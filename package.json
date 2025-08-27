@@ -1,0 +1,43 @@
+{
+  "name": "chopistics",
+  "version": "1.0.0",
+  "description": "Coding Course Management System",
+  "main": "index.html",
+  "scripts": {
+    "dev": "concurrently \"tsc --watch\" \"http-server -p 3000 -o index.html\"",
+    "build": "tsc",
+    "clean": "rimraf dist/*",
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier --write '**/*.{html,css,ts,js}'",
+    "start": "http-server -p 3000 -o index.html"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.1",
+    "http-server": "^14.1.1",
+    "prettier": "^3.6.2",
+    "rimraf": "^5.0.10",
+    "typescript": "^5.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yeabwang/chopistic"
+  },
+  "keywords": [
+    "education",
+    "coding",
+    "typescript",
+    "bootstrap",
+    "course-management"
+  ],
+  "author": "Chopistics Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
