@@ -106,7 +106,7 @@ const Features = () => (
           <b> Learn AI with us</b>
         </h1>
         <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-          Immerse yourself in a rich and ever-expanding universe.
+          Immerse yourself in a rich and ever-expanding learning.
         </p>
       </div>
 
@@ -118,7 +118,7 @@ const Features = () => (
               Course <b>1</b>
             </>
           }
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
+          description="A cross-platform machine learning app, turning your activities across Web2 and Web3 worlds into a rewarding adventure."
           isComingSoon
         />
       </BentoTilt>
@@ -132,7 +132,7 @@ const Features = () => (
                 Course <b>2</b>
               </>
             }
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
+            description="An advanced and learning-inspired NFT collection - the AI primed for expansion."
             isComingSoon
           />
         </BentoTilt>
@@ -145,7 +145,7 @@ const Features = () => (
                 Course <b>3</b>
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            description="A intelligent social hub, adding a new dimension of learning to social interaction for Web3 communities."
             isComingSoon
           />
         </BentoTilt>
@@ -158,7 +158,7 @@ const Features = () => (
                 Course <b>4</b>
               </>
             }
-            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+            description="A cross-world AI Agent - elevating your learning to be more fun and productive."
             isComingSoon
           />
         </BentoTilt>

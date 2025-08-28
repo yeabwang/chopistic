@@ -165,7 +165,7 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
         {/* Header */}
         <div className="auth-form-element mb-8 mt-12 sm:mt-0 text-center">
           <h2 className="special-font mb-2 text-3xl sm:text-3xl font-black font-zentry text-white">
-            <b>{mode === "login" ? "Welcome Back" : "Join Zentry"}</b>
+            <b>{mode === "login" ? "Welcome Back" : "Join Chopistic Learning"}</b>
           </h2>
           <p className="text-sm font-general text-white/70">
             {mode === "login"
