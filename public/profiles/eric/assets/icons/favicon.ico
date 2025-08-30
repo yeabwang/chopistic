@@ -1,0 +1,20 @@
+# Favicon Placeholder
+
+This file should be replaced with your actual favicon.
+
+## Requirements:
+- Format: ICO, PNG, or SVG
+- Size: 16x16px, 32x32px, or 64x64px
+- Simple, recognizable design
+- Matches your brand colors
+
+## How to create a favicon:
+1. Use online tools like favicon.io or realfavicongenerator.net
+2. Create a simple logo or use your initials
+3. Replace this file with the generated favicon
+4. Update the HTML link tag if using a different filename
+
+## Alternative favicon formats:
+- favicon.ico (traditional)
+- favicon.png (modern browsers)
+- favicon.svg (scalable, modern browsers)

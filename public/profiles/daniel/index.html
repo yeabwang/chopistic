@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Reinhart Gunawan</title>
+<style>
+/* ================== Reset & Basics ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #121212, #1f1f1f);
+    color: #e0e0e0;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* ================== Container ================== */
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+/* ================== Header / Hero ================== */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #4caf50;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Shadow & glow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(76, 175, 80, 0.6);
+}
+
+.header img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(76, 175, 80, 0.8);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #bbbbbb;
+}
+
+/* ================== Tags ================== */
+.tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.tag {
+    background-color: #2a2a2a;
+    padding: 6px 14px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #4caf50;
+    color: #121212;
+}
+
+/* ================== Section Cards ================== */
+.section {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.section h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.section p, .section ul {
+    font-size: 1rem;
+    color: #d0d0d0;
+}
+
+.section ul {
+    list-style: none;
+}
+
+.section ul li {
+    margin-bottom: 12px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.section ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+}
+
+/* ================== Contact ================== */
+.contact {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #4caf50;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #80e27e;
+}
+
+/* ================== Footer ================== */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header h2 {
+        font-size: 1.1rem;
+    }
+
+    .section h3 {
+        font-size: 1.5rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <img src="images/profile.jpg" alt="Daniel Reinhart Gunawan">
+        <h1>Daniel Reinhart Gunawan</h1>
+        <h2>Designer & Critical Thinker</h2>
+        <div class="tags">
+            <div class="tag">Problem-solving</div>
+            <div class="tag">Teamwork</div>
+            <div class="tag">Adaptability</div>
+            <div class="tag">Critical thinking</div>
+        </div>
+    </div>
+
+    <!-- About Me -->
+    <div class="section">
+        <h3>About Me</h3>
+        <p>I am just an ordinary guy with an extraordinary brain, capable of thinking and creating new ideas. With the right people, I can execute those ideas efficiently.</p>
+        <p>I am a writer and a designer; as long as I have my laptop, I can create wonders.</p>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h3>Skills & Technologies</h3>
+        <ul>
+            <li>Creative idea generation</li>
+            <li>Critical thinking abilities</li>
+            <li>Active listening and teamwork</li>
+        </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="section contact">
+        <p>📧 Send Email: <a href="mailto:danielgunawan157@gmail.com">danielgunawan157@gmail.com</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Gunawan Daniel
+    </footer>
+
+</div>
+
+</body>
+</html>

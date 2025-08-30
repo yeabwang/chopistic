@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio and information page showcasing skills, experience, and contact details">
+    <title>Eric B - Personal Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">EB</div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <header id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-photo">
+                        <img src="assets/images/profile.jpg" alt="Eric B - Profile Photo" loading="lazy">
+                    </div>
+                    <div class="hero-intro">
+                        <h1 class="hero-title">Eric Bilyk</h1>
+                        <p class="hero-tagline">Programmer & Problem Solver</p>
+                        <p class="hero-subtitle">Building digital solutions with clean code and creative thinking</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-card">
+                    <div class="about-content">
+                        <p class="about-text">
+                            I'm a passionate developer who loves turning complex problems into simple, beautiful solutions. 
+                            With a focus on clean code and user experience, I build applications that make a difference.
+                        </p>
+                        <p class="about-text">
+                            When I'm not coding, you'll find me exploring new technologies, contributing to open source, 
+                            or sharing knowledge with the developer community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-item" data-skill="Frontend Development">
+                        <div class="skill-icon">💻</div>
+                        <h3 class="skill-name">Frontend</h3>
+                        <p class="skill-description">HTML, CSS, JavaScript, React, Vue.js</p>
+                    </div>
+                    <div class="skill-item" data-skill="Backend Development">
+                        <div class="skill-icon">⚙️</div>
+                        <h3 class="skill-name">Backend</h3>
+                        <p class="skill-description">Node.js, Python, Express, Django</p>
+                    </div>
+                    <div class="skill-item" data-skill="Database Management">
+                        <div class="skill-icon">🗄️</div>
+                        <h3 class="skill-name">Databases</h3>
+                        <p class="skill-description">MongoDB, PostgreSQL, Redis</p>
+                    </div>
+                    <div class="skill-item" data-skill="DevOps & Tools">
+                        <div class="skill-icon">🚀</div>
+                        <h3 class="skill-name">DevOps</h3>
+                        <p class="skill-description">Docker, Git, CI/CD, AWS</p>
+                    </div>
+                    <div class="skill-item" data-skill="UI/UX Design">
+                        <div class="skill-icon">🎨</div>
+                        <h3 class="skill-name">Design</h3>
+                        <p class="skill-description">Figma, Responsive Design, Accessibility</p>
+                    </div>
+                    <div class="skill-item" data-skill="Problem Solving">
+                        <div class="skill-icon">🧩</div>
+                        <h3 class="skill-name">Problem Solving</h3>
+                        <p class="skill-description">Algorithms, Data Structures, System Design</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <p class="contact-text">
+                        I'm always interested in new opportunities and collaborations. 
+                        Let's discuss how we can work together!
+                    </p>
+                    <div class="contact-actions">
+                        <a href="mailto:eric.bilyk@mail.ru" class="contact-btn primary-btn">
+                            <span>📧</span>
+                            Send Email
+                        </a>
+                        <div class="social-links">
+                            <a href="https://github.com/TheGrayColour" target="_blank" rel="noopener" aria-label="GitHub Profile" class="social-link">
+                                <span>🐙</span>
+                                GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn Profile" class="social-link">
+                                <span>💼</span>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bilyk E.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>
