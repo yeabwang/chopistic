@@ -10,8 +10,8 @@ import { useRouter } from "../hooks/useRouter";
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "Courses", href: "#courses" },
+  { name: "About Us", href: "#about-us" },
   { name: "Questions", href: "#questions" },
-  { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" }
 ];
 
@@ -46,6 +46,8 @@ const NavBar = () => {
       navigateTo("home");
     } else if (item.name === "Courses") {
       navigateTo("courses");
+    } else if (item.name === "About Us") {
+      navigateTo("about");
     } else {
       // For other items, navigate to home and then scroll to section
       if (currentPage !== "home") {

@@ -1,0 +1,169 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import { TiLocationArrow } from "react-icons/ti";
+import { useEffect, useRef, useState } from "react";
+
+import Button from "./Button";
+import VideoPreview from "./VideoPreview";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const AboutUsHero = () => {
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [hasClicked, setHasClicked] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadedVideos, setLoadedVideos] = useState(0);
+
+  const totalVideos = 3;
+  const nextVdRef = useRef(null);
+
+  const handleVideoLoad = () => {
+    setLoadedVideos((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    if (loadedVideos === totalVideos - 1) {
+      setLoading(false);
+    }
+  }, [loadedVideos]);
+
+  const handleMiniVdClick = () => {
+    setHasClicked(true);
+    setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
+  };
+
+  useGSAP(
+    () => {
+      if (hasClicked) {
+        gsap.set("#about-next-video", { visibility: "visible" });
+        gsap.to("#about-next-video", {
+          transformOrigin: "center center",
+          scale: 1,
+          width: "100%",
+          height: "100%",
+          duration: 1,
+          ease: "power1.inOut",
+          onStart: () => nextVdRef.current.play(),
+        });
+        gsap.from("#about-current-video", {
+          transformOrigin: "center center",
+          scale: 0,
+          duration: 1.5,
+          ease: "power1.inOut",
+        });
+      }
+    },
+    {
+      dependencies: [currentIndex],
+      revertOnUpdate: true,
+    }
+  );
+
+  useGSAP(() => {
+    gsap.set("#about-video-frame", {
+      clipPath: "polygon(20% 0, 80% 0, 85% 85%, 15% 90%)",
+      borderRadius: "0% 0% 35% 15%",
+    });
+    gsap.from("#about-video-frame", {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      borderRadius: "0% 0% 0% 0%",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#about-video-frame",
+        start: "center center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
+
+  const getVideoSrc = (index) => `videos/feature-${index}.mp4`;
+
+  return (
+    <div className="relative h-dvh w-screen overflow-x-hidden">
+      {loading && (
+        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-blue-50">
+          <div className="three-body">
+            <div className="three-body__dot"></div>
+            <div className="three-body__dot"></div>
+            <div className="three-body__dot"></div>
+          </div>
+        </div>
+      )}
+
+      <div
+        id="about-video-frame"
+        className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-300"
+      >
+        <div>
+          <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
+            <VideoPreview>
+              <div
+                onClick={handleMiniVdClick}
+                className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+              >
+                <video
+                  ref={nextVdRef}
+                  src={getVideoSrc((currentIndex % totalVideos) + 1)}
+                  loop
+                  muted
+                  id="about-current-video"
+                  className="size-64 origin-center scale-150 object-cover object-center"
+                  onLoadedData={handleVideoLoad}
+                />
+              </div>
+            </VideoPreview>
+          </div>
+
+          <video
+            ref={nextVdRef}
+            src={getVideoSrc(currentIndex)}
+            loop
+            muted
+            id="about-next-video"
+            className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
+            onLoadedData={handleVideoLoad}
+          />
+          <video
+            src={getVideoSrc(
+              currentIndex === totalVideos - 1 ? 1 : currentIndex
+            )}
+            autoPlay
+            loop
+            muted
+            className="absolute left-0 top-0 size-full object-cover object-center"
+            onLoadedData={handleVideoLoad}
+          />
+        </div>
+
+        <div className="absolute inset-0 z-40 flex items-center justify-center">
+          <div className="text-center">
+            <p className="mb-8 font-general text-sm uppercase tracking-wider text-blue-100/60 md:text-xs">
+              discover the visionaries
+            </p>
+            
+            <h1 className="special-font hero-heading mb-8 text-blue-100">
+              Meet Our <b>T</b>eam
+            </h1>
+
+            <p className="mx-auto mb-12 max-w-2xl font-robert-regular text-lg leading-relaxed text-blue-100/80 md:text-xl">
+              Discover the passionate minds behind Chopistic Learning&apos;s innovative AI education platform and our mission to transform learning.
+            </p>
+
+            <div className="flex justify-center">
+              <Button
+                id="explore-team"
+                title="Explore Our Story"
+                leftIcon={<TiLocationArrow />}
+                containerClass="bg-yellow-300 flex-center gap-1"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AboutUsHero;

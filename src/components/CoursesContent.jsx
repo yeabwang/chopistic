@@ -149,7 +149,7 @@ const CourseCard = ({ course, index }) => {
   return (
     <div
       ref={itemRef}
-      className="group relative h-96 overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 ease-out hover:border-violet-300/30 md:h-[50vh]"
+      className="group relative h-80 overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 ease-out hover:border-violet-300/30 md:h-[420px]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ transform: transformStyle }}
@@ -167,11 +167,11 @@ const CourseCard = ({ course, index }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/30 transition-opacity duration-300 group-hover:from-black/95 group-hover:via-black/80 group-hover:to-black/40"></div>
       
       {/* Content */}
-      <div className="relative z-10 flex size-full flex-col p-6">
+      <div className="relative z-10 flex size-full flex-col p-5">
         {/* Header Section */}
-        <div className="mb-4">
-          <div className="mb-3 flex items-center justify-between">
-            <span className="inline-flex items-center rounded-full bg-gradient-to-r from-violet-400 to-blue-400 px-3 py-1 text-xs font-semibold text-white shadow-lg backdrop-blur-sm">
+        <div className="mb-3">
+          <div className="mb-2 flex items-center justify-between">
+            <span className="inline-flex items-center rounded-full bg-gradient-to-r from-violet-400 to-blue-400 px-2.5 py-1 text-xs font-semibold text-white shadow-lg backdrop-blur-sm">
               {course.category}
             </span>
             <div className="flex items-center space-x-2 rounded-md bg-black/50 px-2 py-1 text-xs text-blue-50 backdrop-blur-sm">
@@ -180,27 +180,27 @@ const CourseCard = ({ course, index }) => {
             </div>
           </div>
 
-          <h3 className="font-zentry text-xl font-bold uppercase leading-tight text-white drop-shadow-lg md:text-2xl">
+          <h3 className="font-zentry text-lg font-bold uppercase leading-tight text-white drop-shadow-lg md:text-xl">
             {course.title}
           </h3>
         </div>
 
         {/* Description */}
         <div className="flex-1">
-          <p className="text-sm leading-relaxed text-white drop-shadow-md md:text-base">
+          <p className="text-sm leading-relaxed text-white/90 drop-shadow-md line-clamp-3">
             {course.description}
           </p>
         </div>
 
         {/* Footer Section */}
-        <div className="mt-6 space-y-4">
+        <div className="mt-4 space-y-3">
           {/* Price and Level */}
           <div className="flex items-end justify-between">
-            <div className="rounded-lg bg-black/40 px-3 py-2 backdrop-blur-sm">
-              <span className="text-2xl font-bold text-yellow-300 drop-shadow-md">{course.price}</span>
-              <span className="ml-2 text-sm text-blue-100">USD</span>
+            <div className="rounded-lg bg-black/40 px-2.5 py-1.5 backdrop-blur-sm">
+              <span className="text-xl font-bold text-yellow-300 drop-shadow-md">{course.price}</span>
+              <span className="ml-1 text-xs text-blue-100">USD</span>
             </div>
-            <div className="rounded-lg bg-black/40 px-3 py-2 text-right backdrop-blur-sm">
+            <div className="rounded-lg bg-black/40 px-2.5 py-1.5 text-right backdrop-blur-sm">
               <div className="text-xs text-blue-100">Skill Level</div>
               <div className="text-sm font-medium text-white">{course.level}</div>
             </div>
@@ -214,7 +214,7 @@ const CourseCard = ({ course, index }) => {
             onMouseLeave={handleMouseLeave}
             className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-300/20 to-blue-300/20 p-[1px] transition-all duration-300 hover:from-violet-300/40 hover:to-blue-300/40"
           >
-            <div className="relative flex items-center justify-center gap-2 rounded-xl bg-black/60 px-6 py-3 backdrop-blur-sm transition-all duration-300 hover:bg-black/40">
+            <div className="relative flex items-center justify-center gap-2 rounded-xl bg-black/60 px-4 py-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-black/40">
               {/* Radial gradient hover effect */}
               <div
                 className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 rounded-xl"

@@ -6,6 +6,7 @@ import Story from "./components/Story";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CoursesPage from "./components/CoursesPage";
+import AboutUsPage from "./components/AboutUsPage";
 import { useRouter } from "./hooks/useRouter";
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
         <>
           <CoursesPage />
           <Footer />
+        </>
+      ) : currentPage === 'about' ? (
+        <>
+          <AboutUsPage />
         </>
       ) : (
         <>

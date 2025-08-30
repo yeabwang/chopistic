@@ -8,6 +8,8 @@ export const useRouter = () => {
       const hash = window.location.hash.slice(1);
       if (hash === 'courses') {
         setCurrentPage('courses');
+      } else if (hash === 'about') {
+        setCurrentPage('about');
       } else {
         setCurrentPage('home');
       }
