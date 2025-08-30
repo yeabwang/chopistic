@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gutsi · Personal Info</title>
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#111827;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#38bdf8;
+      --chip:#1f2937;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:linear-gradient(180deg,var(--bg),#0b1027 50%,var(--bg));
+      color:var(--text);
+    }
+    .container{max-width:980px; margin:0 auto; padding:24px;}
+    header{
+      display:flex; gap:20px; align-items:center; flex-wrap:wrap;
+      background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06);
+      padding:20px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    header img{width:132px; height:132px; object-fit:cover; border-radius:20px; border:3px solid rgba(255,255,255,.08);}
+    h1{font-size:1.9rem; margin:0 0 6px}
+    .subtitle{color:var(--muted); font-weight:500}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{background:var(--chip); color:#cbd5e1; border:1px solid rgba(255,255,255,.06);
+      padding:6px 10px; border-radius:999px; font-size:.9rem}
+    main{margin-top:24px; display:grid; grid-template-columns: 1.1fr .9fr; gap:24px}
+    @media (max-width:900px){ main{grid-template-columns:1fr} }
+    section{
+      background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06);
+      border-radius:20px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    section h2{margin-top:0; letter-spacing:.2px}
+    p{margin:0 0 1rem}
+    ul{padding-left:18px}
+    li{margin:.25rem 0}
+    .facts{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
+    @media (max-width:600px){ .facts{grid-template-columns:1fr} }
+    .fact{background:var(--card); padding:12px 14px; border-radius:14px; border:1px solid rgba(255,255,255,.06)}
+    .fact small{display:block; color:var(--muted); margin-bottom:4px}
+    .gallery{display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:10px}
+    .gallery img{width:100%; aspect-ratio:1.2/1; object-fit:cover; border-radius:14px; border:2px solid rgba(255,255,255,.06)}
+    .contact a{color:var(--accent); text-decoration:none}
+    .contact a:hover{text-decoration:underline}
+    footer{margin:22px 0 10px; text-align:center; color:var(--muted); font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="gutsi.jpg" alt="Portrait photo of Gutsi" />
+      <div>
+        <h1>Gutsi</h1>
+        <div class="subtitle">Student at Beijing Institute of Technology (BIT)</div>
+        <div class="chips">
+          <span class="chip">Problem-solving</span>
+          <span class="chip">Teamwork</span>
+          <span class="chip">Adaptability</span>
+          <span class="chip">Critical thinking</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="about">
+        <h2 id="about">About Me</h2>
+        <p>
+          Hi, my name is <strong>Gutsi</strong>, and I am currently studying at <strong>Beijing Institute of Technology (BIT)</strong>. My academic journey has been both challenging and rewarding, allowing me to grow in knowledge and character. I chose to pursue my studies here because BIT offers not only a strong academic environment but also opportunities to develop practical skills that are important in today’s world.
+        </p>
+        <p>
+          I would describe myself as someone who is motivated, hardworking, and curious about how things work. I enjoy exploring new ideas, solving problems, and working with others toward shared goals. My studies have helped me strengthen my logical thinking and ability to analyze situations carefully, which I believe are essential qualities for both academic and real-life challenges.
+        </p>
+        <p>
+          In addition to my academic work, I take time to focus on personal growth. I constantly try to improve my communication and teamwork skills because I believe collaboration is the key to success. I also value adaptability, since every new challenge requires flexibility and a willingness to learn.
+        </p>
+        <div class="facts" role="list">
+          <div class="fact" role="listitem"><small>University</small>Beijing Institute of Technology (BIT)</div>
+          <div class="fact" role="listitem"><small>Focus</small>Developing problem-solving and analytical skills</div>
+          <div class="fact" role="listitem"><small>Strengths</small>Critical thinking, adaptability, communication</div>
+          <div class="fact" role="listitem"><small>Goal</small>To apply knowledge and skills in meaningful ways</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills">
+        <h2 id="skills">Skills & Abilities</h2>
+        <ul>
+          <li>Strong analytical and critical thinking abilities</li>
+          <li>Effective communication in team and group settings</li>
+          <li>Adaptability in new environments and challenges</li>
+          <li>Organizational and time management skills</li>
+          <li>Curiosity and continuous self-learning</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="highlights">
+        <h2 id="highlights">Highlights</h2>
+        <ul>
+          <li>Currently pursuing higher education at a top university (BIT).</li>
+          <li>Passionate about personal growth and lifelong learning.</li>
+          <li>Capable of working under pressure and staying motivated.</li>
+          <li>Enjoys working both independently and in collaborative groups.</li>
+        </ul>
+              </section>
+
+      <section class="contact" aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <p>Email: <a href="mailto:qudsinagi2006@gmail.com">qudsinagi2006@gmail.com</a></p>
+              </section>
+    </main>
+
+    <footer>
+      © <span id="y"></span> Gutsi · Personal Page
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, black, purple);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Push content higher */
+      padding: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 950px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      margin-top: -40px; /* Move the whole card a bit up */
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .profile-pic {
+      flex: 1 1 250px;
+      text-align: center;
+      margin-top: -20px; /* Lift profile picture higher */
+    }
+
+    .profile-pic img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 20px; /* Rounded square */
+      border: 4px solid rgba(255,255,255,0.5);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic img:hover {
+      transform: rotate(-2deg) scale(1.05);
+    }
+
+    .intro {
+      flex: 2 1 500px;
+      background: rgba(0,0,0,0.6); /* Black with 60% transparency */
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffd369;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #f0f0f0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background: rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Me</h1>
+    <p>Welcome to my personal webpage ✨</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="profile-pic">
+        <!-- Replace with your picture -->
+        <img src="Profile-pic.jpg" alt="My Photo">
+      </div>
+
+      <div class="intro">
+        <h2>Hello, I'm Hamza</h2>
+        <p>
+          <!-- Replace this with your 200-word intro -->
+			As an extroverted and optimistic individual, I excel where teamwork and innovation come together. I am naturally receptive to questions, which makes me introduce new ideas into the mix while valuing the personal contribution of others. My good communication skills and hearing other sides make me help build a cult of team
+			As an extroverted individual with a positive attitude, I work most efficiently in environments where teamwork and innovation overlap. I am extremely open to conversation, which allows me to introduce new ideas into the mix while also valuing other people's individual ideas. Good communication ability along with my ability to value different perspectives create a team culture where all concerned feel heard and motivated.
+			Having had experience as a CEO of two teams in the past, I have leadership skills and knowledge of how to direct a team towards shared goals. Skills acquired in the process included management of a team, conflict management, and staying grounded despite pressure. Such experiences taught me that direction and flexibility are key in balance—making strides while leaving space for innovation.
+			In addition to leadership, I am technically inclined and creative. Having excellent design instincts and above-average video editing skills, I enjoy bringing ideas to polished completions that are imbued with vision and precision.
+			What I bring to this team is not only experience, but enthusiasm for building synergy, creating open collaboration, and translating collective ideas into effectual results. I believe together we can produce work that is not only effectual, but inspiring.
+
+          blandit, sagittis nulla id, feugiat lorem.  
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Chopsticks — All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

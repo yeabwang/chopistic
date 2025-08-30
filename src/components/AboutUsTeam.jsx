@@ -132,13 +132,38 @@ const TeamMemberProfile = ({ member, index }) => {
     );
   });
 
+  const handleCardClick = () => {
+    if (member.profileRoute) {
+      // For Yeab, use React component route
+      if (member.name === "Yeab") {
+        window.location.hash = member.profileRoute;
+        // Scroll to top when navigating to profile
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+      } else {
+        // For other team members, redirect to their HTML file in a new tab
+        const profileUrl = `/${member.profileRoute}`;
+        window.open(profileUrl, '_blank');
+      }
+    }
+  };
+
   return (
     <div
       ref={cardRef}
-      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/20 p-8 backdrop-blur-xl transition-all duration-500 hover:border-violet-300/30 hover:bg-black/30"
+      onClick={handleCardClick}
+      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-black/20 p-8 backdrop-blur-xl transition-all duration-500 hover:border-violet-300/30 hover:bg-black/30 ${
+        member.profileRoute ? 'cursor-pointer hover:scale-105' : ''
+      }`}
     >
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-blue-600/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+      
+      {/* Profile indicator for clickable cards */}
+      {member.profileRoute && (
+        <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-br from-violet-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+      )}
       
       <div className="relative z-10 text-center">
         <div className="mx-auto mb-6 size-32 overflow-hidden rounded-full border-2 border-violet-300/30 p-1 transition-all duration-300 group-hover:border-violet-300/60">
@@ -162,6 +187,7 @@ const TeamMemberProfile = ({ member, index }) => {
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex size-10 items-center justify-center rounded-full bg-white/5 text-white/70 backdrop-blur-sm transition-all duration-300 hover:bg-violet-600/20 hover:text-violet-300 hover:scale-110"
             >
               <FaLinkedin size={18} />
@@ -172,6 +198,7 @@ const TeamMemberProfile = ({ member, index }) => {
               href={member.github}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex size-10 items-center justify-center rounded-full bg-white/5 text-white/70 backdrop-blur-sm transition-all duration-300 hover:bg-blue-600/20 hover:text-blue-300 hover:scale-110"
             >
               <FaGithub size={18} />
@@ -182,6 +209,7 @@ const TeamMemberProfile = ({ member, index }) => {
               href={member.twitter}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex size-10 items-center justify-center rounded-full bg-white/5 text-white/70 backdrop-blur-sm transition-all duration-300 hover:bg-yellow-600/20 hover:text-yellow-300 hover:scale-110"
             >
               <FaTwitter size={18} />
@@ -197,53 +225,63 @@ const AboutUsTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Johnson",
-      title: "CEO & Founder",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      linkedin: "https://linkedin.com/in/alexjohnson",
-      github: "https://github.com/alexjohnson",
-      twitter: "https://twitter.com/alexjohnson"
+      name: "Yeab",
+      title: "Founder & Full-Stack Developer",
+      image: "/img/team/yeab.jpg",
+      linkedin: "https://www.linkedin.com/in/yeabsira-tesfaye/",
+      github: "https://github.com/yeabwang",
+      twitter: "https://x.com/wangyeab",
+      profileRoute: "profile/yeab"
     },
     {
       id: 2,
-      name: "Sarah Chen",
-      title: "CTO & Co-Founder",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-      linkedin: "https://linkedin.com/in/sarahchen",
-      github: "https://github.com/sarahchen",
-      twitter: "https://twitter.com/sarahchen"
+      name: "Eric Bilyk",
+      title: "Programmer & Problem Solver",
+      image: "/img/team/eric/profile.jpg",
+      linkedin: "https://linkedin.com/in/yourusername",
+      github: "https://github.com/TheGrayColour",
+      twitter: "https://twitter.com/ericbilyk",
+      profileRoute: "profiles/eric/index.html"
     },
     {
       id: 3,
-      name: "Michael Rodriguez",
-      title: "Head of AI Research",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      linkedin: "https://linkedin.com/in/michaelrodriguez",
-      github: "https://github.com/michaelrodriguez"
+      name: "Hamza",
+      title: "Team Leader & Designer",
+      image: "/img/team/hamza/profile.jpg",
+      linkedin: "https://linkedin.com/in/hamza-profile",
+      github: "https://github.com/hamza-username",
+      twitter: "https://twitter.com/hamza-handle",
+      profileRoute: "profiles/hamza/index.html"
     },
     {
       id: 4,
-      name: "Emily Watson",
-      title: "Lead Product Designer",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      linkedin: "https://linkedin.com/in/emilywatson",
-      twitter: "https://twitter.com/emilywatson"
+      name: "Daniel Reinhart Gunawan",
+      title: "Designer & Critical Thinker",
+      image: "/img/team/daniel/profile.jpg",
+      linkedin: "https://linkedin.com/in/daniel-gunawan",
+      github: "https://github.com/daniel-gunawan",
+      twitter: "https://twitter.com/daniel-gunawan",
+      profileRoute: "profiles/daniel/index.html"
     },
     {
       id: 5,
-      name: "David Kim",
-      title: "Senior Full Stack Developer",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
-      linkedin: "https://linkedin.com/in/davidkim",
-      github: "https://github.com/davidkim"
+      name: "Gutsi",
+      title: "Student & Problem Solver",
+      image: "/img/team/gutsi/profile.jpg",
+      linkedin: "https://linkedin.com/in/gutsi",
+      github: "https://github.com/gutsi",
+      twitter: "https://twitter.com/gutsi",
+      profileRoute: "profiles/gutsi/index.html"
     },
     {
       id: 6,
-      name: "Lisa Thompson",
-      title: "Head of Marketing",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-      linkedin: "https://linkedin.com/in/lisathompson",
-      twitter: "https://twitter.com/lisathompson"
+      name: "Sarah Khalfi",
+      title: "UI/UX Designer & Project Lead",
+      image: "/img/team/sarah/profile.jpg",
+      linkedin: "https://linkedin.com/in/sarah-khalfi",
+      github: "https://github.com/sarah-khalfi",
+      twitter: "https://twitter.com/sarah-khalfi",
+      profileRoute: "profiles/sarah/index.html"
     }
   ];
 

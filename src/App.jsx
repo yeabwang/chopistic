@@ -7,10 +7,11 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CoursesPage from "./components/CoursesPage";
 import AboutUsPage from "./components/AboutUsPage";
+import Yeab from "./components/profiles/yeab/Yeab";
 import { useRouter } from "./hooks/useRouter";
 
 function App() {
-  const { currentPage } = useRouter();
+  const { currentPage, profileName } = useRouter();
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
@@ -32,6 +33,20 @@ function App() {
       ) : currentPage === 'about' ? (
         <>
           <AboutUsPage />
+        </>
+      ) : currentPage === 'profile' ? (
+        <>
+          {profileName === 'yeab' ? (
+            <Yeab />
+          ) : (
+            <div className="flex min-h-screen items-center justify-center bg-black text-white">
+              <div className="text-center">
+                <h1 className="mb-4 text-4xl font-bold">Profile Not Found</h1>
+                <p className="text-blue-300">The requested profile does not exist.</p>
+              </div>
+            </div>
+          )}
+          <Footer />
         </>
       ) : (
         <>
