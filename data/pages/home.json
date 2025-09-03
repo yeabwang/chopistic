@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "mainTitle": "Lets Learn <b>A</b>I",
+    "description": "Enter the Intelligence Layer Unleash the Learning Economy.",
+    "ctaButton": {
+      "text": "Start Learning",
+      "id": "watch-trailer"
+    },
+    "heroHeading": "Gen <b>A</b>I",
+    "videos": {
+      "total": 4,
+      "basePath": "videos/hero-",
+      "format": ".mp4"
+    }
+  },
+  "about": {
+    "tagline": "Welcome to Chopistic Learning",
+    "title": "Disc<b>o</b>ver the world's <br /> largest shared <b>l</b>earning",
+    "subtitle": "The Learning of Intelligence begins—your life, now an epic MMORPG",
+    "description": "Chopistic Learning unites every learner from countless courses and platforms, both digital and physical, into a unified Learning Economy",
+    "backgroundImage": "img/about.webp"
+  },
+  "features": {
+    "title": "<b> Learn AI with us</b>",
+    "description": "Immerse yourself in a rich and ever-expanding learning.",
+    "comingSoon": {
+      "title": "M<b>o</b>re co<b>m</b>ing s<b>o</b>on."
+    },
+    "additionalVideo": "videos/feature-5.mp4"
+  },
+  "story": {
+    "tagline": "the artificial intelligence world",
+    "title": "the st<b>o</b>ry of <br /> a hidden mind",
+    "description": "Where algorithms converge, lies Chopistic Learning and the boundless knowledge. Discover its secrets and shape your mind amidst infinite opportunities.",
+    "image": "/img/entrance.webp",
+    "ctaButton": {
+      "text": "discover foundation",
+      "id": "realm-btn"
+    }
+  },
+  "contact": {
+    "tagline": "Join Chopistic Learning",
+    "title": "let&#39;s b<b>u</b>ild the <br /> new era of <br /> l<b>e</b>arning t<b>o</b>gether.",
+    "ctaButton": {
+      "text": "contact us"
+    },
+    "images": {
+      "contact1": "/img/contact-1.webp",
+      "contact2": "/img/contact-2.webp",
+      "swordmanPartial": "/img/swordman-partial.webp",
+      "swordman": "/img/swordman.webp"
+    }
+  }
+}

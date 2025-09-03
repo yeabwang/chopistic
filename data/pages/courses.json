@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "Master <b>A</b>I",
+    "description": "Unlock your potential with our comprehensive AI courses designed for every skill level.",
+    "ctaButton": {
+      "text": "Explore Courses",
+      "id": "explore-courses"
+    },
+    "videos": {
+      "total": 3,
+      "basePath": "videos/hero-",
+      "format": ".mp4"
+    }
+  },
+  "content": {
+    "title": "Our <b className=\"text-violet-300\">Courses</b>",
+    "description": "Discover cutting-edge AI courses designed to transform your understanding and skills in artificial intelligence.",
+    "filter": {
+      "title": "Explore",
+      "subtitle": "Find Your Path",
+      "categories": ["All", "Machine Learning", "Deep Learning", "NLP", "Computer Vision"],
+      "levels": ["All", "Beginner", "Intermediate", "Advanced"]
+    }
+  }
+}

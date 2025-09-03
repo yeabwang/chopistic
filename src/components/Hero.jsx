@@ -6,17 +6,19 @@ import { useEffect, useRef, useState } from "react";
 
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
+import { usePageContent } from "../hooks/usePageContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  const { content } = usePageContent('home');
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
 
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
-  const totalVideos = 4;
+  const totalVideos = content?.hero?.videos?.total || 4;
   const nextVdRef = useRef(null);
 
   const handleVideoLoad = () => {
@@ -27,7 +29,7 @@ const Hero = () => {
     if (loadedVideos === totalVideos - 1) {
       setLoading(false);
     }
-  }, [loadedVideos]);
+  }, [loadedVideos, totalVideos]);
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
@@ -80,7 +82,11 @@ const Hero = () => {
     });
   });
 
-  const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
+  const getVideoSrc = (index) => {
+    if (!content?.hero?.videos) return `videos/hero-${index}.mp4`;
+    const { basePath, format } = content.hero.videos;
+    return `${basePath}${index}${format}`;
+  };
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
@@ -141,22 +147,22 @@ const Hero = () => {
         </div>
 
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          Gen <b>A</b>I
+          <span dangerouslySetInnerHTML={{ __html: content?.hero?.heroHeading || "Gen <b>A</b>I" }} />
         </h1>
 
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="special-font hero-heading text-blue-100">
-              Lets Learn <b>A</b>I
+              <span dangerouslySetInnerHTML={{ __html: content?.hero?.mainTitle || "Lets Learn <b>A</b>I" }} />
             </h1>
 
             <p className="mb-5 font-robert-regular text-blue-100">
-              Enter the Intelligence Layer Unleash the Learning Economy.
+              {content?.hero?.description || "Enter the Intelligence Layer Unleash the Learning Economy."}
             </p>
 
             <Button
-              id="watch-trailer"
-              title="Start Learning"
+              id={content?.hero?.ctaButton?.id || "watch-trailer"}
+              title={content?.hero?.ctaButton?.text || "Start Learning"}
               leftIcon={<TiLocationArrow />}
               containerClass="bg-yellow-300 flex-center gap-1"
             />
@@ -165,7 +171,7 @@ const Hero = () => {
       </div>
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        Gen<b>A</b>I
+        <span dangerouslySetInnerHTML={{ __html: content?.hero?.heroHeading || "Gen<b>A</b>I" }} />
       </h1>
     </div>
   );
