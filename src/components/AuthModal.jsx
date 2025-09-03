@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { FiX, FiEye, FiEyeOff, FiMail, FiLock, FiUser } from "react-icons/fi";
-import { FaGoogle, FaApple, FaGithub } from "react-icons/fa";
 
 const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
   const [mode, setMode] = useState(initialMode);
@@ -174,32 +173,7 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
           </p>
         </div>
 
-        {/* Social Login */}
-        <div className="auth-form-element mb-6">
-          <div className="mb-4 grid grid-cols-3 gap-3">
-            {[
-              { icon: FaGoogle, label: "Google" },
-              { icon: FaApple, label: "Apple" },
-              { icon: FaGithub, label: "GitHub" },
-            ].map(({ icon: Icon, label }) => (
-              <button
-                key={label}
-                className="group flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-3 transition-all duration-300 hover:scale-105 hover:border-white/20 hover:bg-white/10"
-              >
-                <Icon className="text-white/80 transition-colors duration-200 group-hover:text-white" size={20} />
-              </button>
-            ))}
-          </div>
-          
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/10" />
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="bg-black/20 px-4 font-general text-white/60">or continue with email</span>
-            </div>
-          </div>
-        </div>
+
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="auth-form-element space-y-4">
