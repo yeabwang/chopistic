@@ -1,0 +1,92 @@
+{
+  "hero": {
+    "tagline": "discover the visionaries",
+    "title": "Meet Our <b>T</b>eam",
+    "description": "Discover the passionate minds behind Chopistic Learning's innovative AI education platform and our mission to transform learning.",
+    "ctaButton": {
+      "text": "Explore Our Story",
+      "id": "explore-team"
+    },
+    "videos": {
+      "total": 3,
+      "basePath": "videos/feature-",
+      "format": ".mp4"
+    }
+  },
+  "aboutTeam": {
+    "tagline": "the minds behind innovation",
+    "title": "About Our <br /> T<b>e</b>am",
+    "descriptions": [
+      "At Chopistic Learning, we believe that the future of education lies at the intersection of human creativity and artificial intelligence. Our diverse team of educators, technologists, and visionaries work tirelessly to create transformative learning experiences that bridge the gap between complex AI concepts and practical, real-world applications.",
+      "From AI researchers pushing the boundaries of machine learning to designers crafting intuitive user experiences, every member of our team contributes to our mission of democratizing AI education and empowering learners worldwide. Our collaborative approach combines decades of industry experience with cutting-edge research, ensuring that our educational content remains both academically rigorous and practically relevant.",
+      "What sets us apart is our commitment to making artificial intelligence accessible to learners at every level. Whether you're a complete beginner taking your first steps into the world of AI, or an experienced professional looking to expand your expertise, our team creates personalized learning paths that adapt to your unique goals and learning style. We believe that everyone deserves the opportunity to understand and harness the power of AI to transform their careers and communities."
+    ]
+  },
+  "stats": [
+    {
+      "number": "50+",
+      "title": "Years Combined",
+      "description": "Experience in AI and Education",
+      "color": "violet"
+    },
+    {
+      "number": "10K+",
+      "title": "Students Taught",
+      "description": "Across Global Platforms",
+      "color": "blue"
+    },
+    {
+      "number": "15+",
+      "title": "Countries",
+      "description": "Where Our Team Resides",
+      "color": "yellow"
+    }
+  ],
+  "journey": {
+    "tagline": "our journey",
+    "title": "How We <br /> W<b>o</b>rk Together",
+    "steps": [
+      {
+        "phase": "Phase 01",
+        "title": "Research & Innovation",
+        "description": "Our AI researchers explore cutting-edge technologies and methodologies to identify the most effective learning approaches for complex AI concepts.",
+        "icon": "🔬",
+        "color": "violet",
+        "position": "right"
+      },
+      {
+        "phase": "Phase 02",
+        "title": "Content Development",
+        "description": "Our educational experts transform complex research into engaging, accessible learning materials that resonate with diverse learning styles.",
+        "icon": "📚",
+        "color": "blue",
+        "position": "left"
+      },
+      {
+        "phase": "Phase 03",
+        "title": "Community & Support",
+        "description": "We build supportive learning communities where students can collaborate, share insights, and grow together in their AI journey.",
+        "icon": "🤝",
+        "color": "yellow",
+        "position": "right"
+      }
+    ]
+  },
+  "team": {
+    "tagline": "meet the experts",
+    "title": "Our L<b>e</b>ading <br /> Experts"
+  },
+  "gallery": {
+    "tagline": "behind the scenes",
+    "title": "Our Creative <br /> J<b>o</b>urney",
+    "description": "Moments of innovation, collaboration, and growth as we build the future of AI education."
+  },
+  "cta": {
+    "tagline": "Ready to transform your career?",
+    "title": "Start Your AI <br /> L<b>e</b>arning Journey",
+    "ctaButton": {
+      "text": "Explore Courses",
+      "id": "start-journey-cta"
+    }
+  }
+}

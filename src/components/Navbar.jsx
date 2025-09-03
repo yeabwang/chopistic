@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import AuthModal from "./AuthModal";
 import { useRouter } from "../hooks/useRouter";
+import { useAuth } from "../contexts/AuthContext";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -23,6 +24,9 @@ const NavBar = () => {
   // Auth modal state
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState("login");
+
+  // Auth context
+  const { user, logout, isAuthenticated } = useAuth();
 
   // Refs for audio and navigation container
   const audioElementRef = useRef(null);
@@ -155,23 +159,39 @@ const NavBar = () => {
 
             {/* Auth Buttons */}
             <div className="ml-6 flex items-center space-x-3">
-              <button
-                onClick={() => {
-                  setAuthMode("login");
-                  setIsAuthModalOpen(true);
-                }}
-                className="nav-hover-btn text-xs uppercase"
-              >
-                Login
-              </button>
-              <Button
-                title="Sign Up"
-                containerClass="!px-5 !py-2 !text-xs"
-                onClick={() => {
-                  setAuthMode("signup");
-                  setIsAuthModalOpen(true);
-                }}
-              />
+              {isAuthenticated ? (
+                <div className="flex items-center space-x-3">
+                  <span className="text-xs text-white/80">
+                    Welcome, {user.name}
+                  </span>
+                  <button
+                    onClick={logout}
+                    className="nav-hover-btn text-xs uppercase"
+                  >
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <button
+                    onClick={() => {
+                      setAuthMode("login");
+                      setIsAuthModalOpen(true);
+                    }}
+                    className="nav-hover-btn text-xs uppercase"
+                  >
+                    Login
+                  </button>
+                  <Button
+                    title="Sign Up"
+                    containerClass="!px-5 !py-2 !text-xs"
+                    onClick={() => {
+                      setAuthMode("signup");
+                      setIsAuthModalOpen(true);
+                    }}
+                  />
+                </>
+              )}
             </div>
           </div>
         </nav>

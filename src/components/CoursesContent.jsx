@@ -3,13 +3,16 @@ import { TiLocationArrow } from "react-icons/ti";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { usePageContent } from "../hooks/usePageContent";
+import { useCourseData } from "../hooks/useCourseData";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Glassmorphic Filter Component
 const FilterSection = ({ selectedCategory, onCategoryChange, selectedLevel, onLevelChange }) => {
-  const categories = ["All", "Machine Learning", "Deep Learning", "NLP", "Computer Vision"];
-  const levels = ["All", "Beginner", "Intermediate", "Advanced"];
+  const { content } = usePageContent('courses');
+  const categories = content?.content?.filter?.categories || ["All", "Machine Learning", "Deep Learning", "NLP", "Computer Vision"];
+  const levels = content?.content?.filter?.levels || ["All", "Beginner", "Intermediate", "Advanced"];
 
   return (
     <div className="courses-filter-glass sticky top-24 h-fit overflow-hidden rounded-3xl border border-white/10 p-8 backdrop-blur-xl">
@@ -17,10 +20,10 @@ const FilterSection = ({ selectedCategory, onCategoryChange, selectedLevel, onLe
       <div className="mb-8 text-center">
         <div className="mx-auto mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-violet-300 to-blue-300"></div>
         <h3 className="font-zentry text-2xl font-black uppercase text-white">
-          Explore
+          {content?.content?.filter?.title || "Explore"}
         </h3>
         <p className="font-general text-xs uppercase tracking-wider text-blue-50/60">
-          Find Your Path
+          {content?.content?.filter?.subtitle || "Find Your Path"}
         </p>
       </div>
       
@@ -156,7 +159,7 @@ const CourseCard = ({ course, index }) => {
     >
       {/* Background Video */}
       <video
-        src={`videos/feature-${((index % 5) + 1)}.mp4`}
+        src={course.media || `videos/feature-${((index % 5) + 1)}.mp4`}
         loop
         muted
         autoPlay
@@ -187,19 +190,15 @@ const CourseCard = ({ course, index }) => {
 
         {/* Description */}
         <div className="flex-1">
-          <p className="text-sm leading-relaxed text-white/90 drop-shadow-md line-clamp-3">
+          <p className="line-clamp-3 text-sm leading-relaxed text-white/90 drop-shadow-md">
             {course.description}
           </p>
         </div>
 
         {/* Footer Section */}
         <div className="mt-4 space-y-3">
-          {/* Price and Level */}
-          <div className="flex items-end justify-between">
-            <div className="rounded-lg bg-black/40 px-2.5 py-1.5 backdrop-blur-sm">
-              <span className="text-xl font-bold text-yellow-300 drop-shadow-md">{course.price}</span>
-              <span className="ml-1 text-xs text-blue-100">USD</span>
-            </div>
+          {/* Level Display */}
+          <div className="flex items-end justify-end">
             <div className="rounded-lg bg-black/40 px-2.5 py-1.5 text-right backdrop-blur-sm">
               <div className="text-xs text-blue-100">Skill Level</div>
               <div className="text-sm font-medium text-white">{course.level}</div>
@@ -207,26 +206,31 @@ const CourseCard = ({ course, index }) => {
           </div>
 
           {/* Enrollment Button */}
-          <button
-            ref={hoverButtonRef}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-300/20 to-blue-300/20 p-[1px] transition-all duration-300 hover:from-violet-300/40 hover:to-blue-300/40"
+          <a
+            href={course.link || "#"}
+            className="block"
           >
-            <div className="relative flex items-center justify-center gap-2 rounded-xl bg-black/60 px-4 py-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-black/40">
-              {/* Radial gradient hover effect */}
-              <div
-                className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 rounded-xl"
-                style={{
-                  opacity: hoverOpacity * 0.3,
-                  background: `radial-gradient(200px circle at ${cursorPosition.x}px ${cursorPosition.y}px, rgba(139, 92, 246, 0.3), transparent 70%)`,
-                }}
-              />
-              <TiLocationArrow className="relative z-20 text-violet-300" />
-              <span className="relative z-20 font-medium text-white">Enroll Now</span>
-            </div>
-          </button>
+            <button
+              ref={hoverButtonRef}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-300/20 to-blue-300/20 p-px transition-all duration-300 hover:from-violet-300/40 hover:to-blue-300/40"
+            >
+              <div className="relative flex items-center justify-center gap-2 rounded-xl bg-black/60 px-4 py-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-black/40">
+                {/* Radial gradient hover effect */}
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition duration-300"
+                  style={{
+                    opacity: hoverOpacity * 0.3,
+                    background: `radial-gradient(200px circle at ${cursorPosition.x}px ${cursorPosition.y}px, rgba(139, 92, 246, 0.3), transparent 70%)`,
+                  }}
+                />
+                <TiLocationArrow className="relative z-20 text-violet-300" />
+                <span className="relative z-20 font-medium text-white">Enroll Now</span>
+              </div>
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -234,65 +238,10 @@ const CourseCard = ({ course, index }) => {
 };
 
 const CoursesContent = () => {
+  const { content } = usePageContent('courses');
+  const { courses } = useCourseData();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedLevel, setSelectedLevel] = useState("All");
-
-  const courses = [
-    {
-      id: 1,
-      title: "AI Fundamentals",
-      category: "Machine Learning",
-      level: "Beginner",
-      duration: "8 weeks",
-      price: "$299",
-      description: "Master the core concepts of artificial intelligence and machine learning with hands-on projects."
-    },
-    {
-      id: 2,
-      title: "Deep Neural Networks",
-      category: "Deep Learning",
-      level: "Intermediate",
-      duration: "12 weeks",
-      price: "$499",
-      description: "Dive deep into neural network architectures and build sophisticated AI models."
-    },
-    {
-      id: 3,
-      title: "Computer Vision Mastery",
-      category: "Computer Vision",
-      level: "Advanced",
-      duration: "10 weeks",
-      price: "$599",
-      description: "Learn to build AI systems that can see and interpret visual information."
-    },
-    {
-      id: 4,
-      title: "Natural Language Processing",
-      category: "NLP",
-      level: "Intermediate",
-      duration: "9 weeks",
-      price: "$449",
-      description: "Build AI systems that understand and generate human language."
-    },
-    {
-      id: 5,
-      title: "Reinforcement Learning",
-      category: "Machine Learning",
-      level: "Advanced",
-      duration: "11 weeks",
-      price: "$549",
-      description: "Train AI agents to make decisions and learn from their environment."
-    },
-    {
-      id: 6,
-      title: "AI Ethics & Governance",
-      category: "Machine Learning",
-      level: "Beginner",
-      duration: "6 weeks",
-      price: "$199",
-      description: "Understand the ethical implications and governance of AI systems."
-    }
-  ];
 
   const filteredCourses = courses.filter(course => {
     const categoryMatch = selectedCategory === "All" || course.category === selectedCategory;
@@ -305,10 +254,10 @@ const CoursesContent = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="mb-16 text-center">
           <h2 className="special-font mb-6 text-6xl font-black uppercase text-white md:text-7xl">
-            Our <b className="text-violet-300">Courses</b>
+            <span dangerouslySetInnerHTML={{ __html: content?.content?.title || "Our <b className=\"text-violet-300\">Courses</b>" }} />
           </h2>
           <p className="mx-auto max-w-2xl font-circular-web text-lg text-blue-50/80">
-            Discover cutting-edge AI courses designed to transform your understanding and skills in artificial intelligence.
+            {content?.content?.description || "Discover cutting-edge AI courses designed to transform your understanding and skills in artificial intelligence."}
           </p>
         </div>
 

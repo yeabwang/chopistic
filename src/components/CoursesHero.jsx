@@ -6,16 +6,18 @@ import { useEffect, useRef, useState } from "react";
 
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
+import { usePageContent } from "../hooks/usePageContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CoursesHero = () => {
+  const { content } = usePageContent('courses');
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
-  const totalVideos = 3;
+  const totalVideos = content?.hero?.videos?.total || 3;
   const nextVdRef = useRef(null);
 
   const handleVideoLoad = () => {
@@ -26,7 +28,7 @@ const CoursesHero = () => {
     if (loadedVideos === totalVideos - 1) {
       setLoading(false);
     }
-  }, [loadedVideos]);
+  }, [loadedVideos, totalVideos]);
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
@@ -78,7 +80,11 @@ const CoursesHero = () => {
     });
   });
 
-  const getVideoSrc = (index) => `videos/feature-${index}.mp4`;
+  const getVideoSrc = (index) => {
+    if (!content?.hero?.videos) return `videos/feature-${index}.mp4`;
+    const { basePath, format } = content.hero.videos;
+    return `${basePath}${index}${format}`;
+  };
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
@@ -140,17 +146,17 @@ const CoursesHero = () => {
         <div className="absolute inset-0 z-40 flex items-center justify-center">
           <div className="text-center">
             <h1 className="special-font hero-heading mb-5 text-blue-100">
-              Master <b>A</b>I
+              <span dangerouslySetInnerHTML={{ __html: content?.hero?.title || "Master <b>A</b>I" }} />
             </h1>
 
             <p className="mx-auto mb-8 max-w-md font-robert-regular text-blue-100">
-              Unlock your potential with our comprehensive AI courses designed for every skill level.
+              {content?.hero?.description || "Unlock your potential with our comprehensive AI courses designed for every skill level."}
             </p>
 
             <div className="flex justify-center">
               <Button
-                id="explore-courses"
-                title="Explore Courses"
+                id={content?.hero?.ctaButton?.id || "explore-courses"}
+                title={content?.hero?.ctaButton?.text || "Explore Courses"}
                 leftIcon={<TiLocationArrow />}
                 containerClass="bg-yellow-300 flex-center gap-1"
               />

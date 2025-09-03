@@ -3,9 +3,11 @@ import { useRef } from "react";
 
 import Button from "./Button";
 import AnimatedTitle from "./AnimatedTitle";
+import { usePageContent } from "../hooks/usePageContent";
 
 const FloatingImage = () => {
   const frameRef = useRef(null);
+  const { content } = usePageContent('home');
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -49,12 +51,12 @@ const FloatingImage = () => {
     <div id="story" className="min-h-dvh w-screen bg-black text-blue-50">
       <div className="flex size-full flex-col items-center py-10 pb-24">
         <p className="font-general text-sm uppercase md:text-[10px]">
-          the artificial intelligence world
+          {content?.story?.tagline || "the artificial intelligence world"}
         </p>
 
         <div className="relative size-full">
           <AnimatedTitle
-            title="the st<b>o</b>ry of <br /> a hidden mind"
+            title={content?.story?.title || "the st<b>o</b>ry of <br /> a hidden mind"}
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
 
@@ -67,7 +69,7 @@ const FloatingImage = () => {
                   onMouseLeave={handleMouseLeave}
                   onMouseUp={handleMouseLeave}
                   onMouseEnter={handleMouseLeave}
-                  src="/img/entrance.webp"
+                  src={content?.story?.image || "/img/entrance.webp"}
                   alt="entrance.webp"
                   className="object-contain"
                 />
@@ -106,14 +108,12 @@ const FloatingImage = () => {
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
-              Where algorithms converge, lies Chopistic Learning and the boundless knowledge.
-              Discover its secrets and shape your mind amidst infinite
-              opportunities.
+              {content?.story?.description || "Where algorithms converge, lies Chopistic Learning and the boundless knowledge. Discover its secrets and shape your mind amidst infinite opportunities."}
             </p>
 
             <Button
-              id="realm-btn"
-              title="discover foundation"
+              id={content?.story?.ctaButton?.id || "realm-btn"}
+              title={content?.story?.ctaButton?.text || "discover foundation"}
               containerClass="mt-5"
             />
           </div>

@@ -6,16 +6,18 @@ import { useEffect, useRef, useState } from "react";
 
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
+import { usePageContent } from "../hooks/usePageContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutUsHero = () => {
+  const { content } = usePageContent('about');
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
-  const totalVideos = 3;
+  const totalVideos = content?.hero?.videos?.total || 3;
   const nextVdRef = useRef(null);
 
   const handleVideoLoad = () => {
@@ -26,7 +28,7 @@ const AboutUsHero = () => {
     if (loadedVideos === totalVideos - 1) {
       setLoading(false);
     }
-  }, [loadedVideos]);
+  }, [loadedVideos, totalVideos]);
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
@@ -78,7 +80,11 @@ const AboutUsHero = () => {
     });
   });
 
-  const getVideoSrc = (index) => `videos/feature-${index}.mp4`;
+  const getVideoSrc = (index) => {
+    if (!content?.hero?.videos) return `videos/feature-${index}.mp4`;
+    const { basePath, format } = content.hero.videos;
+    return `${basePath}${index}${format}`;
+  };
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
@@ -140,21 +146,21 @@ const AboutUsHero = () => {
         <div className="absolute inset-0 z-40 flex items-center justify-center">
           <div className="text-center">
             <p className="mb-8 font-general text-sm uppercase tracking-wider text-blue-100/60 md:text-xs">
-              discover the visionaries
+              {content?.hero?.tagline || "discover the visionaries"}
             </p>
             
             <h1 className="special-font hero-heading mb-8 text-blue-100">
-              Meet Our <b>T</b>eam
+              <span dangerouslySetInnerHTML={{ __html: content?.hero?.title || "Meet Our <b>T</b>eam" }} />
             </h1>
 
             <p className="mx-auto mb-12 max-w-2xl font-robert-regular text-lg leading-relaxed text-blue-100/80 md:text-xl">
-              Discover the passionate minds behind Chopistic Learning&apos;s innovative AI education platform and our mission to transform learning.
+              {content?.hero?.description || "Default content."}
             </p>
 
             <div className="flex justify-center">
               <Button
-                id="explore-team"
-                title="Explore Our Story"
+                id={content?.hero?.ctaButton?.id || "explore-team"}
+                title={content?.hero?.ctaButton?.text || "Default content"}
                 leftIcon={<TiLocationArrow />}
                 containerClass="bg-yellow-300 flex-center gap-1"
               />

@@ -1,0 +1,64 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "AI Fundamentals",
+      "category": "Machine Learning",
+      "level": "Beginner",
+      "duration": "8 weeks",
+      "link": "#",
+      "description": "Master the core concepts of artificial intelligence and machine learning with hands-on projects.",
+      "media": "videos/feature-1.mp4"
+    },
+    {
+      "id": 2,
+      "title": "Deep Neural Networks",
+      "category": "Deep Learning",
+      "level": "Intermediate",
+      "duration": "12 weeks",
+      "link": "#",
+      "description": "Dive deep into neural network architectures and build sophisticated AI models.",
+      "media": "videos/feature-2.mp4"
+    },
+    {
+      "id": 3,
+      "title": "Computer Vision Mastery",
+      "category": "Computer Vision",
+      "level": "Advanced",
+      "duration": "10 weeks",
+      "link": "#",
+      "description": "Learn to build AI systems that can see and interpret visual information.",
+      "media": "videos/feature-3.mp4"
+    },
+    {
+      "id": 4,
+      "title": "Natural Language Processing",
+      "category": "NLP",
+      "level": "Intermediate",
+      "duration": "9 weeks",
+      "link": "#",
+      "description": "Build AI systems that understand and generate human language.",
+      "media": "videos/feature-4.mp4"
+    },
+    {
+      "id": 5,
+      "title": "Reinforcement Learning",
+      "category": "Machine Learning",
+      "level": "Advanced",
+      "duration": "11 weeks",
+      "link": "#",
+      "description": "Train AI agents to make decisions and learn from their environment.",
+      "media": "videos/feature-5.mp4"
+    },
+    {
+      "id": 6,
+      "title": "AI Ethics & Governance",
+      "category": "Machine Learning",
+      "level": "Beginner",
+      "duration": "6 weeks",
+      "link": "#",
+      "description": "Understand the ethical implications and governance of AI systems.",
+      "media": "videos/feature-1.mp4"
+    }
+  ]
+}

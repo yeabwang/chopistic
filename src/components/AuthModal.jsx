@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { FiX, FiEye, FiEyeOff, FiMail, FiLock, FiUser } from "react-icons/fi";
-import { FaGoogle, FaApple, FaGithub } from "react-icons/fa";
+import { useAuth } from "../contexts/AuthContext";
 
 const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
   const [mode, setMode] = useState(initialMode);
@@ -13,7 +13,9 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
     name: "",
     confirmPassword: "",
   });
+  const [validationError, setValidationError] = useState("");
 
+  const { login, signup, isLoading, error } = useAuth();
   const modalRef = useRef(null);
   const backdropRef = useRef(null);
   const contentRef = useRef(null);
@@ -121,10 +123,41 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle authentication logic here
-    console.log(`${mode} submitted:`, formData);
+    setValidationError("");
+    
+    // Client-side validation
+    if (mode === "signup") {
+      if (formData.password !== formData.confirmPassword) {
+        setValidationError("Passwords do not match");
+        return;
+      }
+      if (formData.password.length < 6) {
+        setValidationError("Password must be at least 6 characters");
+        return;
+      }
+      if (!formData.name.trim()) {
+        setValidationError("Name is required");
+        return;
+      }
+    }
+
+    try {
+      let result;
+      if (mode === "login") {
+        result = await login(formData.email, formData.password);
+      } else {
+        result = await signup(formData.email, formData.password, formData.name);
+      }
+
+      if (result.success) {
+        // Close modal and reset form on success
+        handleClose();
+      }
+    } catch (err) {
+      setValidationError(err.message);
+    }
   };
 
   const handleInputChange = (field, value) => {
@@ -136,34 +169,49 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
   return (
     <div
       ref={modalRef}
-      className="fixed inset-0 z-[9999] flex min-h-screen items-center justify-center p-0 sm:p-6 md:p-8"
+      className="fixed inset-0 z-[9999] flex min-h-screen w-screen h-screen items-center justify-center"
+      style={{ 
+        width: '100vw', 
+        height: '100vh', 
+        left: 0, 
+        top: 0, 
+        right: 0, 
+        bottom: 0 
+      }}
     >
       {/* Backdrop */}
       <div
         ref={backdropRef}
-        className="absolute inset-0 bg-black/70 backdrop-blur-md"
+        className="fixed inset-0 w-screen h-screen bg-black/70 backdrop-blur-md"
+        style={{ 
+          width: '100vw', 
+          height: '100vh', 
+          left: 0, 
+          top: 0, 
+          right: 0, 
+          bottom: 0 
+        }}
         onClick={handleClose}
       />
+
+      {/* Close Button - Fixed to viewport */}
+      <button
+        onClick={handleClose}
+        className="fixed right-6 top-6 z-[10000] rounded-full bg-black/50 p-3 text-white/90 transition-all duration-200 hover:bg-black/70 hover:text-white hover:scale-110"
+      >
+        <FiX size={24} />
+      </button>
 
       {/* Modal Content */}
       <div
         ref={contentRef}
-        className="relative w-full h-full sm:h-auto sm:max-w-md sm:m-auto sm:max-h-[90vh] overflow-y-auto sm:rounded-2xl border-0 sm:border border-white/20 bg-black/30 p-6 sm:p-8 shadow-2xl backdrop-blur-xl"
+        className="relative w-full max-w-md mx-6 sm:mx-auto max-h-[90vh] overflow-y-auto rounded-2xl border border-white/20 bg-black/30 p-6 sm:p-8 shadow-2xl backdrop-blur-xl"
         style={{
           background: "linear-gradient(135deg, rgba(139, 69, 255, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%)",
         }}
       >
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute right-4 top-4 z-10 rounded-full bg-black/30 p-3 text-white/80 transition-all duration-200 hover:bg-black/50 hover:text-white hover:scale-110 sm:bg-transparent sm:p-2"
-        >
-          <FiX size={24} className="sm:hidden" />
-          <FiX size={20} className="hidden sm:block" />
-        </button>
-
         {/* Header */}
-        <div className="auth-form-element mb-8 mt-12 sm:mt-0 text-center">
+        <div className="auth-form-element mb-8 text-center">
           <h2 className="special-font mb-2 text-3xl sm:text-3xl font-black font-zentry text-white">
             <b>{mode === "login" ? "Welcome Back" : "Join Chopistic Learning"}</b>
           </h2>
@@ -174,35 +222,17 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
           </p>
         </div>
 
-        {/* Social Login */}
-        <div className="auth-form-element mb-6">
-          <div className="mb-4 grid grid-cols-3 gap-3">
-            {[
-              { icon: FaGoogle, label: "Google" },
-              { icon: FaApple, label: "Apple" },
-              { icon: FaGithub, label: "GitHub" },
-            ].map(({ icon: Icon, label }) => (
-              <button
-                key={label}
-                className="group flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-3 transition-all duration-300 hover:scale-105 hover:border-white/20 hover:bg-white/10"
-              >
-                <Icon className="text-white/80 transition-colors duration-200 group-hover:text-white" size={20} />
-              </button>
-            ))}
-          </div>
-          
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/10" />
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="bg-black/20 px-4 font-general text-white/60">or continue with email</span>
-            </div>
-          </div>
-        </div>
+
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="auth-form-element space-y-4">
+          {/* Error Message */}
+          {(error || validationError) && (
+            <div className="auth-form-element rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-center">
+              <p className="text-sm text-red-400">{error || validationError}</p>
+            </div>
+          )}
+
           {mode === "signup" && (
             <div className="relative">
               <FiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60" size={18} />
@@ -276,14 +306,15 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="auth-form-element group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-4 font-medium font-general text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-violet-500/25"
+            disabled={isLoading}
+            className="auth-form-element group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-4 font-medium font-general text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             <span className="relative inline-flex overflow-hidden">
               <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12">
-                {mode === "login" ? "Sign In" : "Create Account"}
+                {isLoading ? "Processing..." : (mode === "login" ? "Sign In" : "Create Account")}
               </div>
               <div className="absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
-                {mode === "login" ? "Sign In" : "Create Account"}
+                {isLoading ? "Processing..." : (mode === "login" ? "Sign In" : "Create Account")}
               </div>
             </span>
           </button>
