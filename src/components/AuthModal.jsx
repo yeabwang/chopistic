@@ -135,34 +135,49 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
   return (
     <div
       ref={modalRef}
-      className="fixed inset-0 z-[9999] flex min-h-screen items-center justify-center p-0 sm:p-6 md:p-8"
+      className="fixed inset-0 z-[9999] flex min-h-screen w-screen h-screen items-center justify-center"
+      style={{ 
+        width: '100vw', 
+        height: '100vh', 
+        left: 0, 
+        top: 0, 
+        right: 0, 
+        bottom: 0 
+      }}
     >
       {/* Backdrop */}
       <div
         ref={backdropRef}
-        className="absolute inset-0 bg-black/70 backdrop-blur-md"
+        className="fixed inset-0 w-screen h-screen bg-black/70 backdrop-blur-md"
+        style={{ 
+          width: '100vw', 
+          height: '100vh', 
+          left: 0, 
+          top: 0, 
+          right: 0, 
+          bottom: 0 
+        }}
         onClick={handleClose}
       />
+
+      {/* Close Button - Fixed to viewport */}
+      <button
+        onClick={handleClose}
+        className="fixed right-6 top-6 z-[10000] rounded-full bg-black/50 p-3 text-white/90 transition-all duration-200 hover:bg-black/70 hover:text-white hover:scale-110"
+      >
+        <FiX size={24} />
+      </button>
 
       {/* Modal Content */}
       <div
         ref={contentRef}
-        className="relative w-full h-full sm:h-auto sm:max-w-md sm:m-auto sm:max-h-[90vh] overflow-y-auto sm:rounded-2xl border-0 sm:border border-white/20 bg-black/30 p-6 sm:p-8 shadow-2xl backdrop-blur-xl"
+        className="relative w-full max-w-md mx-6 sm:mx-auto max-h-[90vh] overflow-y-auto rounded-2xl border border-white/20 bg-black/30 p-6 sm:p-8 shadow-2xl backdrop-blur-xl"
         style={{
           background: "linear-gradient(135deg, rgba(139, 69, 255, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%)",
         }}
       >
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute right-4 top-4 z-10 rounded-full bg-black/30 p-3 text-white/80 transition-all duration-200 hover:bg-black/50 hover:text-white hover:scale-110 sm:bg-transparent sm:p-2"
-        >
-          <FiX size={24} className="sm:hidden" />
-          <FiX size={20} className="hidden sm:block" />
-        </button>
-
         {/* Header */}
-        <div className="auth-form-element mb-8 mt-12 sm:mt-0 text-center">
+        <div className="auth-form-element mb-8 text-center">
           <h2 className="special-font mb-2 text-3xl sm:text-3xl font-black font-zentry text-white">
             <b>{mode === "login" ? "Welcome Back" : "Join Chopistic Learning"}</b>
           </h2>
