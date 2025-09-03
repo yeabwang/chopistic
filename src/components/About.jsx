@@ -33,18 +33,18 @@ const About = () => {
     <div id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
         <p className="font-general text-sm uppercase md:text-[10px]">
-          {content?.about?.tagline || "Welcome to Chopistic Learning"}
+          {content?.about?.tagline || "Default content"}
         </p>
 
         <AnimatedTitle
-          title={content?.about?.title || "Disc<b>o</b>ver the world's <br /> largest shared <b>l</b>earning"}
+          title={content?.about?.title || "Default content"}
           containerClass="mt-5 !text-black text-center"
         />
 
         <div className="about-subtext">
-          <p>{content?.about?.subtitle || "The Learning of Intelligence begins—your life, now an epic MMORPG"}</p>
+          <p>{content?.about?.subtitle || "Default content"}</p>
           <p className="text-gray-500">
-            {content?.about?.description || "Chopistic Learning unites every learner from countless courses and platforms, both digital and physical, into a unified Learning Economy"}
+            {content?.about?.description || " Default content"}
           </p>
         </div>
       </div>

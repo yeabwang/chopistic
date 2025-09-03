@@ -1,0 +1,86 @@
+{
+  "teamMembers": [
+    {
+      "id": 1,
+      "name": "Yeab",
+      "title": "Founder & Lead AI Researcher",
+      "image": "/img/team/yeab.jpg",
+      "linkedin": "https://www.linkedin.com/in/yeabsira-tesfaye/",
+      "github": "https://github.com/yeabwang",
+      "twitter": "https://x.com/wangyeab",
+      "profileRoute": "profile/yeab"
+    },
+    {
+      "id": 2,
+      "name": "Eric Bilyk",
+      "title": "Programmer & Problem Solver",
+      "image": "/img/team/eric/profile.jpg",
+      "linkedin": "https://linkedin.com/in/yourusername",
+      "github": "https://github.com/TheGrayColour",
+      "twitter": "https://twitter.com/ericbilyk",
+      "profileRoute": "profiles/eric/index.html"
+    },
+    {
+      "id": 3,
+      "name": "Hamza",
+      "title": "Team Leader & Designer",
+      "image": "/img/team/hamza/profile.jpg",
+      "linkedin": "https://linkedin.com/in/hamza-profile",
+      "github": "https://github.com/hamza-username",
+      "twitter": "https://twitter.com/hamza-handle",
+      "profileRoute": "profiles/hamza/index.html"
+    },
+    {
+      "id": 4,
+      "name": "Daniel Reinhart Gunawan",
+      "title": "Designer & Critical Thinker",
+      "image": "/img/team/daniel/profile.jpg",
+      "linkedin": "https://linkedin.com/in/daniel-gunawan",
+      "github": "https://github.com/daniel-gunawan",
+      "twitter": "https://twitter.com/daniel-gunawan",
+      "profileRoute": "profiles/daniel/index.html"
+    },
+    {
+      "id": 5,
+      "name": "Gutsi",
+      "title": "Student & Problem Solver",
+      "image": "/img/team/gutsi/profile.jpg",
+      "linkedin": "https://linkedin.com/in/gutsi",
+      "github": "https://github.com/gutsi",
+      "twitter": "https://twitter.com/gutsi",
+      "profileRoute": "profiles/gutsi/index.html"
+    },
+    {
+      "id": 6,
+      "name": "Sarah Khalfi",
+      "title": "UI/UX Designer & Project Lead",
+      "image": "/img/team/sarah/profile.jpg",
+      "linkedin": "https://linkedin.com/in/sarah-khalfi",
+      "github": "https://github.com/sarah-khalfi",
+      "twitter": "https://twitter.com/sarah-khalfi",
+      "profileRoute": "profiles/sarah/index.html"
+    }
+  ],
+  "galleryImages": [
+    {
+      "id": 1,
+      "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop",
+      "alt": "Team collaboration"
+    },
+    {
+      "id": 2,
+      "src": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=800&fit=crop",
+      "alt": "Team workshop"
+    },
+    {
+      "id": 3,
+      "src": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=800&fit=crop",
+      "alt": "Modern workspace"
+    },
+    {
+      "id": 4,
+      "src": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&h=800&fit=crop",
+      "alt": "Strategic planning"
+    }
+  ]
+}
