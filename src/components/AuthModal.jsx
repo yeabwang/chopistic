@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { FiX, FiEye, FiEyeOff, FiMail, FiLock, FiUser } from "react-icons/fi";
+import { useAuth } from "../contexts/AuthContext";
 
 const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
   const [mode, setMode] = useState(initialMode);
@@ -12,7 +13,9 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
     name: "",
     confirmPassword: "",
   });
+  const [validationError, setValidationError] = useState("");
 
+  const { login, signup, isLoading, error } = useAuth();
   const modalRef = useRef(null);
   const backdropRef = useRef(null);
   const contentRef = useRef(null);
@@ -120,10 +123,41 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle authentication logic here
-    console.log(`${mode} submitted:`, formData);
+    setValidationError("");
+    
+    // Client-side validation
+    if (mode === "signup") {
+      if (formData.password !== formData.confirmPassword) {
+        setValidationError("Passwords do not match");
+        return;
+      }
+      if (formData.password.length < 6) {
+        setValidationError("Password must be at least 6 characters");
+        return;
+      }
+      if (!formData.name.trim()) {
+        setValidationError("Name is required");
+        return;
+      }
+    }
+
+    try {
+      let result;
+      if (mode === "login") {
+        result = await login(formData.email, formData.password);
+      } else {
+        result = await signup(formData.email, formData.password, formData.name);
+      }
+
+      if (result.success) {
+        // Close modal and reset form on success
+        handleClose();
+      }
+    } catch (err) {
+      setValidationError(err.message);
+    }
   };
 
   const handleInputChange = (field, value) => {
@@ -192,6 +226,13 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="auth-form-element space-y-4">
+          {/* Error Message */}
+          {(error || validationError) && (
+            <div className="auth-form-element rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-center">
+              <p className="text-sm text-red-400">{error || validationError}</p>
+            </div>
+          )}
+
           {mode === "signup" && (
             <div className="relative">
               <FiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60" size={18} />
@@ -265,14 +306,15 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="auth-form-element group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-4 font-medium font-general text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-violet-500/25"
+            disabled={isLoading}
+            className="auth-form-element group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-4 font-medium font-general text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             <span className="relative inline-flex overflow-hidden">
               <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12">
-                {mode === "login" ? "Sign In" : "Create Account"}
+                {isLoading ? "Processing..." : (mode === "login" ? "Sign In" : "Create Account")}
               </div>
               <div className="absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
-                {mode === "login" ? "Sign In" : "Create Account"}
+                {isLoading ? "Processing..." : (mode === "login" ? "Sign In" : "Create Account")}
               </div>
             </span>
           </button>
