@@ -165,6 +165,12 @@ const NavBar = () => {
                     Welcome, {user.name}
                   </span>
                   <button
+                    onClick={() => navigateTo("dashboard")}
+                    className="nav-hover-btn text-xs uppercase"
+                  >
+                    Dashboard
+                  </button>
+                  <button
                     onClick={logout}
                     className="nav-hover-btn text-xs uppercase"
                   >

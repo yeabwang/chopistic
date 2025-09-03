@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CoursesPage from "./components/CoursesPage";
 import AboutUsPage from "./components/AboutUsPage";
+import UserDashboard from "./components/dashboard/UserDashboard";
 import Yeab from "./components/profiles/yeab/Yeab";
 import { useRouter } from "./hooks/useRouter";
 
@@ -33,6 +34,10 @@ function App() {
       ) : currentPage === 'about' ? (
         <>
           <AboutUsPage />
+        </>
+      ) : currentPage === 'dashboard' ? (
+        <>
+          <UserDashboard />
         </>
       ) : currentPage === 'profile' ? (
         <>

@@ -13,6 +13,9 @@ export const useRouter = () => {
       } else if (hash === 'about') {
         setCurrentPage('about');
         setProfileName(null);
+      } else if (hash === 'dashboard') {
+        setCurrentPage('dashboard');
+        setProfileName(null);
       } else if (hash.startsWith('profile/')) {
         const name = hash.split('/')[1];
         setCurrentPage('profile');
