@@ -43,7 +43,7 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
         ease: "power2.out" 
       });
 
-      // Modal content animation with more sophisticated easing
+      // Modal content animation 
       gsap.to(contentRef.current, {
         scale: 1,
         opacity: 1,
@@ -194,7 +194,6 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
         onClick={handleClose}
       />
 
-      {/* Close Button - Fixed to viewport */}
       <button
         onClick={handleClose}
         className="fixed right-6 top-6 z-[10000] rounded-full bg-black/50 p-3 text-white/90 transition-all duration-200 hover:bg-black/70 hover:text-white hover:scale-110"

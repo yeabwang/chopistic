@@ -8,7 +8,7 @@ import { useCourseData } from "../hooks/useCourseData";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Glassmorphic Filter Component
+//  Filter Component
 const FilterSection = ({ selectedCategory, onCategoryChange, selectedLevel, onLevelChange }) => {
   const { content } = usePageContent('courses');
   const categories = content?.content?.filter?.categories || ["All", "Machine Learning", "Deep Learning", "NLP", "Computer Vision"];
@@ -92,7 +92,7 @@ const FilterSection = ({ selectedCategory, onCategoryChange, selectedLevel, onLe
   );
 };
 
-// Course Card Component with unique course-focused design
+// Course Card Component
 const CourseCard = ({ course, index }) => {
   const [transformStyle, setTransformStyle] = useState("");
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -218,7 +218,6 @@ const CourseCard = ({ course, index }) => {
               className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-300/20 to-blue-300/20 p-px transition-all duration-300 hover:from-violet-300/40 hover:to-blue-300/40"
             >
               <div className="relative flex items-center justify-center gap-2 rounded-xl bg-black/60 px-4 py-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-black/40">
-                {/* Radial gradient hover effect */}
                 <div
                   className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition duration-300"
                   style={{

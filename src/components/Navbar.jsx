@@ -38,7 +38,6 @@ const NavBar = () => {
 
   const { currentPage, navigateTo } = useRouter();
 
-  // Toggle audio and visual indicator
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
     setIsIndicatorActive((prev) => !prev);
@@ -71,7 +70,6 @@ const NavBar = () => {
     }
   };
 
-  // Manage audio playback
   useEffect(() => {
     if (isAudioPlaying) {
       audioElementRef.current.play();

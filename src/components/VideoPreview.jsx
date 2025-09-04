@@ -15,14 +15,13 @@ export const VideoPreview = ({ children }) => {
     const yOffset = clientY - (rect.top + rect.height / 2); // Calculate Y offset
 
     if (isHovering) {
-      // Move the container slightly in the direction of the cursor
+  
       gsap.to(sectionRef.current, {
         x: xOffset,
         y: yOffset,
         rotationY: xOffset / 2, // Add 3D rotation effect
         rotationX: -yOffset / 2,
-        transformPerspective: 500, // Perspective for realistic 3D effect
-        duration: 1,
+        transformPerspective: 500, 
         ease: "power1.out",
       });
 

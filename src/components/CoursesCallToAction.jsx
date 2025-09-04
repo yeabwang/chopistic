@@ -15,7 +15,7 @@ const CoursesCallToAction = () => {
   const statsRef = useRef([]);
 
   useGSAP(() => {
-    // Elegant entrance animation for main content
+    //  entrance animation for main content
     gsap.fromTo(
       mainContentRef.current,
       { 

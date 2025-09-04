@@ -20,7 +20,6 @@ export const useRouter = () => {
         const name = hash.split('/')[1];
         setCurrentPage('profile');
         setProfileName(name);
-        // Scroll to top when navigating to any profile
         setTimeout(() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 50);
