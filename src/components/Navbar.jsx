@@ -4,9 +4,9 @@ import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
 
 import Button from "./Button";
-import AuthModal from "./AuthModal";
 import { useRouter } from "../hooks/useRouter";
 import { useAuth } from "../contexts/AuthContext";
+import { useAuthModal } from "../contexts/AuthModalContext";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -19,13 +19,10 @@ const NavBar = () => {
   // State for toggling audio and visual indicator
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
-  
-  // Auth modal state
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [authMode, setAuthMode] = useState("login");
 
-  // Auth context
+  // Auth context and modal
   const { user, logout, isAuthenticated } = useAuth();
+  const { openModal } = useAuthModal();
 
   // Refs for audio and navigation container
   const audioElementRef = useRef(null);
@@ -177,10 +174,7 @@ const NavBar = () => {
               ) : (
                 <>
                   <button
-                    onClick={() => {
-                      setAuthMode("login");
-                      setIsAuthModalOpen(true);
-                    }}
+                    onClick={() => openModal('login')}
                     className="nav-hover-btn text-xs uppercase"
                   >
                     Login
@@ -188,23 +182,13 @@ const NavBar = () => {
                   <Button
                     title="Sign Up"
                     containerClass="!px-5 !py-2 !text-xs"
-                    onClick={() => {
-                      setAuthMode("signup");
-                      setIsAuthModalOpen(true);
-                    }}
+                    onClick={() => openModal('signup')}
                   />
                 </>
               )}
             </div>
           </div>
         </nav>
-
-        {/* Auth Modal */}
-        <AuthModal
-          isOpen={isAuthModalOpen}
-          onClose={() => setIsAuthModalOpen(false)}
-          initialMode={authMode}
-        />
       </header>
     </div>
   );

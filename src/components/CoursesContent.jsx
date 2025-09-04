@@ -5,6 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { usePageContent } from "../hooks/usePageContent";
 import { useCourseData } from "../hooks/useCourseData";
+import { useAuthProtection } from "../hooks/useAuthProtection";
+import { useEnrollment } from "../hooks/useEnrollment";
+import { useRouter } from "../hooks/useRouter";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,11 +97,34 @@ const FilterSection = ({ selectedCategory, onCategoryChange, selectedLevel, onLe
 
 // Course Card Component
 const CourseCard = ({ course, index }) => {
+  const { navigateTo } = useRouter();
+  const { requireAuth } = useAuthProtection();
+  const { enrollInCourse, isEnrolledInCourse } = useEnrollment();
   const [transformStyle, setTransformStyle] = useState("");
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const itemRef = useRef(null);
   const hoverButtonRef = useRef(null);
+
+  const handleEnrollClick = () => {
+    const enrollAndNavigate = async () => {
+      try {
+        // Check if already enrolled
+        if (!isEnrolledInCourse(course.id)) {
+          await enrollInCourse(course.id);
+        }
+        // Navigate to course page
+        navigateTo(`course/${course.id}`);
+      } catch (error) {
+        console.error('Error enrolling in course:', error);
+        // Still navigate to course page even if enrollment fails
+        navigateTo(`course/${course.id}`);
+      }
+    };
+
+    // Require authentication before enrollment
+    requireAuth(enrollAndNavigate, { preferSignup: true });
+  };
 
   const handleMouseMove = (event) => {
     if (!itemRef.current) return;
@@ -207,7 +233,7 @@ const CourseCard = ({ course, index }) => {
 
           {/* Enrollment Button */}
           <button
-            onClick={() => window.location.hash = `course/${course.id}`}
+            onClick={handleEnrollClick}
             className="block w-full"
           >
             <div

@@ -265,6 +265,28 @@ class UserService {
       return [];
     }
   }
+
+  async enrollInCourse(userId, courseId) {
+    try {
+      const progress = await this.loadUserProgress(userId);
+      
+      // Initialize coursesEnrolled if it doesn't exist
+      if (!progress.coursesEnrolled) {
+        progress.coursesEnrolled = [];
+      }
+      
+      // Check if already enrolled
+      if (!progress.coursesEnrolled.includes(courseId)) {
+        progress.coursesEnrolled.push(courseId);
+        await this.saveUserProgress(userId, progress);
+      }
+      
+      return { success: true, courseId };
+    } catch (error) {
+      console.error('Error enrolling in course:', error);
+      throw error;
+    }
+  }
 }
 
 export default new UserService();

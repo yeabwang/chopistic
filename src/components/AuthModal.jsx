@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { FiX, FiEye, FiEyeOff, FiMail, FiLock, FiUser } from "react-icons/fi";
 import { useAuth } from "../contexts/AuthContext";
 
-const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
+const AuthModal = ({ isOpen, onClose, initialMode = "login", onSuccess }) => {
   const [mode, setMode] = useState(initialMode);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -154,6 +154,10 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
       if (result.success) {
         // Close modal and reset form on success
         handleClose();
+        // Call onSuccess callback if provided
+        if (onSuccess) {
+          onSuccess();
+        }
       }
     } catch (err) {
       setValidationError(err.message);
