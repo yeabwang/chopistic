@@ -49,50 +49,14 @@ class UserService {
     allUsersData.users.push(newUser);
     allUsersData.nextId++;
 
-    // Create sample progress data for demonstration
+    // Create clean user progress for new account
     const userProgress = {
       userId: newUser.id,
       progress: {},
       achievements: [],
-      quizzes: [
-        {
-          courseId: 1,
-          chapter: "Introduction",
-          title: "Basic AI Concepts Quiz",
-          score: 85,
-          totalQuestions: 10,
-          timeSpent: 8,
-          completedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString() // 7 days ago
-        },
-        {
-          courseId: 1,
-          chapter: "Neural Networks",
-          title: "Neural Network Fundamentals Quiz",
-          score: 92,
-          totalQuestions: 15,
-          timeSpent: 12,
-          completedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString() // 5 days ago
-        },
-        {
-          courseId: 2,
-          chapter: "Introduction",
-          title: "Machine Learning Basics Quiz",
-          score: 78,
-          totalQuestions: 12,
-          timeSpent: 10,
-          completedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString() // 3 days ago
-        },
-        {
-          courseId: 3,
-          chapter: "Computer Vision",
-          title: "Image Processing Quiz",
-          score: 95,
-          totalQuestions: 8,
-          timeSpent: 6,
-          completedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString() // 1 day ago
-        }
-      ],
-      coursesCompleted: [1],
+      quizzes: [],
+      coursesCompleted: [],
+      coursesEnrolled: [],
       lastLogin: new Date().toISOString()
     };
 

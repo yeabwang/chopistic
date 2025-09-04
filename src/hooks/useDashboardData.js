@@ -23,7 +23,11 @@ export const useDashboardData = () => {
         
         // Fetch all courses
         const coursesResponse = await fetch('/data/courses/all_courses.json');
-        const courses = await coursesResponse.json();
+        if (!coursesResponse.ok) {
+          throw new Error(`Failed to fetch courses: ${coursesResponse.status}`);
+        }
+        const coursesData = await coursesResponse.json();
+        const courses = coursesData.courses || [];
         
         // Fetch user progress
         const progress = await userService.loadUserProgress(user.id);
