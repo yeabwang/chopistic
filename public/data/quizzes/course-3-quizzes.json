@@ -1,0 +1,108 @@
+{
+  "courseId": 3,
+  "courseName": "Data Science & Analytics",
+  "quizzes": [
+    {
+      "id": 9,
+      "chapterId": 1,
+      "chapterName": "Data Analysis Fundamentals",
+      "title": "Data Analysis Basics Quiz",
+      "description": "Test your understanding of fundamental data analysis concepts and statistical methods.",
+      "questions": 10,
+      "estimatedTime": "15 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "Descriptive Statistics",
+        "Data Types",
+        "Data Cleaning",
+        "Exploratory Data Analysis"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the first step in any data analysis project?",
+          "options": [
+            "Building models",
+            "Data collection and understanding",
+            "Creating visualizations",
+            "Writing reports"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Understanding and collecting quality data is the foundation of any successful data analysis project."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "chapterId": 2,
+      "chapterName": "Statistical Methods",
+      "title": "Statistical Analysis Quiz",
+      "description": "Evaluate your knowledge of statistical methods and hypothesis testing in data science.",
+      "questions": 12,
+      "estimatedTime": "18 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 120,
+      "passingScore": 75,
+      "topics": [
+        "Hypothesis Testing",
+        "Confidence Intervals",
+        "Correlation",
+        "Regression Analysis"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What does a p-value represent in hypothesis testing?",
+          "options": [
+            "The probability of the null hypothesis being true",
+            "The probability of observing the data given the null hypothesis is true",
+            "The confidence level",
+            "The effect size"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "A p-value represents the probability of observing the data (or more extreme) given that the null hypothesis is true."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "chapterId": 3,
+      "chapterName": "Data Visualization",
+      "title": "Data Visualization Quiz",
+      "description": "Test your knowledge of effective data visualization techniques and best practices.",
+      "questions": 8,
+      "estimatedTime": "12 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 80,
+      "passingScore": 70,
+      "topics": [
+        "Chart Types",
+        "Visualization Best Practices",
+        "Dashboard Design",
+        "Interactive Visualizations"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "Which chart type is best for showing the relationship between two continuous variables?",
+          "options": [
+            "Bar chart",
+            "Pie chart",
+            "Scatter plot",
+            "Line chart"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Scatter plots are ideal for showing relationships between two continuous variables and identifying correlations."
+        }
+      ]
+    }
+  ]
+}

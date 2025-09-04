@@ -1,0 +1,150 @@
+{
+  "courseId": 5,
+  "courseName": "Reinforcement Learning",
+  "quizzes": [
+    {
+      "id": 15,
+      "chapterId": 1,
+      "chapterName": "Introduction to Reinforcement Learning",
+      "title": "RL Fundamentals Quiz",
+      "description": "Test your understanding of basic reinforcement learning concepts and terminology.",
+      "questions": 10,
+      "estimatedTime": "15 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "Agent-Environment Interaction",
+        "Rewards and Returns",
+        "RL Problem Formulation",
+        "Basic Terminology"
+      ]
+    },
+    {
+      "id": 16,
+      "chapterId": 2,
+      "chapterName": "Markov Decision Processes",
+      "title": "MDP Theory Quiz",
+      "description": "Evaluate your knowledge of Markov Decision Processes and their mathematical foundations.",
+      "questions": 12,
+      "estimatedTime": "20 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 120,
+      "passingScore": 80,
+      "topics": [
+        "States and Actions",
+        "Transition Probabilities",
+        "Bellman Equations",
+        "Value Functions"
+      ]
+    },
+    {
+      "id": 17,
+      "chapterId": 3,
+      "chapterName": "Dynamic Programming",
+      "title": "Dynamic Programming Quiz",
+      "description": "Test your understanding of dynamic programming methods for solving MDPs.",
+      "questions": 8,
+      "estimatedTime": "12 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 80,
+      "passingScore": 75,
+      "topics": [
+        "Policy Evaluation",
+        "Policy Improvement",
+        "Policy Iteration",
+        "Value Iteration"
+      ]
+    },
+    {
+      "id": 18,
+      "chapterId": 4,
+      "chapterName": "Model-Free Methods",
+      "title": "Q-Learning and SARSA Quiz",
+      "description": "Assess your knowledge of model-free reinforcement learning algorithms.",
+      "questions": 15,
+      "estimatedTime": "25 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 150,
+      "passingScore": 80,
+      "topics": [
+        "Monte Carlo Methods",
+        "Temporal Difference Learning",
+        "Q-Learning Algorithm",
+        "SARSA Algorithm"
+      ]
+    },
+    {
+      "id": 19,
+      "chapterId": 5,
+      "chapterName": "Function Approximation",
+      "title": "Deep Q-Networks Quiz",
+      "description": "Test your understanding of function approximation and deep Q-networks.",
+      "questions": 12,
+      "estimatedTime": "18 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 120,
+      "passingScore": 85,
+      "topics": [
+        "Linear Function Approximation",
+        "Neural Network Approximation",
+        "Deep Q-Networks",
+        "Experience Replay"
+      ]
+    },
+    {
+      "id": 20,
+      "chapterId": 6,
+      "chapterName": "Policy Gradient Methods",
+      "title": "Policy Optimization Quiz",
+      "description": "Evaluate your knowledge of policy gradient methods and actor-critic algorithms.",
+      "questions": 14,
+      "estimatedTime": "22 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 140,
+      "passingScore": 85,
+      "topics": [
+        "Policy Gradient Theorem",
+        "REINFORCE Algorithm",
+        "Actor-Critic Methods",
+        "Proximal Policy Optimization"
+      ]
+    },
+    {
+      "id": 21,
+      "chapterId": 7,
+      "chapterName": "Advanced Deep RL",
+      "title": "Advanced RL Algorithms Quiz",
+      "description": "Test your understanding of advanced deep reinforcement learning techniques.",
+      "questions": 16,
+      "estimatedTime": "28 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 160,
+      "passingScore": 90,
+      "topics": [
+        "Double DQN",
+        "Dueling DQN",
+        "Trust Region Methods",
+        "Multi-Agent RL"
+      ]
+    },
+    {
+      "id": 22,
+      "chapterId": 8,
+      "chapterName": "Applications and Case Studies",
+      "title": "RL Applications Quiz",
+      "description": "Assess your knowledge of real-world reinforcement learning applications.",
+      "questions": 10,
+      "estimatedTime": "15 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 100,
+      "passingScore": 75,
+      "topics": [
+        "Game Playing AI",
+        "Robotics Applications",
+        "Autonomous Systems",
+        "Financial Trading"
+      ]
+    }
+  ]
+}

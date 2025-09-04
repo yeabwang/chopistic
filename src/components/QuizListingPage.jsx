@@ -1,70 +1,13 @@
-import { useState, useEffect } from "react";
 import { useCourseData } from "../hooks/useCourseData";
+import { useQuizData } from "../hooks/useQuizData";
 
 const QuizListingPage = ({ courseId }) => {
-  const { courses, loading } = useCourseData();
-  const [quizzes, setQuizzes] = useState([]);
+  const { courses, loading: coursesLoading } = useCourseData();
+  const { quizzes, loading: quizzesLoading, getQuizStats } = useQuizData(courseId);
   
   const course = courses.find(c => c.id === parseInt(courseId));
-
-  // Mock quiz data - in real app this would come from API
-  useEffect(() => {
-    if (courseId) {
-      const mockQuizzes = [
-        {
-          id: 1,
-          title: "Introduction to AI Fundamentals",
-          description: "Test your understanding of basic AI concepts and terminology covered in the first chapter.",
-          questions: 10,
-          estimatedTime: "15 mins",
-          difficulty: "Beginner",
-          completed: true,
-          score: 85
-        },
-        {
-          id: 2,
-          title: "Machine Learning Basics Assessment",
-          description: "Evaluate your knowledge of ML algorithms, supervised and unsupervised learning methods.",
-          questions: 15,
-          estimatedTime: "20 mins",
-          difficulty: "Intermediate",
-          completed: false,
-          score: null
-        },
-        {
-          id: 3,
-          title: "Neural Networks Deep Dive",
-          description: "Challenge yourself with advanced neural network architectures and deep learning concepts.",
-          questions: 12,
-          estimatedTime: "18 mins",
-          difficulty: "Advanced",
-          completed: false,
-          score: null
-        },
-        {
-          id: 4,
-          title: "Practical AI Applications",
-          description: "Apply your knowledge to real-world scenarios and case studies in artificial intelligence.",
-          questions: 8,
-          estimatedTime: "12 mins",
-          difficulty: "Intermediate",
-          completed: true,
-          score: 92
-        },
-        {
-          id: 5,
-          title: "Final Assessment",
-          description: "Comprehensive evaluation covering all course topics and advanced problem-solving scenarios.",
-          questions: 25,
-          estimatedTime: "35 mins",
-          difficulty: "Advanced",
-          completed: false,
-          score: null
-        }
-      ];
-      setQuizzes(mockQuizzes);
-    }
-  }, [courseId]);
+  const stats = getQuizStats();
+  const loading = coursesLoading || quizzesLoading;
 
   const getDifficultyColor = (difficulty) => {
     switch (difficulty) {
@@ -137,19 +80,15 @@ const QuizListingPage = ({ courseId }) => {
           {/* Progress Overview */}
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-              <div className="text-2xl font-bold text-white">{quizzes.length}</div>
+              <div className="text-2xl font-bold text-white">{stats.total}</div>
               <div className="text-sm text-gray-400">Total Quizzes</div>
             </div>
             <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-              <div className="text-2xl font-bold text-white">{quizzes.filter(q => q.completed).length}</div>
+              <div className="text-2xl font-bold text-white">{stats.completed}</div>
               <div className="text-sm text-gray-400">Completed</div>
             </div>
             <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-              <div className="text-2xl font-bold text-white">
-                {quizzes.filter(q => q.completed).length > 0 
-                  ? Math.round(quizzes.filter(q => q.completed).reduce((acc, q) => acc + q.score, 0) / quizzes.filter(q => q.completed).length)
-                  : 0}%
-              </div>
+              <div className="text-2xl font-bold text-white">{stats.averageScore}%</div>
               <div className="text-sm text-gray-400">Average Score</div>
             </div>
           </div>
@@ -163,13 +102,13 @@ const QuizListingPage = ({ courseId }) => {
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/30 to-black/50 p-6 backdrop-blur-xl transition-all duration-300 hover:border-violet-300/30 hover:shadow-lg hover:shadow-violet-300/10"
             >
               {/* Completion Badge */}
-              {quiz.completed && (
+              {quiz.userProgress?.completed && (
                 <div className="absolute right-4 top-4">
                   <div className="flex items-center gap-1 rounded-full bg-green-400/20 px-2 py-1 text-xs text-green-400">
                     <svg className="size-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    {quiz.score}%
+                    {quiz.userProgress.score}%
                   </div>
                 </div>
               )}
@@ -216,12 +155,12 @@ const QuizListingPage = ({ courseId }) => {
                 <button
                   onClick={() => window.location.hash = `quiz/${courseId}/${quiz.id}`}
                   className={`w-full rounded-xl px-4 py-3 font-general text-sm font-medium transition-all duration-300 ${
-                    quiz.completed
+                    quiz.userProgress?.completed
                       ? "border border-white/20 bg-white/10 text-white hover:bg-white/20"
                       : "bg-yellow-300 text-black shadow-lg shadow-yellow-300/20 hover:bg-yellow-300/90"
                   }`}
                 >
-                  {quiz.completed ? "Retake Quiz" : "Start Quiz"}
+                  {quiz.userProgress?.completed ? "Retake Quiz" : "Start Quiz"}
                 </button>
               </div>
             </div>

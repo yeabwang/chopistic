@@ -1,0 +1,231 @@
+{
+  "id": 1,
+  "title": "AI Fundamentals",
+  "category": "Machine Learning",
+  "level": "Beginner",
+  "duration": "8 weeks",
+  "description": "Master the core concepts of artificial intelligence and machine learning with hands-on projects.",
+  "instructor": "Dr. Sarah Chen",
+  "enrollmentCount": 2847,
+  "rating": 4.8,
+  "media": "videos/feature-1.mp4",
+  "thumbnail": "img/gallery-1.webp",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Introduction to AI",
+      "duration": "45 minutes",
+      "videoUrl": "https://www.youtube.com/embed/JMUxmLyrhSk",
+      "content": {
+        "overview": "Welcome to the fascinating world of Artificial Intelligence! In this opening chapter, we'll explore what AI really means and how it's transforming our world.",
+        "sections": [
+          {
+            "title": "What is Artificial Intelligence?",
+            "content": "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions. The term may also be applied to any machine that exhibits traits associated with a human mind such as learning and problem-solving."
+          },
+          {
+            "title": "History of AI",
+            "content": "The field of AI research was born at a Dartmouth College workshop in 1956. Since then, AI has experienced several waves of optimism, followed by disappointment and the loss of funding (known as 'AI winters'), followed by new approaches, success and renewed funding."
+          },
+          {
+            "title": "Types of AI",
+            "content": "AI can be categorized into three types: Narrow AI (weak AI), General AI (strong AI), and Artificial Superintelligence. Currently, we only have Narrow AI systems that can perform specific tasks."
+          }
+        ],
+        "keyPoints": [
+          "Understanding the definition and scope of AI",
+          "Learning about the historical development of AI",
+          "Distinguishing between different types of AI systems",
+          "Recognizing AI applications in everyday life"
+        ],
+        "practicalExercise": "Identify 5 AI applications you use in your daily life and categorize them by type."
+      }
+    },
+    {
+      "id": 2,
+      "title": "Machine Learning Basics",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+      "content": {
+        "overview": "Dive into the core concepts of machine learning, the driving force behind most modern AI applications.",
+        "sections": [
+          {
+            "title": "What is Machine Learning?",
+            "content": "Machine Learning is a subset of AI that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. It focuses on the development of computer programs that can access data and use it to learn for themselves."
+          },
+          {
+            "title": "Types of Machine Learning",
+            "content": "There are three main types of machine learning: Supervised Learning (learning with labeled data), Unsupervised Learning (finding patterns in unlabeled data), and Reinforcement Learning (learning through interaction with an environment)."
+          },
+          {
+            "title": "Common Algorithms",
+            "content": "Popular machine learning algorithms include Linear Regression, Decision Trees, Random Forest, Support Vector Machines, K-Means Clustering, and Neural Networks. Each has its strengths and is suited for different types of problems."
+          }
+        ],
+        "keyPoints": [
+          "Understanding machine learning fundamentals",
+          "Differentiating between supervised and unsupervised learning",
+          "Learning about common ML algorithms",
+          "Understanding when to use different approaches"
+        ],
+        "practicalExercise": "Create a simple linear regression model to predict house prices using a sample dataset."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Neural Networks Introduction",
+      "duration": "75 minutes",
+      "videoUrl": "https://www.youtube.com/embed/aircAruvnKk",
+      "content": {
+        "overview": "Explore the building blocks of deep learning - neural networks and how they mimic the human brain.",
+        "sections": [
+          {
+            "title": "What are Neural Networks?",
+            "content": "Neural networks are computing systems inspired by biological neural networks. They consist of interconnected nodes (neurons) that work together to solve specific problems. Neural networks adapt and learn from data without being explicitly programmed."
+          },
+          {
+            "title": "How Neural Networks Work",
+            "content": "Neural networks process information through layers of interconnected nodes. Each connection has a weight that adjusts as learning proceeds. The network learns by adjusting these weights to minimize prediction errors."
+          },
+          {
+            "title": "Types of Neural Networks",
+            "content": "Common types include Feedforward Neural Networks, Convolutional Neural Networks (CNNs) for image processing, Recurrent Neural Networks (RNNs) for sequential data, and Transformer networks for natural language processing."
+          }
+        ],
+        "keyPoints": [
+          "Understanding neural network architecture",
+          "Learning how neurons and layers work together",
+          "Exploring different types of neural networks",
+          "Understanding backpropagation and training"
+        ],
+        "practicalExercise": "Build a simple neural network to classify handwritten digits using Python and TensorFlow."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Deep Learning Fundamentals",
+      "duration": "90 minutes",
+      "videoUrl": "https://www.youtube.com/embed/6M5VXKLf4D4",
+      "content": {
+        "overview": "Take your understanding deeper with advanced neural network concepts and deep learning techniques.",
+        "sections": [
+          {
+            "title": "What is Deep Learning?",
+            "content": "Deep learning is a subset of machine learning that uses neural networks with multiple layers (hence 'deep') to model and understand complex patterns in data. It has been responsible for major breakthroughs in AI."
+          },
+          {
+            "title": "Deep Learning Applications",
+            "content": "Deep learning powers image recognition, natural language processing, speech recognition, autonomous vehicles, medical diagnosis, and many other cutting-edge applications we see today."
+          },
+          {
+            "title": "Training Deep Networks",
+            "content": "Training deep networks requires large amounts of data, significant computational power, and careful tuning of hyperparameters. Techniques like transfer learning and data augmentation help improve performance."
+          }
+        ],
+        "keyPoints": [
+          "Understanding deep learning vs traditional ML",
+          "Learning about popular deep learning architectures",
+          "Understanding training challenges and solutions",
+          "Exploring real-world applications"
+        ],
+        "practicalExercise": "Implement a convolutional neural network for image classification using a pre-trained model."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Computer Vision Basics",
+      "duration": "85 minutes",
+      "videoUrl": "https://www.youtube.com/embed/OcycT1Jwsns",
+      "content": {
+        "overview": "Learn how AI systems can see and interpret visual information through computer vision techniques.",
+        "sections": [
+          {
+            "title": "Introduction to Computer Vision",
+            "content": "Computer vision is a field of AI that enables computers to interpret and make decisions based on visual data. It combines techniques from computer science, mathematics, and engineering."
+          },
+          {
+            "title": "Image Processing Fundamentals",
+            "content": "Basic image processing involves operations like filtering, edge detection, feature extraction, and image transformations. These form the foundation for more complex computer vision tasks."
+          },
+          {
+            "title": "Object Detection and Recognition",
+            "content": "Modern computer vision systems can detect and classify objects in images and videos with remarkable accuracy, using techniques like YOLO, R-CNN, and other deep learning approaches."
+          }
+        ],
+        "keyPoints": [
+          "Understanding computer vision fundamentals",
+          "Learning image processing techniques",
+          "Exploring object detection methods",
+          "Understanding real-world applications"
+        ],
+        "practicalExercise": "Build an object detection system that can identify common objects in photographs."
+      }
+    },
+    {
+      "id": 6,
+      "title": "Natural Language Processing",
+      "duration": "70 minutes",
+      "videoUrl": "https://www.youtube.com/embed/fOvTtapxa9c",
+      "content": {
+        "overview": "Discover how AI systems understand and generate human language through natural language processing.",
+        "sections": [
+          {
+            "title": "What is NLP?",
+            "content": "Natural Language Processing (NLP) is a branch of AI that helps computers understand, interpret and manipulate human language. It bridges the gap between human communication and computer understanding."
+          },
+          {
+            "title": "Text Processing Techniques",
+            "content": "NLP involves various text processing techniques including tokenization, part-of-speech tagging, named entity recognition, sentiment analysis, and language translation."
+          },
+          {
+            "title": "Modern NLP with Transformers",
+            "content": "Recent breakthroughs in NLP have come from transformer architectures like BERT, GPT, and T5, which have revolutionized how machines understand and generate text."
+          }
+        ],
+        "keyPoints": [
+          "Understanding NLP fundamentals",
+          "Learning text processing techniques",
+          "Exploring modern transformer models",
+          "Building practical NLP applications"
+        ],
+        "practicalExercise": "Create a sentiment analysis tool that can classify movie reviews as positive or negative."
+      }
+    }
+  ],
+  "prerequisites": [
+    "Basic programming knowledge (Python recommended)",
+    "High school level mathematics",
+    "Curiosity about technology and AI"
+  ],
+  "learningOutcomes": [
+    "Understand the fundamental concepts of artificial intelligence",
+    "Build basic machine learning models",
+    "Implement simple neural networks",
+    "Apply AI techniques to real-world problems",
+    "Make informed decisions about AI applications"
+  ],
+  "resources": [
+    {
+      "type": "book",
+      "title": "Artificial Intelligence: A Modern Approach",
+      "author": "Stuart Russell & Peter Norvig",
+      "url": "#"
+    },
+    {
+      "type": "documentation",
+      "title": "TensorFlow Documentation",
+      "url": "https://www.tensorflow.org/learn"
+    },
+    {
+      "type": "dataset",
+      "title": "MNIST Handwritten Digits",
+      "url": "http://yann.lecun.com/exdb/mnist/"
+    }
+  ],
+  "quiz": {
+    "available": true,
+    "questionsCount": 25,
+    "passingScore": 80,
+    "timeLimit": 45
+  }
+}

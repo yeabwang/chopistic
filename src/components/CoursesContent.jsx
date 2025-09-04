@@ -249,7 +249,7 @@ const CoursesContent = () => {
   });
 
   return (
-    <section className="min-h-screen bg-black py-24">
+    <section id="courses-grid" className="min-h-screen bg-black py-24">
       <div className="container mx-auto px-6 md:px-10">
         <div className="mb-16 text-center">
           <h2 className="special-font mb-6 text-6xl font-black uppercase text-white md:text-7xl">

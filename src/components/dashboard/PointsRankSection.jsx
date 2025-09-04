@@ -1,15 +1,76 @@
-const PointsRankSection = () => {
-  const currentRank = 247;
-  const totalPoints = 1247;
-  const nextRankPoints = 1500;
-  const progressToNext = ((totalPoints) / nextRankPoints) * 100;
+import { useDashboardData } from '../../hooks/useDashboardData';
+import { useAuth } from '../../contexts/AuthContext';
 
-  const leaderboard = [
-    { rank: 1, name: "Sarah Chen", points: 2840, avatar: "/img/team/sarah/profile.jpg" },
-    { rank: 2, name: "Daniel Kim", points: 2715, avatar: "/img/team/daniel/profile.jpg" },
-    { rank: 3, name: "Eric Johnson", points: 2680, avatar: "/img/team/eric/profile.jpg" },
-    { rank: 4, name: "You", points: 1247, avatar: "/img/team/yeab.jpg", isUser: true },
-  ];
+const PointsRankSection = () => {
+  const { stats, leaderboardData, loading } = useDashboardData();
+  const { user } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="space-y-6">
+        <div className="animate-pulse rounded-xl border border-white/20 bg-white/10 p-6">
+          <div className="mb-4 h-6 w-3/4 rounded bg-gray-600"></div>
+          <div className="space-y-4">
+            <div className="h-8 w-16 rounded bg-gray-600"></div>
+            <div className="h-6 w-20 rounded bg-gray-600"></div>
+            <div className="h-2 w-full rounded bg-gray-600"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const totalPoints = stats.totalPoints;
+  const nextRankThreshold = Math.ceil(totalPoints / 500) * 500 + 500; // Next 500-point milestone
+  const progressToNext = totalPoints > 0 ? ((totalPoints % 500) / 500) * 100 : 0;
+
+  // Use real leaderboard data if available, otherwise show current user only
+  const getLeaderboard = () => {
+    if (leaderboardData.length === 0) {
+      // No other users, show only current user
+      return [{
+        rank: 1,
+        name: user?.name || "You",
+        points: totalPoints,
+        avatar: "/img/team/yeab.jpg",
+        isUser: true
+      }];
+    }
+
+    // Find current user's position in real leaderboard
+    const currentUserIndex = leaderboardData.findIndex(player => player.id === user?.id);
+    let leaderboard = [...leaderboardData];
+
+    // Add current user if not in leaderboard yet
+    if (currentUserIndex === -1 && user) {
+      leaderboard.push({
+        id: user.id,
+        name: user.name,
+        points: totalPoints,
+        avatar: "/img/team/yeab.jpg",
+        isUser: true
+      });
+      // Re-sort
+      leaderboard.sort((a, b) => b.points - a.points);
+    } else if (currentUserIndex !== -1) {
+      // Mark current user
+      leaderboard[currentUserIndex].isUser = true;
+      leaderboard[currentUserIndex].avatar = "/img/team/yeab.jpg";
+    }
+
+    // Assign ranks and limit to top 10
+    return leaderboard
+      .slice(0, 10)
+      .map((player, index) => ({
+        ...player,
+        rank: index + 1,
+        avatar: player.avatar || "/img/team/yeab.jpg"
+      }));
+  };
+
+  const leaderboard = getLeaderboard();
+  const currentUserInLeaderboard = leaderboard.find(player => player.isUser);
+  const currentRank = currentUserInLeaderboard ? currentUserInLeaderboard.rank : leaderboard.length + 1;
 
   const getRankBadge = (rank) => {
     if (rank === 1) return "🥇";
@@ -36,8 +97,8 @@ const PointsRankSection = () => {
         
         <div>
           <div className="mb-2 flex justify-between text-sm">
-            <span>Progress to next rank</span>
-            <span>{nextRankPoints - totalPoints} points to go</span>
+            <span>Progress to next milestone</span>
+            <span>{nextRankThreshold - totalPoints} points to go</span>
           </div>
           <div className="h-2 rounded-full bg-blue-400/30">
             <div 
@@ -53,33 +114,31 @@ const PointsRankSection = () => {
         <h3 className="mb-4 text-lg font-semibold text-white">Leaderboard</h3>
         
         <div className="space-y-3">
-          {leaderboard.map((user) => (
+          {leaderboard.map((player) => (
             <div 
-              key={user.rank} 
+              key={player.rank} 
               className={`flex items-center justify-between rounded-lg p-3 transition-all ${
-                user.isUser 
+                player.isUser 
                   ? 'bg-blue-500/20 ring-2 ring-blue-400/50' 
                   : 'hover:bg-white/5'
               }`}
             >
               <div className="flex items-center space-x-3">
-                <div className="flex size-8 items-center justify-center text-sm font-bold text-yellow-400">
-                  {getRankBadge(user.rank)}
+                <div className="text-lg font-bold text-white">
+                  {getRankBadge(player.rank)}
                 </div>
                 <img 
-                  src={user.avatar} 
-                  alt={user.name}
-                  className="size-8 rounded-full object-cover ring-2 ring-white/20"
+                  src={player.avatar} 
+                  alt={player.name}
+                  className="size-8 rounded-full object-cover"
                 />
-                <div>
-                  <div className="font-medium text-white">
-                    {user.name}
-                  </div>
-                </div>
+                <span className={`font-medium ${player.isUser ? 'text-blue-300' : 'text-white'}`}>
+                  {player.name}
+                </span>
               </div>
-              <div className="font-semibold text-blue-300">
-                {user.points.toLocaleString()}
-              </div>
+              <span className={`font-bold ${player.isUser ? 'text-blue-300' : 'text-gray-300'}`}>
+                {player.points.toLocaleString()}
+              </span>
             </div>
           ))}
         </div>

@@ -1,0 +1,158 @@
+{
+  "id": "course-6",
+  "title": "AI Ethics and Governance",
+  "subtitle": "Responsible AI Development",
+  "description": "Learn the ethical considerations, governance frameworks, and responsible practices for developing and deploying AI systems in society.",
+  "instructor": "Prof. Maria Rodriguez",
+  "duration": "8 weeks",
+  "level": "Intermediate",
+  "rating": 4.9,
+  "students": 3421,
+  "price": "$99",
+  "image": "/img/course-6.jpg",
+  "video": "/videos/feature-5.mp4",
+  "tags": ["AI Ethics", "Governance", "Responsible AI", "Bias", "Privacy"],
+  "overview": {
+    "description": "Navigate the complex landscape of AI ethics and governance. This course provides essential knowledge for developing responsible AI systems that benefit society while minimizing harm and ensuring fairness.",
+    "whatYoullLearn": [
+      "Understand fundamental principles of AI ethics",
+      "Identify and mitigate algorithmic bias",
+      "Implement privacy-preserving AI techniques",
+      "Navigate legal and regulatory frameworks",
+      "Design inclusive and accessible AI systems",
+      "Develop AI governance strategies for organizations"
+    ],
+    "prerequisites": [
+      "Basic understanding of AI and machine learning",
+      "Familiarity with data science concepts",
+      "Interest in social and ethical issues",
+      "No specific programming requirements"
+    ]
+  },
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "Introduction to AI Ethics",
+      "duration": "40 min",
+      "lessons": [
+        "What is AI Ethics?",
+        "Historical Context and Case Studies",
+        "Stakeholders in AI Development",
+        "Ethical Frameworks and Principles"
+      ],
+      "description": "Explore the fundamental concepts of AI ethics and understand why ethical considerations are crucial in AI development."
+    },
+    {
+      "id": "chapter-2",
+      "title": "Algorithmic Bias and Fairness",
+      "duration": "55 min",
+      "lessons": [
+        "Types of Algorithmic Bias",
+        "Sources of Bias in Data and Models",
+        "Measuring and Detecting Bias",
+        "Bias Mitigation Strategies"
+      ],
+      "description": "Learn how bias enters AI systems and discover techniques to identify, measure, and mitigate unfair outcomes."
+    },
+    {
+      "id": "chapter-3",
+      "title": "Privacy and Data Protection",
+      "duration": "50 min",
+      "lessons": [
+        "Privacy Principles in AI",
+        "Data Minimization and Purpose Limitation",
+        "Differential Privacy",
+        "Federated Learning for Privacy"
+      ],
+      "description": "Understand privacy challenges in AI and learn techniques to protect individual privacy while maintaining utility."
+    },
+    {
+      "id": "chapter-4",
+      "title": "Transparency and Explainability",
+      "duration": "60 min",
+      "lessons": [
+        "The Black Box Problem",
+        "Interpretable Machine Learning",
+        "Explainable AI (XAI) Techniques",
+        "Communication and Documentation"
+      ],
+      "description": "Explore methods to make AI systems more transparent and understandable to users and stakeholders."
+    },
+    {
+      "id": "chapter-5",
+      "title": "Legal and Regulatory Landscape",
+      "duration": "45 min",
+      "lessons": [
+        "Current AI Regulations (GDPR, AI Act)",
+        "Liability and Accountability",
+        "Intellectual Property Considerations",
+        "International Perspectives"
+      ],
+      "description": "Navigate the evolving legal landscape surrounding AI development and deployment."
+    },
+    {
+      "id": "chapter-6",
+      "title": "Human-AI Interaction",
+      "duration": "50 min",
+      "lessons": [
+        "Human-Centered AI Design",
+        "Automation and Human Agency",
+        "Trust and Acceptance",
+        "Social Impact Assessment"
+      ],
+      "description": "Learn how to design AI systems that enhance rather than replace human capabilities and decision-making."
+    },
+    {
+      "id": "chapter-7",
+      "title": "AI Governance and Risk Management",
+      "duration": "65 min",
+      "lessons": [
+        "AI Governance Frameworks",
+        "Risk Assessment and Management",
+        "Ethics Committees and Review Boards",
+        "Continuous Monitoring and Evaluation"
+      ],
+      "description": "Develop comprehensive governance strategies for responsible AI development and deployment in organizations."
+    },
+    {
+      "id": "chapter-8",
+      "title": "Future of Responsible AI",
+      "duration": "35 min",
+      "lessons": [
+        "Emerging Ethical Challenges",
+        "Global Cooperation and Standards",
+        "Building Ethical AI Culture",
+        "Career Paths in AI Ethics"
+      ],
+      "description": "Look ahead to future challenges and opportunities in the field of AI ethics and responsible innovation."
+    }
+  ],
+  "instructor_info": {
+    "name": "Prof. Maria Rodriguez",
+    "title": "Director of AI Ethics Institute, MIT",
+    "bio": "Prof. Rodriguez is a renowned expert in AI ethics and policy with over 12 years of experience bridging technology and social responsibility. She advises governments and organizations on responsible AI development.",
+    "image": "/img/instructors/maria-rodriguez.jpg",
+    "credentials": [
+      "PhD in Philosophy and Computer Science from Harvard",
+      "Former policy advisor for UNESCO on AI ethics",
+      "Author of 'Responsible AI: A Practical Guide'",
+      "Member of multiple AI ethics advisory boards"
+    ]
+  },
+  "course_materials": {
+    "videos": 32,
+    "assignments": 8,
+    "quizzes": 8,
+    "projects": 2,
+    "downloadable_resources": 30
+  },
+  "certification": {
+    "available": true,
+    "requirements": [
+      "Complete all video lessons",
+      "Submit all assignments",
+      "Pass all quizzes with 70% or higher",
+      "Complete the final ethics assessment project"
+    ]
+  }
+}

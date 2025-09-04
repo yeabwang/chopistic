@@ -10,6 +10,7 @@ import AboutUsPage from "./components/AboutUsPage";
 import UserDashboard from "./components/dashboard/UserDashboard";
 import SingleCoursePage from "./components/SingleCoursePage";
 import QuizListingPage from "./components/QuizListingPage";
+import QuizTakingPage from "./components/QuizTakingPage";
 import Yeab from "./components/profiles/yeab/Yeab";
 import { useRouter } from "./hooks/useRouter";
 
@@ -51,13 +52,7 @@ function App() {
         </>
       ) : currentPage === 'quiz' ? (
         <>
-          <div className="flex min-h-screen items-center justify-center bg-black text-white">
-            <div className="text-center">
-              <h1 className="mb-4 text-4xl font-bold">Quiz Page</h1>
-              <p className="text-gray-400">Quiz component will be implemented here</p>
-              <p className="text-sm text-gray-500">Course ID: {courseId}, Quiz ID: {quizId}</p>
-            </div>
-          </div>
+          <QuizTakingPage courseId={courseId} quizId={quizId} />
         </>
       ) : currentPage === 'profile' ? (
         <>

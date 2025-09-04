@@ -1,21 +1,9 @@
 import { useState, useEffect } from "react";
-import { useCourseData } from "../hooks/useCourseData";
+import { useSingleCourseData } from "../hooks/useSingleCourseData";
 
 const SingleCoursePage = ({ courseId }) => {
   const [activeChapter, setActiveChapter] = useState(0);
-  const { courses, loading } = useCourseData();
-  
-  const course = courses.find(c => c.id === parseInt(courseId));
-
-  // Mock chapters data - in real app this would come from course data
-  const chapters = [
-    "Introduction to AI",
-    "Machine Learning Basics", 
-    "Neural Networks",
-    "Deep Learning",
-    "Computer Vision",
-    "Natural Language Processing"
-  ];
+  const { course, loading, error } = useSingleCourseData(courseId);
 
   useEffect(() => {
     // Reset active chapter when course changes
@@ -27,7 +15,7 @@ const SingleCoursePage = ({ courseId }) => {
   };
 
   const handleNext = () => {
-    if (activeChapter < chapters.length - 1) setActiveChapter(activeChapter + 1);
+    if (course?.chapters && activeChapter < course.chapters.length - 1) setActiveChapter(activeChapter + 1);
   };
 
   if (loading) {
@@ -41,12 +29,12 @@ const SingleCoursePage = ({ courseId }) => {
     );
   }
 
-  if (!course) {
+  if (!course || error) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-black">
         <div className="text-center text-white">
           <h1 className="mb-4 text-4xl font-bold">Course Not Found</h1>
-          <p className="text-gray-400">The requested course does not exist.</p>
+          <p className="text-gray-400">The requested course does not exist or failed to load.</p>
           <button 
             onClick={() => window.location.hash = 'courses'}
             className="mt-4 rounded-lg bg-violet-300 px-6 py-2 text-black hover:bg-violet-400"
@@ -79,9 +67,9 @@ const SingleCoursePage = ({ courseId }) => {
           </h2>
           
           <div className="space-y-3">
-            {chapters.map((chapter, index) => (
+            {course.chapters?.map((chapter, index) => (
               <button
-                key={index}
+                key={chapter.id}
                 onClick={() => setActiveChapter(index)}
                 className={`w-full rounded-xl border p-4 text-left transition-all duration-300 ${
                   activeChapter === index
@@ -97,7 +85,10 @@ const SingleCoursePage = ({ courseId }) => {
                   }`}>
                     {index + 1}
                   </span>
-                  <span className="font-general text-sm font-medium">{chapter}</span>
+                  <div className="flex-1">
+                    <span className="block font-general text-sm font-medium">{chapter.title}</span>
+                    <span className="mt-1 text-xs text-gray-500">{chapter.duration}</span>
+                  </div>
                 </div>
               </button>
             ))}
@@ -126,32 +117,77 @@ const SingleCoursePage = ({ courseId }) => {
           {/* Video Section */}
           <div className="w-full">
             <div className="aspect-video overflow-hidden rounded-2xl border border-white/10 bg-gray-900 shadow-2xl">
-              <iframe
-                className="size-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Course Video"
-                frameBorder="0"
-                allowFullScreen
-              />
+              {course.chapters?.[activeChapter]?.videoUrl ? (
+                <iframe
+                  className="size-full"
+                  src={course.chapters[activeChapter].videoUrl}
+                  title={`${course.title} - ${course.chapters[activeChapter].title}`}
+                  frameBorder="0"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="flex size-full items-center justify-center">
+                  <p className="text-gray-400">Video content coming soon...</p>
+                </div>
+              )}
             </div>
           </div>
 
           {/* Content Section */}
           <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/30 to-black/50 p-8 backdrop-blur-xl">
             <h1 className="mb-6 font-zentry text-3xl font-black uppercase tracking-wide text-white">
-              {chapters[activeChapter]}
+              {course.chapters?.[activeChapter]?.title || 'Chapter Content'}
             </h1>
             
             <div className="prose prose-invert max-w-none">
-              <p className="mb-6 font-robert-regular text-lg leading-relaxed text-gray-300">
-                This is Chapter {activeChapter + 1}: {chapters[activeChapter]}. Here you&apos;ll find detailed course materials, explanations, 
-                and supplementary information for this specific topic.
-              </p>
-              
-              <p className="font-robert-regular leading-relaxed text-gray-400">
-                Interactive elements, code examples, exercises, and multimedia content 
-                are seamlessly integrated into this flexible content space to enhance your learning experience.
-              </p>
+              {course.chapters?.[activeChapter]?.content ? (
+                <>
+                  <p className="mb-6 font-robert-regular text-lg leading-relaxed text-gray-300">
+                    {course.chapters[activeChapter].content.overview}
+                  </p>
+                  
+                  {course.chapters[activeChapter].content.sections?.map((section, index) => (
+                    <div key={index} className="mb-6">
+                      <h3 className="mb-3 text-xl font-semibold text-white">{section.title}</h3>
+                      <p className="font-robert-regular leading-relaxed text-gray-400">
+                        {section.content}
+                      </p>
+                    </div>
+                  ))}
+                  
+                  {course.chapters[activeChapter].content.keyPoints && (
+                    <div className="mt-8">
+                      <h3 className="mb-4 text-xl font-semibold text-white">Key Learning Points</h3>
+                      <ul className="list-disc space-y-2 pl-6">
+                        {course.chapters[activeChapter].content.keyPoints.map((point, index) => (
+                          <li key={index} className="font-robert-regular text-gray-400">{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {course.chapters[activeChapter].content.practicalExercise && (
+                    <div className="mt-8 rounded-lg border border-yellow-300/20 bg-yellow-300/10 p-4">
+                      <h3 className="mb-2 text-lg font-semibold text-yellow-300">Practical Exercise</h3>
+                      <p className="font-robert-regular text-gray-300">
+                        {course.chapters[activeChapter].content.practicalExercise}
+                      </p>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <>
+                  <p className="mb-6 font-robert-regular text-lg leading-relaxed text-gray-300">
+                    This is Chapter {activeChapter + 1}: {course.chapters?.[activeChapter]?.title || 'Loading...'}. 
+                    Here you&apos;ll find detailed course materials, explanations, and supplementary information for this specific topic.
+                  </p>
+                  
+                  <p className="font-robert-regular leading-relaxed text-gray-400">
+                    Interactive elements, code examples, exercises, and multimedia content 
+                    are seamlessly integrated into this flexible content space to enhance your learning experience.
+                  </p>
+                </>
+              )}
             </div>
           </div>
 
@@ -173,7 +209,7 @@ const SingleCoursePage = ({ courseId }) => {
             </button>
 
             <div className="flex items-center gap-2">
-              {chapters.map((_, index) => (
+              {course.chapters?.map((_, index) => (
                 <div
                   key={index}
                   className={`size-2 rounded-full transition-all duration-300 ${
@@ -187,9 +223,9 @@ const SingleCoursePage = ({ courseId }) => {
 
             <button
               onClick={handleNext}
-              disabled={activeChapter === chapters.length - 1}
+              disabled={!course.chapters || activeChapter === course.chapters.length - 1}
               className={`flex items-center gap-2 rounded-full px-6 py-3 font-general text-sm font-medium transition-all duration-300 ${
-                activeChapter === chapters.length - 1
+                !course.chapters || activeChapter === course.chapters.length - 1
                   ? "cursor-not-allowed bg-gray-800/50 text-gray-500"
                   : "bg-blue-300 text-black shadow-lg shadow-blue-300/20 hover:bg-blue-300/90"
               }`}

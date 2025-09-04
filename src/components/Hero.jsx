@@ -7,11 +7,13 @@ import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
 import { usePageContent } from "../hooks/usePageContent";
+import { useRouter } from "../hooks/useRouter";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const { content } = usePageContent('home');
+  const { navigateTo } = useRouter();
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
 
@@ -165,6 +167,7 @@ const Hero = () => {
               title={content?.hero?.ctaButton?.text || "Start Learning"}
               leftIcon={<TiLocationArrow />}
               containerClass="bg-yellow-300 flex-center gap-1"
+              onClick={() => navigateTo('courses')}
             />
           </div>
         </div>

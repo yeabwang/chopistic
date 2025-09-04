@@ -86,6 +86,16 @@ const CoursesHero = () => {
     return `${basePath}${index}${format}`;
   };
 
+  const handleExploreCoursesClick = () => {
+    const coursesSection = document.getElementById('courses-grid');
+    if (coursesSection) {
+      coursesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
       {loading && (
@@ -159,6 +169,7 @@ const CoursesHero = () => {
                 title={content?.hero?.ctaButton?.text || "Explore Courses"}
                 leftIcon={<TiLocationArrow />}
                 containerClass="bg-yellow-300 flex-center gap-1"
+                onClick={handleExploreCoursesClick}
               />
             </div>
           </div>
