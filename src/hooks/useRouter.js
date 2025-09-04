@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 export const useRouter = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [profileName, setProfileName] = useState(null);
+  const [courseId, setCourseId] = useState(null);
+  const [quizId, setQuizId] = useState(null);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -10,20 +12,61 @@ export const useRouter = () => {
       if (hash === 'courses') {
         setCurrentPage('courses');
         setProfileName(null);
+        setCourseId(null);
+        setQuizId(null);
       } else if (hash === 'about') {
         setCurrentPage('about');
         setProfileName(null);
+        setCourseId(null);
+        setQuizId(null);
+      } else if (hash === 'dashboard') {
+        setCurrentPage('dashboard');
+        setProfileName(null);
+        setCourseId(null);
+        setQuizId(null);
+      } else if (hash.startsWith('course/')) {
+        const id = hash.split('/')[1];
+        setCurrentPage('course');
+        setCourseId(id);
+        setProfileName(null);
+        setQuizId(null);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      } else if (hash.startsWith('quizzes/')) {
+        const id = hash.split('/')[1];
+        setCurrentPage('quizzes');
+        setCourseId(id);
+        setProfileName(null);
+        setQuizId(null);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      } else if (hash.startsWith('quiz/')) {
+        const parts = hash.split('/');
+        const courseIdParam = parts[1];
+        const quizIdParam = parts[2];
+        setCurrentPage('quiz');
+        setCourseId(courseIdParam);
+        setQuizId(quizIdParam);
+        setProfileName(null);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
       } else if (hash.startsWith('profile/')) {
         const name = hash.split('/')[1];
         setCurrentPage('profile');
         setProfileName(name);
-        // Scroll to top when navigating to any profile
+        setCourseId(null);
+        setQuizId(null);
         setTimeout(() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 50);
       } else {
         setCurrentPage('home');
         setProfileName(null);
+        setCourseId(null);
+        setQuizId(null);
       }
     };
 
@@ -40,5 +83,5 @@ export const useRouter = () => {
     window.location.hash = page;
   };
 
-  return { currentPage, profileName, navigateTo };
+  return { currentPage, profileName, courseId, quizId, navigateTo };
 };

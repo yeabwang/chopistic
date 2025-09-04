@@ -291,7 +291,7 @@ const AboutUsTeam = () => {
         </div>
       </section>
 
-      {/* Our Journey Timeline Section */}
+      {/* Timeline Section */}
       <section className="relative py-32">
         <div className="container mx-auto px-6 md:px-10">
           <div className="mb-20 text-center">
@@ -413,14 +413,13 @@ const AboutUsTeam = () => {
         </div>
       </section>
 
-      {/* Image Gallery Section - Full Width with White Background */}
+      {/* Image Gallery Section*/}
       <section className="relative py-40">
         {/* Visual transition - top gradient */}
         <div className="absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b from-black via-black/80 to-transparent"></div>
         
-        {/* White background container */}
         <div className="relative bg-gradient-to-br from-blue-50 via-white to-violet-50 py-32">
-          {/* Subtle pattern overlay */}
+
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(99,102,241,0.03)_1px,transparent_0)] bg-[length:40px_40px] opacity-50"></div>
           
           <div className="container relative z-10 mx-auto px-6 md:px-10">
@@ -428,7 +427,6 @@ const AboutUsTeam = () => {
           </div>
         </div>
         
-        {/* Visual transition - bottom gradient */}
         <div className="absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
       </section>
 

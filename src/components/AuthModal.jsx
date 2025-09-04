@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { FiX, FiEye, FiEyeOff, FiMail, FiLock, FiUser } from "react-icons/fi";
 import { useAuth } from "../contexts/AuthContext";
 
-const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
+const AuthModal = ({ isOpen, onClose, initialMode = "login", onSuccess }) => {
   const [mode, setMode] = useState(initialMode);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
         ease: "power2.out" 
       });
 
-      // Modal content animation with more sophisticated easing
+      // Modal content animation 
       gsap.to(contentRef.current, {
         scale: 1,
         opacity: 1,
@@ -154,6 +154,10 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
       if (result.success) {
         // Close modal and reset form on success
         handleClose();
+        // Call onSuccess callback if provided
+        if (onSuccess) {
+          onSuccess();
+        }
       }
     } catch (err) {
       setValidationError(err.message);
@@ -194,7 +198,6 @@ const AuthModal = ({ isOpen, onClose, initialMode = "login" }) => {
         onClick={handleClose}
       />
 
-      {/* Close Button - Fixed to viewport */}
       <button
         onClick={handleClose}
         className="fixed right-6 top-6 z-[10000] rounded-full bg-black/50 p-3 text-white/90 transition-all duration-200 hover:bg-black/70 hover:text-white hover:scale-110"

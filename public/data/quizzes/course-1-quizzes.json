@@ -1,0 +1,191 @@
+{
+  "courseId": 1,
+  "courseName": "Artificial Intelligence Fundamentals",
+  "quizzes": [
+    {
+      "id": 1,
+      "chapterId": 1,
+      "chapterName": "Introduction to AI",
+      "title": "AI Fundamentals Quiz",
+      "description": "Test your understanding of basic AI concepts, history, and applications covered in the introduction chapter.",
+      "questions": 10,
+      "estimatedTime": "15 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "AI Definition and History",
+        "Types of AI Systems",
+        "AI Applications",
+        "Basic Terminology"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What does AI stand for?",
+          "options": [
+            "Artificial Intelligence",
+            "Advanced Integration",
+            "Automated Information",
+            "Algorithmic Interface"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Which of the following is considered the father of AI?",
+          "options": [
+            "Alan Turing",
+            "John McCarthy",
+            "Marvin Minsky",
+            "Herbert Simon"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "John McCarthy coined the term 'Artificial Intelligence' and is often considered the father of AI."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "chapterId": 2,
+      "chapterName": "Machine Learning Basics",
+      "title": "Machine Learning Concepts Quiz",
+      "description": "Evaluate your knowledge of ML algorithms, supervised and unsupervised learning methods from chapter 2.",
+      "questions": 15,
+      "estimatedTime": "20 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 150,
+      "passingScore": 70,
+      "topics": [
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "ML Algorithms",
+        "Data Preprocessing"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the main difference between supervised and unsupervised learning?",
+          "options": [
+            "Supervised learning uses labeled data, unsupervised doesn't",
+            "Supervised learning is faster than unsupervised",
+            "Supervised learning uses more data",
+            "There is no difference"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Supervised learning uses labeled training data, while unsupervised learning finds patterns in unlabeled data."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "chapterId": 3,
+      "chapterName": "Neural Networks",
+      "title": "Neural Networks Deep Dive Quiz",
+      "description": "Challenge yourself with neural network architectures and deep learning concepts from chapter 3.",
+      "questions": 12,
+      "estimatedTime": "18 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 120,
+      "passingScore": 75,
+      "topics": [
+        "Neural Network Architecture",
+        "Backpropagation",
+        "Activation Functions",
+        "Deep Learning"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the purpose of an activation function in a neural network?",
+          "options": [
+            "To introduce non-linearity",
+            "To speed up training",
+            "To reduce overfitting",
+            "To normalize input data"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Activation functions introduce non-linearity to neural networks, allowing them to learn complex patterns."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "chapterId": 4,
+      "chapterName": "AI Applications",
+      "title": "Practical AI Applications Quiz",
+      "description": "Apply your knowledge to real-world AI scenarios and case studies from chapter 4.",
+      "questions": 8,
+      "estimatedTime": "12 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 80,
+      "passingScore": 70,
+      "topics": [
+        "Computer Vision",
+        "Natural Language Processing",
+        "Robotics",
+        "AI Ethics"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "Which AI application is most commonly used in image recognition?",
+          "options": [
+            "Computer Vision",
+            "Natural Language Processing",
+            "Expert Systems",
+            "Genetic Algorithms"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Computer Vision is the AI field that deals with enabling computers to interpret and understand visual information."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "chapterId": 5,
+      "chapterName": "Course Summary",
+      "title": "Final Comprehensive Assessment",
+      "description": "Comprehensive evaluation covering all course topics and advanced problem-solving scenarios.",
+      "questions": 25,
+      "estimatedTime": "35 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 250,
+      "passingScore": 80,
+      "topics": [
+        "All AI Fundamentals",
+        "Machine Learning",
+        "Neural Networks",
+        "AI Applications",
+        "Problem Solving"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "In a comprehensive AI system, which component is responsible for learning from data?",
+          "options": [
+            "Knowledge Base",
+            "Machine Learning Module",
+            "User Interface",
+            "Database"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "The Machine Learning Module is responsible for learning patterns and making predictions from data."
+        }
+      ]
+    }
+  ]
+}

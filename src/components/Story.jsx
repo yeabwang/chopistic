@@ -4,10 +4,12 @@ import { useRef } from "react";
 import Button from "./Button";
 import AnimatedTitle from "./AnimatedTitle";
 import { usePageContent } from "../hooks/usePageContent";
+import { useRouter } from "../hooks/useRouter";
 
 const FloatingImage = () => {
   const frameRef = useRef(null);
   const { content } = usePageContent('home');
+  const { navigateTo } = useRouter();
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -115,6 +117,7 @@ const FloatingImage = () => {
               id={content?.story?.ctaButton?.id || "realm-btn"}
               title={content?.story?.ctaButton?.text || "discover foundation"}
               containerClass="mt-5"
+              onClick={() => navigateTo('about')}
             />
           </div>
         </div>

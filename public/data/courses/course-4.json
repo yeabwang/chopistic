@@ -1,0 +1,202 @@
+{
+  "id": 4,
+  "title": "Natural Language Processing",
+  "category": "NLP",
+  "level": "Intermediate",
+  "duration": "9 weeks",
+  "description": "Build AI systems that understand and generate human language.",
+  "instructor": "Dr. Alex Thompson",
+  "enrollmentCount": 2156,
+  "rating": 4.8,
+  "media": "videos/feature-4.mp4",
+  "thumbnail": "img/gallery-4.webp",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Introduction to Natural Language Processing",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/fOvTtapxa9c",
+      "content": {
+        "overview": "Explore the fascinating world of natural language processing and understand how computers can work with human language.",
+        "sections": [
+          {
+            "title": "What is Natural Language Processing?",
+            "content": "NLP is a field of AI that focuses on the interaction between computers and humans through natural language. It combines computational linguistics with machine learning to help computers understand, interpret, and generate human language."
+          },
+          {
+            "title": "Challenges in NLP",
+            "content": "Human language is inherently ambiguous, context-dependent, and constantly evolving. Learn about the unique challenges NLP faces including polysemy, syntax variation, cultural context, and informal language."
+          },
+          {
+            "title": "NLP Applications",
+            "content": "Discover real-world applications including machine translation, sentiment analysis, chatbots, information extraction, question answering, and text summarization."
+          }
+        ],
+        "keyPoints": [
+          "Understanding the scope and challenges of NLP",
+          "Learning about language ambiguity and context",
+          "Exploring various NLP applications",
+          "Understanding the intersection of linguistics and AI"
+        ],
+        "practicalExercise": "Analyze different types of language ambiguity in a collection of text samples and identify challenges for automated processing."
+      }
+    },
+    {
+      "id": 2,
+      "title": "Text Preprocessing and Tokenization",
+      "duration": "70 minutes",
+      "videoUrl": "https://www.youtube.com/embed/ZvvZONHzLz8",
+      "content": {
+        "overview": "Master the fundamental techniques for preparing text data for NLP analysis.",
+        "sections": [
+          {
+            "title": "Text Cleaning and Normalization",
+            "content": "Learn essential preprocessing steps including removing special characters, handling case sensitivity, dealing with numbers and punctuation, and normalizing text for consistent analysis."
+          },
+          {
+            "title": "Tokenization Techniques",
+            "content": "Understand different approaches to breaking text into meaningful units, from simple whitespace splitting to advanced methods like SentencePiece and Byte-Pair Encoding (BPE)."
+          },
+          {
+            "title": "Stop Words and Stemming",
+            "content": "Learn about removing common words that don't carry significant meaning and reducing words to their root forms through stemming and lemmatization techniques."
+          }
+        ],
+        "keyPoints": [
+          "Implementing text cleaning pipelines",
+          "Understanding different tokenization strategies",
+          "Applying stemming and lemmatization",
+          "Handling multilingual text preprocessing"
+        ],
+        "practicalExercise": "Build a comprehensive text preprocessing pipeline and compare the effects of different preprocessing steps on downstream tasks."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Word Embeddings and Semantic Representation",
+      "duration": "85 minutes",
+      "videoUrl": "https://www.youtube.com/embed/ERibwqs9p38",
+      "content": {
+        "overview": "Learn how to represent words and documents as numerical vectors that capture semantic meaning.",
+        "sections": [
+          {
+            "title": "Traditional Approaches: Bag of Words and TF-IDF",
+            "content": "Understand classical methods for text representation including frequency-based approaches and their limitations in capturing semantic relationships between words."
+          },
+          {
+            "title": "Word2Vec and FastText",
+            "content": "Explore neural word embeddings that learn dense vector representations of words, capturing semantic and syntactic relationships from large text corpora."
+          },
+          {
+            "title": "Contextual Embeddings",
+            "content": "Learn about modern contextual embeddings like ELMo, BERT, and RoBERTa that generate different representations for the same word based on its context."
+          }
+        ],
+        "keyPoints": [
+          "Understanding vector space representations of text",
+          "Implementing Word2Vec and FastText models",
+          "Working with pre-trained word embeddings",
+          "Exploring contextual embedding models"
+        ],
+        "practicalExercise": "Train custom word embeddings on domain-specific text and evaluate their quality through similarity tasks and visualization."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Text Classification and Sentiment Analysis",
+      "duration": "75 minutes",
+      "videoUrl": "https://www.youtube.com/embed/VtRLrQ3Ev-U",
+      "content": {
+        "overview": "Build systems that can automatically categorize and analyze the sentiment of text documents.",
+        "sections": [
+          {
+            "title": "Text Classification Fundamentals",
+            "content": "Learn the principles of text classification, feature engineering for text, and classical machine learning approaches like Naive Bayes and SVM for text classification."
+          },
+          {
+            "title": "Deep Learning for Text Classification",
+            "content": "Explore neural approaches including recurrent neural networks (RNNs), LSTMs, and convolutional neural networks (CNNs) for text classification tasks."
+          },
+          {
+            "title": "Sentiment Analysis Techniques",
+            "content": "Understand different approaches to sentiment analysis from rule-based methods to machine learning and deep learning approaches, including handling of sarcasm and context."
+          }
+        ],
+        "keyPoints": [
+          "Implementing classical text classification algorithms",
+          "Building deep learning models for text classification",
+          "Understanding sentiment analysis challenges",
+          "Evaluating text classification performance"
+        ],
+        "practicalExercise": "Build a multi-class sentiment analyzer for product reviews and compare different modeling approaches."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Advanced NLP with Transformers",
+      "duration": "95 minutes",
+      "videoUrl": "https://www.youtube.com/embed/TQQlZhbC5ps",
+      "content": {
+        "overview": "Master the transformer architecture that has revolutionized modern NLP.",
+        "sections": [
+          {
+            "title": "Transformer Architecture",
+            "content": "Understand the self-attention mechanism, multi-head attention, and the encoder-decoder structure that makes transformers so powerful for sequence-to-sequence tasks."
+          },
+          {
+            "title": "BERT and Pre-trained Language Models",
+            "content": "Learn about bidirectional encoder representations and how pre-trained language models like BERT, RoBERTa, and ALBERT have transformed NLP through transfer learning."
+          },
+          {
+            "title": "GPT and Generative Models",
+            "content": "Explore generative pre-trained transformers and their applications in text generation, completion, and conversational AI."
+          }
+        ],
+        "keyPoints": [
+          "Understanding attention mechanisms",
+          "Fine-tuning pre-trained language models",
+          "Implementing transformer-based solutions",
+          "Building conversational AI systems"
+        ],
+        "practicalExercise": "Fine-tune a BERT model for named entity recognition and compare performance with traditional approaches."
+      }
+    }
+  ],
+  "prerequisites": [
+    "Strong programming skills in Python",
+    "Basic understanding of machine learning",
+    "Familiarity with statistics and probability",
+    "Knowledge of linear algebra fundamentals"
+  ],
+  "learningOutcomes": [
+    "Build end-to-end NLP applications",
+    "Implement state-of-the-art transformer models",
+    "Master text preprocessing and feature engineering",
+    "Deploy NLP models for real-world applications",
+    "Understand modern approaches to language understanding"
+  ],
+  "resources": [
+    {
+      "type": "book",
+      "title": "Natural Language Processing with Python",
+      "author": "Steven Bird, Ewan Klein, Edward Loper",
+      "url": "#"
+    },
+    {
+      "type": "documentation",
+      "title": "Hugging Face Transformers",
+      "url": "https://huggingface.co/docs/transformers/"
+    },
+    {
+      "type": "dataset",
+      "title": "Stanford Sentiment Treebank",
+      "url": "https://nlp.stanford.edu/sentiment/"
+    }
+  ],
+  "quiz": {
+    "available": true,
+    "questionsCount": 28,
+    "passingScore": 82,
+    "timeLimit": 55
+  }
+}

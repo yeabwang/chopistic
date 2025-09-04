@@ -1,0 +1,202 @@
+{
+  "id": 3,
+  "title": "Computer Vision Mastery",
+  "category": "Computer Vision",
+  "level": "Advanced",
+  "duration": "10 weeks",
+  "description": "Learn to build AI systems that can see and interpret visual information.",
+  "instructor": "Dr. Elena Vasquez",
+  "enrollmentCount": 1456,
+  "rating": 4.7,
+  "media": "videos/feature-3.mp4",
+  "thumbnail": "img/gallery-3.webp",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Foundations of Computer Vision",
+      "duration": "75 minutes",
+      "videoUrl": "https://www.youtube.com/embed/OcycT1Jwsns",
+      "content": {
+        "overview": "Establish a strong foundation in computer vision principles and understand how machines can interpret visual data.",
+        "sections": [
+          {
+            "title": "What is Computer Vision?",
+            "content": "Computer vision is an interdisciplinary field that deals with how computers can be made to gain high-level understanding from digital images or videos. It seeks to automate tasks that the human visual system can do."
+          },
+          {
+            "title": "Digital Image Representation",
+            "content": "Learn how images are represented digitally as arrays of pixels, understanding color spaces (RGB, HSV, LAB), and the mathematical foundations of image processing."
+          },
+          {
+            "title": "Basic Image Operations",
+            "content": "Master fundamental operations like image filtering, enhancement, noise reduction, and geometric transformations that form the building blocks of computer vision."
+          }
+        ],
+        "keyPoints": [
+          "Understanding digital image representation",
+          "Learning fundamental image processing operations",
+          "Exploring different color spaces and their applications",
+          "Building intuition for visual data analysis"
+        ],
+        "practicalExercise": "Implement basic image filtering operations and compare their effects on different types of images."
+      }
+    },
+    {
+      "id": 2,
+      "title": "Feature Detection and Extraction",
+      "duration": "85 minutes",
+      "videoUrl": "https://www.youtube.com/embed/NPcMYbNS-GU",
+      "content": {
+        "overview": "Learn to identify and extract meaningful features from images that can be used for recognition and matching.",
+        "sections": [
+          {
+            "title": "Edge Detection",
+            "content": "Understand edge detection algorithms like Sobel, Canny, and Laplacian filters. Learn how edges provide crucial structural information about objects in images."
+          },
+          {
+            "title": "Corner and Interest Point Detection",
+            "content": "Explore algorithms like Harris corner detector and SIFT (Scale-Invariant Feature Transform) for finding distinctive points in images that can be tracked across different views."
+          },
+          {
+            "title": "Feature Descriptors",
+            "content": "Learn about feature descriptors like SIFT, SURF, and ORB that can describe local image regions in a way that's robust to changes in lighting, scale, and rotation."
+          }
+        ],
+        "keyPoints": [
+          "Implementing edge detection algorithms",
+          "Understanding corner and interest point detection",
+          "Working with feature descriptors and matching",
+          "Building robust feature extraction pipelines"
+        ],
+        "practicalExercise": "Build a feature matching system that can find correspondences between different views of the same object."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Deep Learning for Computer Vision",
+      "duration": "95 minutes",
+      "videoUrl": "https://www.youtube.com/embed/ArPaAX_PhIs",
+      "content": {
+        "overview": "Dive into modern deep learning approaches for computer vision, focusing on convolutional neural networks and their applications.",
+        "sections": [
+          {
+            "title": "Convolutional Neural Networks (CNNs)",
+            "content": "Understand the architecture and principles of CNNs, including convolutional layers, pooling operations, and how they extract hierarchical features from images."
+          },
+          {
+            "title": "Popular CNN Architectures",
+            "content": "Explore landmark architectures like LeNet, AlexNet, VGG, ResNet, and modern networks like EfficientNet, understanding their innovations and use cases."
+          },
+          {
+            "title": "Transfer Learning",
+            "content": "Learn how to leverage pre-trained models for new tasks, understanding fine-tuning strategies and when to freeze or train different layers."
+          }
+        ],
+        "keyPoints": [
+          "Understanding CNN architecture and operations",
+          "Implementing popular CNN models",
+          "Applying transfer learning effectively",
+          "Optimizing models for different vision tasks"
+        ],
+        "practicalExercise": "Fine-tune a pre-trained CNN for a custom image classification task and compare different architectures."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Object Detection and Recognition",
+      "duration": "90 minutes",
+      "videoUrl": "https://www.youtube.com/embed/9s_FpMpdYW8",
+      "content": {
+        "overview": "Master advanced techniques for detecting and recognizing objects in images and videos.",
+        "sections": [
+          {
+            "title": "Object Detection Fundamentals",
+            "content": "Understand the difference between image classification, object detection, and segmentation. Learn about bounding boxes, intersection over union (IoU), and evaluation metrics."
+          },
+          {
+            "title": "YOLO and Single-Shot Detectors",
+            "content": "Explore YOLO (You Only Look Once) architecture and other single-shot detectors that can detect objects in real-time with high accuracy."
+          },
+          {
+            "title": "Two-Stage Detectors",
+            "content": "Learn about R-CNN, Fast R-CNN, and Faster R-CNN architectures that use region proposals for more accurate object detection."
+          }
+        ],
+        "keyPoints": [
+          "Understanding object detection pipelines",
+          "Implementing YOLO and R-CNN architectures",
+          "Evaluating detection performance",
+          "Optimizing for speed vs accuracy tradeoffs"
+        ],
+        "practicalExercise": "Implement a real-time object detection system using YOLO and test it on video streams."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Image Segmentation and Scene Understanding",
+      "duration": "80 minutes",
+      "videoUrl": "https://www.youtube.com/embed/nDPWywWRIRo",
+      "content": {
+        "overview": "Learn advanced techniques for pixel-level understanding of images through segmentation methods.",
+        "sections": [
+          {
+            "title": "Semantic Segmentation",
+            "content": "Understand semantic segmentation where each pixel is classified into a category. Learn about FCN (Fully Convolutional Networks) and U-Net architectures."
+          },
+          {
+            "title": "Instance Segmentation",
+            "content": "Explore instance segmentation that combines object detection with semantic segmentation to identify and segment individual object instances."
+          },
+          {
+            "title": "Advanced Segmentation Techniques",
+            "content": "Learn about recent advances like Mask R-CNN, panoptic segmentation, and transformer-based segmentation methods."
+          }
+        ],
+        "keyPoints": [
+          "Implementing semantic segmentation models",
+          "Understanding instance segmentation",
+          "Working with segmentation masks and annotations",
+          "Evaluating segmentation performance"
+        ],
+        "practicalExercise": "Build a semantic segmentation model for autonomous driving scenarios using cityscapes dataset."
+      }
+    }
+  ],
+  "prerequisites": [
+    "Strong programming skills in Python",
+    "Understanding of linear algebra and calculus",
+    "Familiarity with machine learning concepts",
+    "Basic knowledge of image processing"
+  ],
+  "learningOutcomes": [
+    "Build end-to-end computer vision applications",
+    "Implement state-of-the-art object detection systems",
+    "Master image segmentation techniques",
+    "Deploy computer vision models in production",
+    "Understand modern CNN architectures and their applications"
+  ],
+  "resources": [
+    {
+      "type": "book",
+      "title": "Computer Vision: Algorithms and Applications",
+      "author": "Richard Szeliski",
+      "url": "#"
+    },
+    {
+      "type": "documentation",
+      "title": "OpenCV Documentation",
+      "url": "https://docs.opencv.org/"
+    },
+    {
+      "type": "dataset",
+      "title": "COCO Dataset",
+      "url": "https://cocodataset.org/"
+    }
+  ],
+  "quiz": {
+    "available": true,
+    "questionsCount": 30,
+    "passingScore": 85,
+    "timeLimit": 50
+  }
+}

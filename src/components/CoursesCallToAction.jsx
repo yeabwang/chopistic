@@ -6,16 +6,18 @@ import { useRef } from "react";
 
 import AnimatedTitle from "./AnimatedTitle";
 import Button from "./Button";
+import { useRouter } from "../hooks/useRouter";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CoursesCallToAction = () => {
+  const { navigateTo } = useRouter();
   const floatingElementsRef = useRef([]);
   const mainContentRef = useRef(null);
   const statsRef = useRef([]);
 
   useGSAP(() => {
-    // Elegant entrance animation for main content
+    //  entrance animation for main content
     gsap.fromTo(
       mainContentRef.current,
       { 
@@ -176,11 +178,13 @@ const CoursesCallToAction = () => {
             title="Start Learning Today"
             leftIcon={<TiLocationArrow />}
             containerClass="bg-violet-300 flex-center gap-1"
+            onClick={() => navigateTo('courses')}
           />
           <Button
             id="explore-curriculum"
             title="Explore Curriculum"
             containerClass="bg-yellow-300 flex-center gap-1"
+            onClick={() => navigateTo('courses')}
           />
         </div>
 

@@ -2,6 +2,9 @@ import { useState, useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import { usePageContent } from "../hooks/usePageContent";
 import { useCourseData } from "../hooks/useCourseData";
+import { useRouter } from "../hooks/useRouter";
+import { useAuthProtection } from "../hooks/useAuthProtection";
+import { useEnrollment } from "../hooks/useEnrollment";
 
 export const BentoTilt = ({ children, className = "" }) => {
   const [transformStyle, setTransformStyle] = useState("");
@@ -41,9 +44,34 @@ export const BentoTilt = ({ children, className = "" }) => {
 };
 
 export const BentoCard = ({ src, title, description, course }) => {
+  const { navigateTo } = useRouter();
+  const { requireAuth } = useAuthProtection();
+  const { enrollInCourse, isEnrolledInCourse } = useEnrollment();
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverButtonRef = useRef(null);
+
+  const handleEnrollClick = () => {
+    if (!course) return;
+
+    const enrollAndNavigate = async () => {
+      try {
+        // Check if already enrolled
+        if (!isEnrolledInCourse(course.id)) {
+          await enrollInCourse(course.id);
+        }
+        // Navigate to course page
+        navigateTo(`course/${course.id}`);
+      } catch (error) {
+        console.error('Error enrolling in course:', error);
+        // Still navigate to course page even if enrollment fails
+        navigateTo(`course/${course.id}`);
+      }
+    };
+
+    // Require authentication before enrollment
+    requireAuth(enrollAndNavigate, { preferSignup: true });
+  };
 
   const handleMouseMove = (event) => {
     if (!hoverButtonRef.current) return;
@@ -78,7 +106,10 @@ export const BentoCard = ({ src, title, description, course }) => {
         <div className="flex items-end justify-between">
           {/* Enroll Now Button */}
           {course && (
-            <a href={course.link || "#"} className="block w-fit">
+            <button 
+              onClick={handleEnrollClick}
+              className="block w-fit"
+            >
               <div
                 ref={hoverButtonRef}
                 onMouseMove={handleMouseMove}
@@ -97,7 +128,7 @@ export const BentoCard = ({ src, title, description, course }) => {
                 <TiLocationArrow className="relative z-20" />
                 <p className="relative z-20">Enroll Now</p>
               </div>
-            </a>
+            </button>
           )}
 
           {/* Course Level and Duration */}

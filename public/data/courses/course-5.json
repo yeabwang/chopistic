@@ -1,0 +1,158 @@
+{
+  "id": "course-5",
+  "title": "Reinforcement Learning",
+  "subtitle": "Master Decision-Making AI",
+  "description": "Learn the fundamentals of reinforcement learning and how to build intelligent agents that can make optimal decisions in complex environments.",
+  "instructor": "Dr. Sarah Chen",
+  "duration": "10 weeks",
+  "level": "Advanced",
+  "rating": 4.8,
+  "students": 2847,
+  "price": "$149",
+  "image": "/img/course-5.jpg",
+  "video": "/videos/feature-4.mp4",
+  "tags": ["Reinforcement Learning", "Q-Learning", "Policy Gradient", "Deep RL"],
+  "overview": {
+    "description": "Dive deep into the world of reinforcement learning, where agents learn to make optimal decisions through trial and error. This comprehensive course covers everything from basic concepts to advanced deep reinforcement learning algorithms.",
+    "whatYoullLearn": [
+      "Understand Markov Decision Processes (MDPs)",
+      "Implement Q-Learning and SARSA algorithms",
+      "Master policy gradient methods",
+      "Build deep reinforcement learning models",
+      "Apply RL to real-world problems",
+      "Understand multi-agent reinforcement learning"
+    ],
+    "prerequisites": [
+      "Strong Python programming skills",
+      "Understanding of machine learning basics",
+      "Linear algebra and calculus knowledge",
+      "Familiarity with neural networks"
+    ]
+  },
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "Introduction to Reinforcement Learning",
+      "duration": "45 min",
+      "lessons": [
+        "What is Reinforcement Learning?",
+        "Agent-Environment Interaction",
+        "Rewards and Returns",
+        "The RL Problem Formulation"
+      ],
+      "description": "Get introduced to the fundamental concepts of reinforcement learning and understand how it differs from supervised and unsupervised learning."
+    },
+    {
+      "id": "chapter-2",
+      "title": "Markov Decision Processes",
+      "duration": "60 min",
+      "lessons": [
+        "States, Actions, and Rewards",
+        "Transition Probabilities",
+        "Bellman Equations",
+        "Value Functions and Policies"
+      ],
+      "description": "Learn about the mathematical framework that underlies reinforcement learning - Markov Decision Processes."
+    },
+    {
+      "id": "chapter-3",
+      "title": "Dynamic Programming",
+      "duration": "50 min",
+      "lessons": [
+        "Policy Evaluation",
+        "Policy Improvement",
+        "Policy Iteration",
+        "Value Iteration"
+      ],
+      "description": "Explore dynamic programming methods for solving MDPs when the model is known."
+    },
+    {
+      "id": "chapter-4",
+      "title": "Model-Free Methods",
+      "duration": "70 min",
+      "lessons": [
+        "Monte Carlo Methods",
+        "Temporal Difference Learning",
+        "Q-Learning Algorithm",
+        "SARSA Algorithm"
+      ],
+      "description": "Learn model-free methods that can solve RL problems without knowing the environment dynamics."
+    },
+    {
+      "id": "chapter-5",
+      "title": "Function Approximation",
+      "duration": "65 min",
+      "lessons": [
+        "Linear Function Approximation",
+        "Neural Network Approximation",
+        "Deep Q-Networks (DQN)",
+        "Experience Replay"
+      ],
+      "description": "Understand how to handle large state spaces using function approximation techniques."
+    },
+    {
+      "id": "chapter-6",
+      "title": "Policy Gradient Methods",
+      "duration": "80 min",
+      "lessons": [
+        "Policy Gradient Theorem",
+        "REINFORCE Algorithm",
+        "Actor-Critic Methods",
+        "Proximal Policy Optimization (PPO)"
+      ],
+      "description": "Learn direct policy optimization methods that can handle continuous action spaces."
+    },
+    {
+      "id": "chapter-7",
+      "title": "Advanced Deep RL",
+      "duration": "90 min",
+      "lessons": [
+        "Double DQN and Dueling DQN",
+        "Trust Region Policy Optimization",
+        "Soft Actor-Critic (SAC)",
+        "Multi-Agent Reinforcement Learning"
+      ],
+      "description": "Explore advanced deep reinforcement learning algorithms and multi-agent systems."
+    },
+    {
+      "id": "chapter-8",
+      "title": "Applications and Case Studies",
+      "duration": "55 min",
+      "lessons": [
+        "Game Playing (AlphaGo, Chess)",
+        "Robotics and Control",
+        "Autonomous Vehicles",
+        "Trading and Finance"
+      ],
+      "description": "See how reinforcement learning is applied in real-world scenarios across different domains."
+    }
+  ],
+  "instructor_info": {
+    "name": "Dr. Sarah Chen",
+    "title": "Senior Research Scientist at DeepMind",
+    "bio": "Dr. Chen is a leading researcher in reinforcement learning with over 8 years of experience at top AI research labs. She has published extensively on deep RL and has contributed to breakthrough algorithms in game-playing AI.",
+    "image": "/img/instructors/sarah-chen.jpg",
+    "credentials": [
+      "PhD in Computer Science from Stanford University",
+      "Former researcher at OpenAI",
+      "Co-author of 50+ peer-reviewed papers",
+      "Speaker at major AI conferences worldwide"
+    ]
+  },
+  "course_materials": {
+    "videos": 45,
+    "assignments": 12,
+    "quizzes": 8,
+    "projects": 4,
+    "downloadable_resources": 25
+  },
+  "certification": {
+    "available": true,
+    "requirements": [
+      "Complete all video lessons",
+      "Submit all assignments",
+      "Pass all quizzes with 80% or higher",
+      "Complete the final capstone project"
+    ]
+  }
+}

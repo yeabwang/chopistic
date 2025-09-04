@@ -5,10 +5,13 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { usePageContent } from "../hooks/usePageContent";
 import { useCourseData } from "../hooks/useCourseData";
+import { useAuthProtection } from "../hooks/useAuthProtection";
+import { useEnrollment } from "../hooks/useEnrollment";
+import { useRouter } from "../hooks/useRouter";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Glassmorphic Filter Component
+//  Filter Component
 const FilterSection = ({ selectedCategory, onCategoryChange, selectedLevel, onLevelChange }) => {
   const { content } = usePageContent('courses');
   const categories = content?.content?.filter?.categories || ["All", "Machine Learning", "Deep Learning", "NLP", "Computer Vision"];
@@ -92,13 +95,36 @@ const FilterSection = ({ selectedCategory, onCategoryChange, selectedLevel, onLe
   );
 };
 
-// Course Card Component with unique course-focused design
+// Course Card Component
 const CourseCard = ({ course, index }) => {
+  const { navigateTo } = useRouter();
+  const { requireAuth } = useAuthProtection();
+  const { enrollInCourse, isEnrolledInCourse } = useEnrollment();
   const [transformStyle, setTransformStyle] = useState("");
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const itemRef = useRef(null);
   const hoverButtonRef = useRef(null);
+
+  const handleEnrollClick = () => {
+    const enrollAndNavigate = async () => {
+      try {
+        // Check if already enrolled
+        if (!isEnrolledInCourse(course.id)) {
+          await enrollInCourse(course.id);
+        }
+        // Navigate to course page
+        navigateTo(`course/${course.id}`);
+      } catch (error) {
+        console.error('Error enrolling in course:', error);
+        // Still navigate to course page even if enrollment fails
+        navigateTo(`course/${course.id}`);
+      }
+    };
+
+    // Require authentication before enrollment
+    requireAuth(enrollAndNavigate, { preferSignup: true });
+  };
 
   const handleMouseMove = (event) => {
     if (!itemRef.current) return;
@@ -206,11 +232,11 @@ const CourseCard = ({ course, index }) => {
           </div>
 
           {/* Enrollment Button */}
-          <a
-            href={course.link || "#"}
-            className="block"
+          <button
+            onClick={handleEnrollClick}
+            className="block w-full"
           >
-            <button
+            <div
               ref={hoverButtonRef}
               onMouseMove={handleMouseMove}
               onMouseEnter={handleMouseEnter}
@@ -218,7 +244,6 @@ const CourseCard = ({ course, index }) => {
               className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-300/20 to-blue-300/20 p-px transition-all duration-300 hover:from-violet-300/40 hover:to-blue-300/40"
             >
               <div className="relative flex items-center justify-center gap-2 rounded-xl bg-black/60 px-4 py-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-black/40">
-                {/* Radial gradient hover effect */}
                 <div
                   className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition duration-300"
                   style={{
@@ -229,8 +254,8 @@ const CourseCard = ({ course, index }) => {
                 <TiLocationArrow className="relative z-20 text-violet-300" />
                 <span className="relative z-20 font-medium text-white">Enroll Now</span>
               </div>
-            </button>
-          </a>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -250,7 +275,7 @@ const CoursesContent = () => {
   });
 
   return (
-    <section className="min-h-screen bg-black py-24">
+    <section id="courses-grid" className="min-h-screen bg-black py-24">
       <div className="container mx-auto px-6 md:px-10">
         <div className="mb-16 text-center">
           <h2 className="special-font mb-6 text-6xl font-black uppercase text-white md:text-7xl">

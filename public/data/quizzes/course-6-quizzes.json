@@ -1,0 +1,150 @@
+{
+  "courseId": 6,
+  "courseName": "AI Ethics and Governance",
+  "quizzes": [
+    {
+      "id": 23,
+      "chapterId": 1,
+      "chapterName": "Introduction to AI Ethics",
+      "title": "AI Ethics Fundamentals Quiz",
+      "description": "Test your understanding of basic AI ethics concepts and ethical frameworks.",
+      "questions": 10,
+      "estimatedTime": "15 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "Ethical Principles",
+        "Stakeholder Analysis",
+        "Historical Context",
+        "Case Studies"
+      ]
+    },
+    {
+      "id": 24,
+      "chapterId": 2,
+      "chapterName": "Algorithmic Bias and Fairness",
+      "title": "Bias and Fairness Quiz",
+      "description": "Evaluate your knowledge of algorithmic bias detection and mitigation strategies.",
+      "questions": 12,
+      "estimatedTime": "18 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 120,
+      "passingScore": 75,
+      "topics": [
+        "Types of Bias",
+        "Bias Sources",
+        "Fairness Metrics",
+        "Mitigation Strategies"
+      ]
+    },
+    {
+      "id": 25,
+      "chapterId": 3,
+      "chapterName": "Privacy and Data Protection",
+      "title": "Privacy in AI Quiz",
+      "description": "Test your understanding of privacy principles and protection techniques in AI systems.",
+      "questions": 10,
+      "estimatedTime": "15 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 100,
+      "passingScore": 75,
+      "topics": [
+        "Privacy Principles",
+        "Data Minimization",
+        "Differential Privacy",
+        "Federated Learning"
+      ]
+    },
+    {
+      "id": 26,
+      "chapterId": 4,
+      "chapterName": "Transparency and Explainability",
+      "title": "Explainable AI Quiz",
+      "description": "Assess your knowledge of AI transparency and explainability techniques.",
+      "questions": 14,
+      "estimatedTime": "20 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 140,
+      "passingScore": 80,
+      "topics": [
+        "Black Box Problem",
+        "Interpretable ML",
+        "XAI Techniques",
+        "Communication"
+      ]
+    },
+    {
+      "id": 27,
+      "chapterId": 5,
+      "chapterName": "Legal and Regulatory Landscape",
+      "title": "AI Law and Regulation Quiz",
+      "description": "Test your understanding of current AI regulations and legal frameworks.",
+      "questions": 12,
+      "estimatedTime": "18 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 120,
+      "passingScore": 75,
+      "topics": [
+        "GDPR and AI",
+        "AI Act",
+        "Liability Issues",
+        "International Perspectives"
+      ]
+    },
+    {
+      "id": 28,
+      "chapterId": 6,
+      "chapterName": "Human-AI Interaction",
+      "title": "Human-Centered AI Quiz",
+      "description": "Evaluate your knowledge of human-centered AI design principles.",
+      "questions": 10,
+      "estimatedTime": "15 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 100,
+      "passingScore": 75,
+      "topics": [
+        "Human-Centered Design",
+        "Automation Balance",
+        "Trust Building",
+        "Social Impact"
+      ]
+    },
+    {
+      "id": 29,
+      "chapterId": 7,
+      "chapterName": "AI Governance and Risk Management",
+      "title": "AI Governance Quiz",
+      "description": "Test your understanding of AI governance frameworks and risk management strategies.",
+      "questions": 15,
+      "estimatedTime": "22 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 150,
+      "passingScore": 85,
+      "topics": [
+        "Governance Frameworks",
+        "Risk Assessment",
+        "Ethics Committees",
+        "Continuous Monitoring"
+      ]
+    },
+    {
+      "id": 30,
+      "chapterId": 8,
+      "chapterName": "Future of Responsible AI",
+      "title": "Responsible AI Future Quiz",
+      "description": "Assess your knowledge of emerging challenges and future directions in AI ethics.",
+      "questions": 8,
+      "estimatedTime": "12 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 80,
+      "passingScore": 70,
+      "topics": [
+        "Emerging Challenges",
+        "Global Standards",
+        "Ethical Culture",
+        "Career Paths"
+      ]
+    }
+  ]
+}

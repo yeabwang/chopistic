@@ -49,12 +49,50 @@ class UserService {
     allUsersData.users.push(newUser);
     allUsersData.nextId++;
 
+    // Create sample progress data for demonstration
     const userProgress = {
       userId: newUser.id,
       progress: {},
       achievements: [],
-      quizzes: [],
-      coursesCompleted: [],
+      quizzes: [
+        {
+          courseId: 1,
+          chapter: "Introduction",
+          title: "Basic AI Concepts Quiz",
+          score: 85,
+          totalQuestions: 10,
+          timeSpent: 8,
+          completedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString() // 7 days ago
+        },
+        {
+          courseId: 1,
+          chapter: "Neural Networks",
+          title: "Neural Network Fundamentals Quiz",
+          score: 92,
+          totalQuestions: 15,
+          timeSpent: 12,
+          completedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString() // 5 days ago
+        },
+        {
+          courseId: 2,
+          chapter: "Introduction",
+          title: "Machine Learning Basics Quiz",
+          score: 78,
+          totalQuestions: 12,
+          timeSpent: 10,
+          completedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString() // 3 days ago
+        },
+        {
+          courseId: 3,
+          chapter: "Computer Vision",
+          title: "Image Processing Quiz",
+          score: 95,
+          totalQuestions: 8,
+          timeSpent: 6,
+          completedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString() // 1 day ago
+        }
+      ],
+      coursesCompleted: [1],
       lastLogin: new Date().toISOString()
     };
 
@@ -148,6 +186,106 @@ class UserService {
       await this.saveUserProgress(userId, progress);
     }
     return progress;
+  }
+
+  async getLeaderboardData() {
+    try {
+      const allUsersData = await this.loadAllUsers();
+      const leaderboard = [];
+
+      for (const user of allUsersData.users) {
+        const progress = await this.loadUserProgress(user.id);
+        const totalPoints = progress.quizzes?.reduce((total, quiz) => total + (quiz.score || 0), 0) || 0;
+        const completedQuizzes = progress.quizzes?.length || 0;
+        const completedCourses = progress.coursesCompleted?.length || 0;
+
+        leaderboard.push({
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          points: totalPoints,
+          quizzesCompleted: completedQuizzes,
+          coursesCompleted: completedCourses,
+          lastActive: progress.lastLogin || user.createdAt
+        });
+      }
+
+      // Sort by points (descending)
+      return leaderboard.sort((a, b) => b.points - a.points);
+    } catch (error) {
+      console.error('Error getting leaderboard data:', error);
+      return [];
+    }
+  }
+
+  async getWeeklyActivityData() {
+    try {
+      const allUsersData = await this.loadAllUsers();
+      const weeklyData = {};
+      const now = new Date();
+      
+      // Initialize 7 days of data
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date(now);
+        date.setDate(date.getDate() - i);
+        const dateKey = date.toISOString().split('T')[0];
+        weeklyData[dateKey] = {
+          date: dateKey,
+          quizzes: 0,
+          users: new Set(),
+          totalScore: 0,
+          quizCount: 0
+        };
+      }
+
+      // Aggregate data from all users
+      for (const user of allUsersData.users) {
+        const progress = await this.loadUserProgress(user.id);
+        
+        progress.quizzes?.forEach(quiz => {
+          const quizDate = new Date(quiz.completedAt).toISOString().split('T')[0];
+          if (weeklyData[quizDate]) {
+            weeklyData[quizDate].quizzes++;
+            weeklyData[quizDate].users.add(user.id);
+            weeklyData[quizDate].totalScore += quiz.score;
+            weeklyData[quizDate].quizCount++;
+          }
+        });
+      }
+
+      // Convert sets to counts and calculate averages
+      return Object.values(weeklyData).map(day => ({
+        date: day.date,
+        quizzes: day.quizzes,
+        activeUsers: day.users.size,
+        averageScore: day.quizCount > 0 ? Math.round(day.totalScore / day.quizCount) : 0
+      }));
+    } catch (error) {
+      console.error('Error getting weekly activity data:', error);
+      return [];
+    }
+  }
+
+  async enrollInCourse(userId, courseId) {
+    try {
+      const progress = await this.loadUserProgress(userId);
+      
+      // Initialize coursesEnrolled if it doesn't exist
+      if (!progress.coursesEnrolled) {
+        progress.coursesEnrolled = [];
+      }
+      
+      // Check if already enrolled
+      if (!progress.coursesEnrolled.includes(courseId)) {
+        progress.coursesEnrolled.push(courseId);
+        await this.saveUserProgress(userId, progress);
+      }
+      
+      return { success: true, courseId };
+    } catch (error) {
+      console.error('Error enrolling in course:', error);
+      throw error;
+    }
   }
 }
 
