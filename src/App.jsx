@@ -9,15 +9,16 @@ import CoursesPage from "./components/CoursesPage";
 import AboutUsPage from "./components/AboutUsPage";
 import UserDashboard from "./components/dashboard/UserDashboard";
 import SingleCoursePage from "./components/SingleCoursePage";
+import QuizListingPage from "./components/QuizListingPage";
 import Yeab from "./components/profiles/yeab/Yeab";
 import { useRouter } from "./hooks/useRouter";
 
 function App() {
-  const { currentPage, profileName, courseId } = useRouter();
+  const { currentPage, profileName, courseId, quizId } = useRouter();
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
-      {currentPage !== 'course' && <NavBar />}
+      {currentPage !== 'course' && currentPage !== 'quizzes' && currentPage !== 'quiz' && <NavBar />}
       {currentPage === 'home' ? (
         <>
           <Hero />
@@ -43,6 +44,20 @@ function App() {
       ) : currentPage === 'course' ? (
         <>
           <SingleCoursePage courseId={courseId} />
+        </>
+      ) : currentPage === 'quizzes' ? (
+        <>
+          <QuizListingPage courseId={courseId} />
+        </>
+      ) : currentPage === 'quiz' ? (
+        <>
+          <div className="flex min-h-screen items-center justify-center bg-black text-white">
+            <div className="text-center">
+              <h1 className="mb-4 text-4xl font-bold">Quiz Page</h1>
+              <p className="text-gray-400">Quiz component will be implemented here</p>
+              <p className="text-sm text-gray-500">Course ID: {courseId}, Quiz ID: {quizId}</p>
+            </div>
+          </div>
         </>
       ) : currentPage === 'profile' ? (
         <>

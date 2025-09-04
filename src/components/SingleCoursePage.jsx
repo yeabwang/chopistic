@@ -85,14 +85,14 @@ const SingleCoursePage = ({ courseId }) => {
                 onClick={() => setActiveChapter(index)}
                 className={`w-full rounded-xl border p-4 text-left transition-all duration-300 ${
                   activeChapter === index
-                    ? "border-violet-300/50 bg-violet-300/20 text-white shadow-lg shadow-violet-300/10"
+                    ? "border-blue-300/50 bg-blue-300/20 text-white shadow-lg shadow-blue-300/10"
                     : "border-white/10 bg-white/5 text-gray-300 hover:border-white/20 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <span className={`flex size-8 items-center justify-center rounded-full text-sm font-bold ${
                     activeChapter === index 
-                      ? "bg-violet-300 text-black" 
+                      ? "bg-blue-300 text-black" 
                       : "bg-white/10 text-gray-400"
                   }`}>
                     {index + 1}
@@ -101,6 +101,20 @@ const SingleCoursePage = ({ courseId }) => {
                 </div>
               </button>
             ))}
+          </div>
+          
+          {/* Quiz Section */}
+          <div className="mt-8 rounded-xl border border-violet-300/20 bg-violet-300/10 p-4">
+            <div className="mb-3">
+              <h4 className="font-general text-sm font-bold text-white">Course Quiz</h4>
+              <p className="text-xs text-gray-400">Test your knowledge</p>
+            </div>
+            <button
+              onClick={() => window.location.hash = `quizzes/${courseId}`}
+              className="w-full rounded-lg bg-yellow-300 px-3 py-2 font-general text-sm font-medium text-black transition-all duration-300 hover:bg-yellow-300/90"
+            >
+              Take Quiz
+            </button>
           </div>
         </div>
       </div>
@@ -177,7 +191,7 @@ const SingleCoursePage = ({ courseId }) => {
               className={`flex items-center gap-2 rounded-full px-6 py-3 font-general text-sm font-medium transition-all duration-300 ${
                 activeChapter === chapters.length - 1
                   ? "cursor-not-allowed bg-gray-800/50 text-gray-500"
-                  : "bg-violet-300 text-black shadow-lg shadow-violet-300/20 hover:bg-violet-400"
+                  : "bg-blue-300 text-black shadow-lg shadow-blue-300/20 hover:bg-blue-300/90"
               }`}
             >
               Next

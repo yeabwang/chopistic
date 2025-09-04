@@ -4,6 +4,7 @@ export const useRouter = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [profileName, setProfileName] = useState(null);
   const [courseId, setCourseId] = useState(null);
+  const [quizId, setQuizId] = useState(null);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -12,18 +13,42 @@ export const useRouter = () => {
         setCurrentPage('courses');
         setProfileName(null);
         setCourseId(null);
+        setQuizId(null);
       } else if (hash === 'about') {
         setCurrentPage('about');
         setProfileName(null);
         setCourseId(null);
+        setQuizId(null);
       } else if (hash === 'dashboard') {
         setCurrentPage('dashboard');
         setProfileName(null);
         setCourseId(null);
+        setQuizId(null);
       } else if (hash.startsWith('course/')) {
         const id = hash.split('/')[1];
         setCurrentPage('course');
         setCourseId(id);
+        setProfileName(null);
+        setQuizId(null);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      } else if (hash.startsWith('quizzes/')) {
+        const id = hash.split('/')[1];
+        setCurrentPage('quizzes');
+        setCourseId(id);
+        setProfileName(null);
+        setQuizId(null);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      } else if (hash.startsWith('quiz/')) {
+        const parts = hash.split('/');
+        const courseIdParam = parts[1];
+        const quizIdParam = parts[2];
+        setCurrentPage('quiz');
+        setCourseId(courseIdParam);
+        setQuizId(quizIdParam);
         setProfileName(null);
         setTimeout(() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -33,6 +58,7 @@ export const useRouter = () => {
         setCurrentPage('profile');
         setProfileName(name);
         setCourseId(null);
+        setQuizId(null);
         setTimeout(() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 50);
@@ -40,6 +66,7 @@ export const useRouter = () => {
         setCurrentPage('home');
         setProfileName(null);
         setCourseId(null);
+        setQuizId(null);
       }
     };
 
@@ -56,5 +83,5 @@ export const useRouter = () => {
     window.location.hash = page;
   };
 
-  return { currentPage, profileName, courseId, navigateTo };
+  return { currentPage, profileName, courseId, quizId, navigateTo };
 };
