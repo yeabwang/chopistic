@@ -8,6 +8,9 @@ export const useTeamData = () => {
     const loadTeamData = async () => {
       try {
         const response = await fetch('/data/team/all_teams.json');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch team data: ${response.status}`);
+        }
         const data = await response.json();
         setTeamData(data);
       } catch (error) {

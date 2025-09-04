@@ -8,6 +8,9 @@ export const usePageContent = (pageName) => {
     const loadContent = async () => {
       try {
         const response = await fetch(`/data/pages/${pageName}.json`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch page content: ${response.status}`);
+        }
         const data = await response.json();
         setContent(data);
       } catch (error) {

@@ -8,8 +8,12 @@ export const useCourseData = () => {
     const loadCourses = async () => {
       try {
         const response = await fetch('/data/courses/all_courses.json');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch courses: ${response.status}`);
+        }
         const data = await response.json();
-        setCourses(data.courses);
+        // Handle both data.courses and direct array format
+        setCourses(data.courses || data || []);
       } catch (error) {
         console.error('Error loading courses:', error);
         setCourses([]);
