@@ -8,15 +8,16 @@ import Footer from "./components/Footer";
 import CoursesPage from "./components/CoursesPage";
 import AboutUsPage from "./components/AboutUsPage";
 import UserDashboard from "./components/dashboard/UserDashboard";
+import SingleCoursePage from "./components/SingleCoursePage";
 import Yeab from "./components/profiles/yeab/Yeab";
 import { useRouter } from "./hooks/useRouter";
 
 function App() {
-  const { currentPage, profileName } = useRouter();
+  const { currentPage, profileName, courseId } = useRouter();
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
-      <NavBar />
+      {currentPage !== 'course' && <NavBar />}
       {currentPage === 'home' ? (
         <>
           <Hero />
@@ -38,6 +39,10 @@ function App() {
       ) : currentPage === 'dashboard' ? (
         <>
           <UserDashboard />
+        </>
+      ) : currentPage === 'course' ? (
+        <>
+          <SingleCoursePage courseId={courseId} />
         </>
       ) : currentPage === 'profile' ? (
         <>

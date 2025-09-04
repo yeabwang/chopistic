@@ -206,11 +206,11 @@ const CourseCard = ({ course, index }) => {
           </div>
 
           {/* Enrollment Button */}
-          <a
-            href={course.link || "#"}
-            className="block"
+          <button
+            onClick={() => window.location.hash = `course/${course.id}`}
+            className="block w-full"
           >
-            <button
+            <div
               ref={hoverButtonRef}
               onMouseMove={handleMouseMove}
               onMouseEnter={handleMouseEnter}
@@ -228,8 +228,8 @@ const CourseCard = ({ course, index }) => {
                 <TiLocationArrow className="relative z-20 text-violet-300" />
                 <span className="relative z-20 font-medium text-white">Enroll Now</span>
               </div>
-            </button>
-          </a>
+            </div>
+          </button>
         </div>
       </div>
     </div>
