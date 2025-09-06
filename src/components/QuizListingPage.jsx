@@ -1,13 +1,15 @@
 import { useCourseData } from "../hooks/useCourseData";
 import { useQuizData } from "../hooks/useQuizData";
+import { useEffect } from "react";
 
 const QuizListingPage = ({ courseId }) => {
   const { courses, loading: coursesLoading } = useCourseData();
-  const { quizzes, loading: quizzesLoading, getQuizStats } = useQuizData(courseId);
+  const { quizzes, loading: quizzesLoading, getQuizStats, userProgress } = useQuizData(courseId);
   
   const course = courses.find(c => c.id === parseInt(courseId));
   const stats = getQuizStats();
   const loading = coursesLoading || quizzesLoading;
+
 
   const getDifficultyColor = (difficulty) => {
     switch (difficulty) {
@@ -131,7 +133,7 @@ const QuizListingPage = ({ courseId }) => {
                       <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      {quiz.questions} questions
+                      {quiz.questionData?.length || 0} questions
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-300">
                       <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
