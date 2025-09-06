@@ -8,6 +8,7 @@ export const useDashboardData = () => {
   const [userProgress, setUserProgress] = useState(null);
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [weeklyActivityData, setWeeklyActivityData] = useState([]);
+  const [courseQuizCounts, setCourseQuizCounts] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -38,10 +39,14 @@ export const useDashboardData = () => {
         // Fetch weekly activity data
         const weeklyActivity = await userService.getWeeklyActivityData();
         
+        // Fetch quiz counts for each course
+        const quizCounts = await fetchCourseQuizCounts(courses);
+        
         setCoursesData(courses);
         setUserProgress(progress);
         setLeaderboardData(leaderboard);
         setWeeklyActivityData(weeklyActivity);
+        setCourseQuizCounts(quizCounts);
         
       } catch (err) {
         console.error('Error fetching dashboard data:', err);
@@ -83,6 +88,7 @@ export const useDashboardData = () => {
       ? Math.round(totalPoints / completedQuizzes) 
       : 0;
 
+
     // Calculate current streak (simplified - based on recent quiz activity)
     const currentStreak = calculateStreak(userProgress.quizzes || []);
 
@@ -99,6 +105,28 @@ export const useDashboardData = () => {
       achievementsEarned,
       studyTimeHours
     };
+  };
+
+  // Fetch quiz counts for each course
+  const fetchCourseQuizCounts = async (courses) => {
+    const quizCounts = {};
+    
+    for (const course of courses) {
+      try {
+        const response = await fetch(`/data/quizzes/course-${course.id}-quizzes.json`);
+        if (response.ok) {
+          const data = await response.json();
+          quizCounts[course.id] = data.quizzes?.length || 0;
+        } else {
+          quizCounts[course.id] = 0;
+        }
+      } catch (error) {
+        console.error(`Error fetching quiz count for course ${course.id}:`, error);
+        quizCounts[course.id] = 0;
+      }
+    }
+    
+    return quizCounts;
   };
 
   // Calculate streak based on quiz completion dates
@@ -132,18 +160,24 @@ export const useDashboardData = () => {
 
     return coursesData.map(course => {
       const isCompleted = userProgress.coursesCompleted?.includes(course.id) || false;
+      
+      // Ensure proper type comparison for courseId
       const quizzesForCourse = userProgress.quizzes?.filter(quiz => 
-        quiz.courseId === course.id
+        parseInt(quiz.courseId) === parseInt(course.id)
       ) || [];
       
-      const averageQuizScore = quizzesForCourse.length > 0
-        ? Math.round(quizzesForCourse.reduce((sum, quiz) => sum + quiz.score, 0) / quizzesForCourse.length)
+      // Calculate average quiz score for this course (only latest attempts)
+      const latestQuizScores = getLatestQuizScores(quizzesForCourse);
+      const averageQuizScore = latestQuizScores.length > 0
+        ? Math.round(latestQuizScores.reduce((sum, score) => sum + score, 0) / latestQuizScores.length)
         : 0;
+      
 
       return {
         ...course,
         isCompleted,
-        quizzesCompleted: quizzesForCourse.length,
+        quizzesCompleted: quizzesForCourse.length, // This is the number of completed quizzes
+        totalQuizzes: courseQuizCounts[course.id] || 0, // This is the total number of quizzes available
         averageScore: averageQuizScore,
         lastAccessed: getLastAccessDate(course.id, userProgress)
       };
@@ -188,11 +222,35 @@ export const useDashboardData = () => {
 
   // Helper function to get last access date for a course
   const getLastAccessDate = (courseId, progress) => {
-    const courseQuizzes = progress.quizzes?.filter(quiz => quiz.courseId === courseId) || [];
+    const courseQuizzes = progress.quizzes?.filter(quiz => parseInt(quiz.courseId) === parseInt(courseId)) || [];
     if (courseQuizzes.length === 0) return null;
     
     const lastQuiz = courseQuizzes.sort((a, b) => new Date(b.completedAt) - new Date(a.completedAt))[0];
     return lastQuiz.completedAt;
+  };
+
+  // Helper function to get latest quiz scores (removes duplicates from retakes)
+  const getLatestQuizScores = (quizzes) => {
+    if (!quizzes || quizzes.length === 0) return [];
+    
+    // Group quizzes by title to handle retakes
+    const quizGroups = {};
+    quizzes.forEach(quiz => {
+      if (!quizGroups[quiz.title]) {
+        quizGroups[quiz.title] = [];
+      }
+      quizGroups[quiz.title].push(quiz);
+    });
+    
+    // Get the latest attempt for each quiz
+    const latestScores = [];
+    Object.values(quizGroups).forEach(quizGroup => {
+      // Sort by completion date (newest first) and take the first one
+      const latestQuiz = quizGroup.sort((a, b) => new Date(b.completedAt) - new Date(a.completedAt))[0];
+      latestScores.push(latestQuiz.score || 0);
+    });
+    
+    return latestScores;
   };
 
   // Update user progress (wrapper function)

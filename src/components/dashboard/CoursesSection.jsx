@@ -69,7 +69,7 @@ const CoursesSection = () => {
                   <div className="mb-2 flex items-center justify-between">
                     <h4 className="font-medium text-white">{course.title}</h4>
                     <span className="text-sm text-gray-300">
-                      {course.quizzesCompleted} quiz{course.quizzesCompleted !== 1 ? 'es' : ''}
+                      {course.totalQuizzes} quiz{course.totalQuizzes !== 1 ? 'es' : ''}
                     </span>
                   </div>
                   <div className="mb-2 flex items-center justify-between">
@@ -117,7 +117,7 @@ const CoursesSection = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-green-400">✓ Completed</span>
                     <span className="text-sm text-gray-300">
-                      {course.quizzesCompleted} quiz{course.quizzesCompleted !== 1 ? 'es' : ''} • Avg: {course.averageScore}%
+                      {course.totalQuizzes} quiz{course.totalQuizzes !== 1 ? 'es' : ''} • Avg: {course.averageScore}%
                     </span>
                   </div>
                   <p className="text-xs text-gray-400">

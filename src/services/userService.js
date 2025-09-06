@@ -135,10 +135,25 @@ class UserService {
 
   async addQuizResult(userId, quizResult) {
     const progress = await this.loadUserProgress(userId);
-    progress.quizzes.push({
+    
+    // Check if quiz already exists and update it, otherwise add new
+    const existingQuizIndex = progress.quizzes.findIndex(
+      q => q.courseId === quizResult.courseId && q.title === quizResult.title
+    );
+    
+    const quizResultWithTimestamp = {
       ...quizResult,
-      completedAt: new Date().toISOString()
-    });
+      completedAt: quizResult.completedAt || new Date().toISOString()
+    };
+    
+    if (existingQuizIndex >= 0) {
+      // Update existing quiz result (for retakes)
+      progress.quizzes[existingQuizIndex] = quizResultWithTimestamp;
+    } else {
+      // Add new quiz result
+      progress.quizzes.push(quizResultWithTimestamp);
+    }
+    
     await this.saveUserProgress(userId, progress);
     return progress;
   }
