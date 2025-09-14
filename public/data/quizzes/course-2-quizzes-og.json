@@ -1,0 +1,108 @@
+{
+  "courseId": 2,
+  "courseName": "Advanced Machine Learning",
+  "quizzes": [
+    {
+      "id": 6,
+      "chapterId": 1,
+      "chapterName": "Advanced Algorithms",
+      "title": "Advanced ML Algorithms Quiz",
+      "description": "Test your understanding of advanced machine learning algorithms and their implementations.",
+      "questions": 12,
+      "estimatedTime": "18 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 120,
+      "passingScore": 75,
+      "topics": [
+        "Ensemble Methods",
+        "SVM",
+        "Random Forest",
+        "Gradient Boosting"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "Which ensemble method combines multiple weak learners to create a strong learner?",
+          "options": [
+            "Bagging",
+            "Boosting",
+            "Stacking",
+            "All of the above"
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "All three methods (Bagging, Boosting, and Stacking) are ensemble techniques that combine weak learners."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "chapterId": 2,
+      "chapterName": "Deep Learning",
+      "title": "Deep Learning Architectures Quiz",
+      "description": "Evaluate your knowledge of various deep learning architectures and their applications.",
+      "questions": 15,
+      "estimatedTime": "22 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 150,
+      "passingScore": 80,
+      "topics": [
+        "CNN",
+        "RNN",
+        "LSTM",
+        "Transformer"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What type of neural network is best suited for image processing?",
+          "options": [
+            "RNN",
+            "CNN",
+            "LSTM",
+            "GAN"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Convolutional Neural Networks (CNNs) are specifically designed for image processing tasks."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "chapterId": 3,
+      "chapterName": "Model Optimization",
+      "title": "Optimization Techniques Quiz",
+      "description": "Test your knowledge of model optimization, hyperparameter tuning, and performance improvement.",
+      "questions": 10,
+      "estimatedTime": "15 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "Hyperparameter Tuning",
+        "Cross Validation",
+        "Regularization",
+        "Optimization Algorithms"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the purpose of cross-validation?",
+          "options": [
+            "To prevent overfitting",
+            "To estimate model performance",
+            "To tune hyperparameters",
+            "All of the above"
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Cross-validation serves multiple purposes including preventing overfitting, estimating performance, and helping with hyperparameter tuning."
+        }
+      ]
+    }
+  ]
+}

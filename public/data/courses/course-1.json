@@ -4,194 +4,12 @@
   "category": "Machine Learning",
   "level": "Beginner",
   "duration": "8 weeks",
-  "description": "Master the core concepts of artificial intelligence and machine learning with hands-on projects.",
+  "description": "AI Fundamentals is a beginner-friendly journey into the world of Artificial Intelligence. Across six chapters, you’ll learn how AI began, how it works, where it is applied, and what challenges and opportunities it creates. Each chapter is written like a real class session: step-by-step, with stories, real-world examples, reflection prompts, and practical exercises.",
   "instructor": "Dr. Sarah Chen",
   "enrollmentCount": 2847,
   "rating": 4.8,
   "media": "videos/feature-1.mp4",
   "thumbnail": "img/gallery-1.webp",
-  "chapters": [
-    {
-      "id": 1,
-      "title": "Introduction to AI",
-      "duration": "45 minutes",
-      "videoUrl": "https://www.youtube.com/embed/JMUxmLyrhSk",
-      "content": {
-        "overview": "Welcome to the fascinating world of Artificial Intelligence! In this opening chapter, we'll explore what AI really means and how it's transforming our world.",
-        "sections": [
-          {
-            "title": "What is Artificial Intelligence?",
-            "content": "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions. The term may also be applied to any machine that exhibits traits associated with a human mind such as learning and problem-solving."
-          },
-          {
-            "title": "History of AI",
-            "content": "The field of AI research was born at a Dartmouth College workshop in 1956. Since then, AI has experienced several waves of optimism, followed by disappointment and the loss of funding (known as 'AI winters'), followed by new approaches, success and renewed funding."
-          },
-          {
-            "title": "Types of AI",
-            "content": "AI can be categorized into three types: Narrow AI (weak AI), General AI (strong AI), and Artificial Superintelligence. Currently, we only have Narrow AI systems that can perform specific tasks."
-          }
-        ],
-        "keyPoints": [
-          "Understanding the definition and scope of AI",
-          "Learning about the historical development of AI",
-          "Distinguishing between different types of AI systems",
-          "Recognizing AI applications in everyday life"
-        ],
-        "practicalExercise": "Identify 5 AI applications you use in your daily life and categorize them by type."
-      }
-    },
-    {
-      "id": 2,
-      "title": "Machine Learning Basics",
-      "duration": "60 minutes",
-      "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
-      "content": {
-        "overview": "Dive into the core concepts of machine learning, the driving force behind most modern AI applications.",
-        "sections": [
-          {
-            "title": "What is Machine Learning?",
-            "content": "Machine Learning is a subset of AI that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. It focuses on the development of computer programs that can access data and use it to learn for themselves."
-          },
-          {
-            "title": "Types of Machine Learning",
-            "content": "There are three main types of machine learning: Supervised Learning (learning with labeled data), Unsupervised Learning (finding patterns in unlabeled data), and Reinforcement Learning (learning through interaction with an environment)."
-          },
-          {
-            "title": "Common Algorithms",
-            "content": "Popular machine learning algorithms include Linear Regression, Decision Trees, Random Forest, Support Vector Machines, K-Means Clustering, and Neural Networks. Each has its strengths and is suited for different types of problems."
-          }
-        ],
-        "keyPoints": [
-          "Understanding machine learning fundamentals",
-          "Differentiating between supervised and unsupervised learning",
-          "Learning about common ML algorithms",
-          "Understanding when to use different approaches"
-        ],
-        "practicalExercise": "Create a simple linear regression model to predict house prices using a sample dataset."
-      }
-    },
-    {
-      "id": 3,
-      "title": "Neural Networks Introduction",
-      "duration": "75 minutes",
-      "videoUrl": "https://www.youtube.com/embed/aircAruvnKk",
-      "content": {
-        "overview": "Explore the building blocks of deep learning - neural networks and how they mimic the human brain.",
-        "sections": [
-          {
-            "title": "What are Neural Networks?",
-            "content": "Neural networks are computing systems inspired by biological neural networks. They consist of interconnected nodes (neurons) that work together to solve specific problems. Neural networks adapt and learn from data without being explicitly programmed."
-          },
-          {
-            "title": "How Neural Networks Work",
-            "content": "Neural networks process information through layers of interconnected nodes. Each connection has a weight that adjusts as learning proceeds. The network learns by adjusting these weights to minimize prediction errors."
-          },
-          {
-            "title": "Types of Neural Networks",
-            "content": "Common types include Feedforward Neural Networks, Convolutional Neural Networks (CNNs) for image processing, Recurrent Neural Networks (RNNs) for sequential data, and Transformer networks for natural language processing."
-          }
-        ],
-        "keyPoints": [
-          "Understanding neural network architecture",
-          "Learning how neurons and layers work together",
-          "Exploring different types of neural networks",
-          "Understanding backpropagation and training"
-        ],
-        "practicalExercise": "Build a simple neural network to classify handwritten digits using Python and TensorFlow."
-      }
-    },
-    {
-      "id": 4,
-      "title": "Deep Learning Fundamentals",
-      "duration": "90 minutes",
-      "videoUrl": "https://www.youtube.com/embed/6M5VXKLf4D4",
-      "content": {
-        "overview": "Take your understanding deeper with advanced neural network concepts and deep learning techniques.",
-        "sections": [
-          {
-            "title": "What is Deep Learning?",
-            "content": "Deep learning is a subset of machine learning that uses neural networks with multiple layers (hence 'deep') to model and understand complex patterns in data. It has been responsible for major breakthroughs in AI."
-          },
-          {
-            "title": "Deep Learning Applications",
-            "content": "Deep learning powers image recognition, natural language processing, speech recognition, autonomous vehicles, medical diagnosis, and many other cutting-edge applications we see today."
-          },
-          {
-            "title": "Training Deep Networks",
-            "content": "Training deep networks requires large amounts of data, significant computational power, and careful tuning of hyperparameters. Techniques like transfer learning and data augmentation help improve performance."
-          }
-        ],
-        "keyPoints": [
-          "Understanding deep learning vs traditional ML",
-          "Learning about popular deep learning architectures",
-          "Understanding training challenges and solutions",
-          "Exploring real-world applications"
-        ],
-        "practicalExercise": "Implement a convolutional neural network for image classification using a pre-trained model."
-      }
-    },
-    {
-      "id": 5,
-      "title": "Computer Vision Basics",
-      "duration": "85 minutes",
-      "videoUrl": "https://www.youtube.com/embed/OcycT1Jwsns",
-      "content": {
-        "overview": "Learn how AI systems can see and interpret visual information through computer vision techniques.",
-        "sections": [
-          {
-            "title": "Introduction to Computer Vision",
-            "content": "Computer vision is a field of AI that enables computers to interpret and make decisions based on visual data. It combines techniques from computer science, mathematics, and engineering."
-          },
-          {
-            "title": "Image Processing Fundamentals",
-            "content": "Basic image processing involves operations like filtering, edge detection, feature extraction, and image transformations. These form the foundation for more complex computer vision tasks."
-          },
-          {
-            "title": "Object Detection and Recognition",
-            "content": "Modern computer vision systems can detect and classify objects in images and videos with remarkable accuracy, using techniques like YOLO, R-CNN, and other deep learning approaches."
-          }
-        ],
-        "keyPoints": [
-          "Understanding computer vision fundamentals",
-          "Learning image processing techniques",
-          "Exploring object detection methods",
-          "Understanding real-world applications"
-        ],
-        "practicalExercise": "Build an object detection system that can identify common objects in photographs."
-      }
-    },
-    {
-      "id": 6,
-      "title": "Natural Language Processing",
-      "duration": "70 minutes",
-      "videoUrl": "https://www.youtube.com/embed/fOvTtapxa9c",
-      "content": {
-        "overview": "Discover how AI systems understand and generate human language through natural language processing.",
-        "sections": [
-          {
-            "title": "What is NLP?",
-            "content": "Natural Language Processing (NLP) is a branch of AI that helps computers understand, interpret and manipulate human language. It bridges the gap between human communication and computer understanding."
-          },
-          {
-            "title": "Text Processing Techniques",
-            "content": "NLP involves various text processing techniques including tokenization, part-of-speech tagging, named entity recognition, sentiment analysis, and language translation."
-          },
-          {
-            "title": "Modern NLP with Transformers",
-            "content": "Recent breakthroughs in NLP have come from transformer architectures like BERT, GPT, and T5, which have revolutionized how machines understand and generate text."
-          }
-        ],
-        "keyPoints": [
-          "Understanding NLP fundamentals",
-          "Learning text processing techniques",
-          "Exploring modern transformer models",
-          "Building practical NLP applications"
-        ],
-        "practicalExercise": "Create a sentiment analysis tool that can classify movie reviews as positive or negative."
-      }
-    }
-  ],
   "prerequisites": [
     "Basic programming knowledge (Python recommended)",
     "High school level mathematics",
@@ -199,10 +17,201 @@
   ],
   "learningOutcomes": [
     "Understand the fundamental concepts of artificial intelligence",
+    "Identify the main types and applications of AI",
     "Build basic machine learning models",
     "Implement simple neural networks",
-    "Apply AI techniques to real-world problems",
-    "Make informed decisions about AI applications"
+    "Recognize ethical and societal issues in AI",
+    "Apply AI techniques to simple real-world problems"
+  ],
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Introduction to AI",
+      "duration": "70 minutes",
+      "videoUrl": "https://www.youtube.com/embed/JMUxmLyrhSk",
+      "content": {
+        "overview": "We start by asking a simple question: what does it mean for a machine to be 'intelligent'? In this chapter, you will walk through the history of AI, see how it entered our daily lives, and understand the categories of AI that scientists talk about. Each step is designed to build your curiosity, connect ideas to real-world examples, and help you reflect on where AI is heading.",
+        "sections": [
+          {
+            "title": "Step 1 – The Origins of AI",
+            "content": "💡 Hook: Imagine it’s the 1950s, and scientists are asking: 'Can machines think?'\nThe famous Dartmouth Conference of 1956 is considered the birth of AI. John McCarthy, Marvin Minsky, Herbert Simon, and others believed computers could simulate human intelligence.\nEarly programs amazed the world – one could solve algebra problems, another could play checkers.\nPause & Think: Why do you think people in the 1950s were so fascinated with this idea?"
+          },
+          {
+            "title": "Step 2 – AI in Popular Culture",
+            "content": "Before real AI existed, movies and books imagined it. From HAL 9000 in *2001: A Space Odyssey* to R2-D2 in *Star Wars*, fiction shaped our fears and hopes.\nThese cultural images influenced how the public and even researchers thought about AI.\nMini Summary: Pop culture often makes AI look magical, but in reality, today’s AI is much narrower."
+          },
+          {
+            "title": "Step 3 – AI in Everyday Life",
+            "content": "Fast forward to today: AI helps Google Maps find the fastest route, powers Netflix recommendations, and runs virtual assistants like Siri and Alexa.\nReal-world example: Every time you unlock your phone with Face ID, you are using computer vision – a form of AI.\nPause & Think: Which AI tools did you already use this week without realizing?"
+          },
+          {
+            "title": "Step 4 – Types of AI",
+            "content": "AI is usually classified into three categories:\n• Narrow AI: Special-purpose systems (like chatbots or translation apps).\n• General AI: Hypothetical machines that can think and learn like humans.\n• Superintelligence: A speculative future where AI surpasses all human intelligence.\nMini Summary: We live in the age of Narrow AI – General AI is still science fiction."
+          },
+          {
+            "title": "Step 5 – Current Limitations",
+            "content": "AI is powerful but not perfect.\nIt struggles with common sense reasoning. Example: A system might know that a picture has a cat, but not that cats don’t usually drive cars.\nBias is a real issue – if data is biased, the AI’s output will also be biased.\nPause & Think: What risks do you see if AI is trusted without checking its limitations?"
+          }
+        ],
+        "keyPoints": [
+          "AI has a long history starting in the 1950s.",
+          "Pop culture shaped public imagination of AI.",
+          "AI today is everywhere – but it is still 'narrow'.",
+          "Understanding AI’s limits is as important as knowing its strengths."
+        ],
+        "practicalExercise": "Interview 3 people (friends or classmates) and ask how they use AI in daily life. Categorize their examples into Narrow, General, or Superintelligence. Discuss which ones were surprising to you."
+      }
+    },
+    {
+      "id": 2,
+      "title": "Machine Learning Basics",
+      "duration": "80 minutes",
+      "videoUrl": "https://www.youtube.com/embed/ukzFI9rgwfU",
+      "content": {
+        "overview": "In this chapter, you’ll meet the 'engine room' of AI: machine learning. We’ll explore what ML is, how it differs from traditional programming, and the main approaches that power applications you see daily.",
+        "sections": [
+          {
+            "title": "Step 1 – What is Machine Learning?",
+            "content": "Traditional programming means humans write explicit rules: 'If X, then Y.'\nMachine Learning flips this: the system learns the rules by analyzing lots of data.\nAnalogy: Instead of teaching a child every single rule of language, you let them learn by listening and practicing.\nPause & Think: Which do you think is easier: writing 1000 rules, or letting a machine discover patterns in 1000 examples?"
+          },
+          {
+            "title": "Step 2 – Types of Machine Learning",
+            "content": "Supervised Learning: The model is trained on labeled data (like pictures of cats with the label 'cat').\nUnsupervised Learning: The model finds hidden patterns without labels (like grouping customers by shopping habits).\nReinforcement Learning: The model learns by trial and error, receiving rewards or penalties (like training a robot to walk).\nMini Summary: Supervised is 'with answers,' Unsupervised is 'no answers,' Reinforcement is 'learn by doing.'"
+          },
+          {
+            "title": "Step 3 – Common Algorithms",
+            "content": "Linear Regression: Predicts continuous values (e.g., house prices).\nDecision Trees: Simple 'if-else' structures that split data into groups.\nK-Means: Groups similar items without labels.\nNeural Networks: Layers of 'artificial neurons' that learn complex patterns.\nPause & Think: If you had to classify spam vs. non-spam emails, which algorithm might be most effective?"
+          },
+          {
+            "title": "Step 4 – From Data to Model",
+            "content": "Data Collection → Cleaning → Splitting into Training & Testing sets → Training → Evaluation.\nImportant rule: 'Garbage in, garbage out.' If data is biased or messy, the model will also be poor.\nMini Summary: ML success depends as much on good data as on clever algorithms."
+          }
+        ],
+        "keyPoints": [
+          "ML is about learning patterns from data instead of coding rules.",
+          "There are three main ML types: supervised, unsupervised, reinforcement.",
+          "Popular algorithms solve tasks from prediction to clustering.",
+          "Data quality is critical for ML success."
+        ],
+        "practicalExercise": "Use a simple online tool (like Google Teachable Machine) to create a classifier. Train it on images of two objects from your room and test how accurate it is."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Neural Networks Demystified",
+      "duration": "75 minutes",
+      "videoUrl": "https://www.youtube.com/embed/bj1fh3BvqSU",
+      "content": {
+        "overview": "Now that you’ve met ML, let’s peek into the 'brains' of modern AI – neural networks. You’ll learn how they work step by step and why they’re so powerful.",
+        "sections": [
+          {
+            "title": "Step 1 – Neurons and Layers",
+            "content": "Artificial neurons are simplified versions of biological neurons.\nEach takes inputs, applies a function, and passes output forward.\nNeurons are grouped into layers: input, hidden, output.\nMini Summary: Layers of neurons let networks capture increasingly complex patterns."
+          },
+          {
+            "title": "Step 2 – Training a Neural Network",
+            "content": "The network makes predictions and compares them to the correct answers.\nError is measured and sent backward (backpropagation).\nWeights are adjusted to improve the next prediction.\nPause & Think: This is similar to how humans learn – trial, error, correction."
+          },
+          {
+            "title": "Step 3 – Why Deep Learning Works",
+            "content": "With many layers, networks can learn very abstract features.\nExample: In image recognition, the first layer detects edges, the next detects shapes, the next detects objects.\nThis hierarchy is what makes deep learning so effective.\nMini Summary: Deep = multiple layers = ability to recognize complex patterns."
+          }
+        ],
+        "keyPoints": [
+          "Neural networks are inspired by the human brain.",
+          "They are trained through trial, error, and weight adjustment.",
+          "Deep learning uses many layers to detect complex features."
+        ],
+        "practicalExercise": "Try a neural network demo online (like TensorFlow Playground). Experiment with changing the number of layers and neurons, and see how it affects accuracy."
+      }
+    },
+    {
+      "id": 4,
+      "title": "AI in the Real World",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/2ePf9rue1Ao",
+      "content": {
+        "overview": "AI is not just theory – it’s already reshaping industries. In this chapter, we tour real-world applications, from healthcare to entertainment.",
+        "sections": [
+          {
+            "title": "Step 1 – AI in Healthcare",
+            "content": "AI assists doctors in detecting diseases early (like spotting tumors in scans).\nIt can predict patient risks and personalize treatment plans.\nPause & Think: Would you trust an AI to give a second opinion on your medical scan?"
+          },
+          {
+            "title": "Step 2 – AI in Transportation",
+            "content": "Self-driving cars use computer vision, sensors, and ML to navigate roads.\nTraffic prediction systems help optimize routes and reduce congestion.\nMini Summary: AI is transforming how people and goods move."
+          },
+          {
+            "title": "Step 3 – AI in Business & Daily Life",
+            "content": "Recommendation engines power Netflix, YouTube, and online shopping.\nChatbots handle customer service 24/7.\nAI fraud detection protects banking transactions.\nPause & Think: Which AI application has personally saved you time?"
+          }
+        ],
+        "keyPoints": [
+          "AI impacts healthcare, transport, business, and entertainment.",
+          "Applications often combine multiple AI methods.",
+          "Everyday convenience and global industries both benefit."
+        ],
+        "practicalExercise": "Pick one industry (healthcare, transport, education, finance). Research one AI tool in that field and present its impact in 3–4 sentences."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Ethics and Challenges in AI",
+      "duration": "65 minutes",
+      "videoUrl": "https://www.youtube.com/embed/McKxCGLk5jY",
+      "content": {
+        "overview": "AI brings power, but also responsibility. This chapter examines bias, fairness, privacy, and the big question of accountability in AI systems.",
+        "sections": [
+          {
+            "title": "Step 1 – Bias in AI",
+            "content": "AI learns from data – if the data is biased, the results will be biased too.\nExample: A hiring AI trained mostly on male resumes may favor men unfairly.\nPause & Think: Have you seen an app or tool that you felt was unfair?"
+          },
+          {
+            "title": "Step 2 – Privacy Concerns",
+            "content": "AI thrives on big data, but collecting so much data can threaten privacy.\nFacial recognition in public spaces is especially controversial.\nMini Summary: Privacy must be balanced with innovation."
+          },
+          {
+            "title": "Step 3 – Accountability",
+            "content": "Who is responsible if an AI system makes a harmful decision – the developer, the company, or the AI?\nPause & Think: Imagine a self-driving car causes an accident. Who should be blamed?"
+          }
+        ],
+        "keyPoints": [
+          "AI can inherit and amplify human bias.",
+          "Massive data collection creates privacy challenges.",
+          "Accountability is a key unresolved issue in AI ethics."
+        ],
+        "practicalExercise": "Form small groups and debate: 'Should governments strictly regulate AI, or should innovation be left to companies?' Write down at least 3 arguments for each side."
+      }
+    },
+    {
+      "id": 6,
+      "title": "The Future of AI",
+      "duration": "55 minutes",
+      "videoUrl": "https://www.youtube.com/embed/5q87K1WaoFI",
+      "content": {
+        "overview": "We end the course by looking ahead. What does the future of AI hold? From robotics to creativity, we’ll explore opportunities and open questions.",
+        "sections": [
+          {
+            "title": "Step 1 – Human-AI Collaboration",
+            "content": "Future AI is less about replacing humans and more about working with us.\nDoctors + AI systems, Teachers + AI tutors, Artists + AI tools.\nPause & Think: Would you like an AI assistant for your studies?"
+          },
+          {
+            "title": "Step 2 – Robotics & Automation",
+            "content": "Robots may handle dangerous jobs like firefighting or deep-sea exploration.\nAutomation may change the job market significantly.\nMini Summary: Robotics is where AI meets the physical world."
+          },
+          {
+            "title": "Step 3 – Creative AI",
+            "content": "AI is now generating art, music, and even literature.\nDebate: Is AI creativity 'real' creativity, or just remixing human ideas?\nPause & Think: Would you attend a concert where all the music was AI-composed?"
+          }
+        ],
+        "keyPoints": [
+          "Future AI will likely emphasize collaboration with humans.",
+          "Robotics and automation will expand AI’s impact on industries.",
+          "Creative AI challenges our definition of creativity."
+        ],
+        "practicalExercise": "Write a short paragraph imagining life in 2040 with AI everywhere. Focus on one area: school, work, or home. Share with peers and compare visions."
+      }
+    }
   ],
   "resources": [
     {

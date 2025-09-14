@@ -1,0 +1,202 @@
+{
+  "id": 2,
+  "title": "Deep Neural Networks",
+  "category": "Deep Learning",
+  "level": "Intermediate",
+  "duration": "12 weeks",
+  "description": "Dive deep into neural network architectures and build sophisticated AI models.",
+  "instructor": "Prof. Michael Rodriguez",
+  "enrollmentCount": 1923,
+  "rating": 4.9,
+  "media": "videos/feature-2.mp4",
+  "thumbnail": "img/gallery-2.webp",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Advanced Neural Network Architectures",
+      "duration": "90 minutes",
+      "videoUrl": "https://www.youtube.com/embed/VS3OAXG-Rx4",
+      "content": {
+        "overview": "Explore advanced neural network architectures that power today's most sophisticated AI systems.",
+        "sections": [
+          {
+            "title": "Convolutional Neural Networks (CNNs)",
+            "content": "CNNs are specialized neural networks designed for processing grid-like data such as images. They use convolutional layers that apply filters to detect features like edges, textures, and patterns."
+          },
+          {
+            "title": "Recurrent Neural Networks (RNNs)",
+            "content": "RNNs are designed for sequential data and can maintain memory of previous inputs. Variants like LSTM and GRU solve the vanishing gradient problem of traditional RNNs."
+          },
+          {
+            "title": "Transformer Architecture",
+            "content": "Transformers use self-attention mechanisms to process sequences in parallel, making them highly efficient for natural language processing and other sequential tasks."
+          }
+        ],
+        "keyPoints": [
+          "Understanding CNN architecture and applications",
+          "Learning RNN variants and their use cases",
+          "Mastering transformer networks",
+          "Comparing different architectures for specific tasks"
+        ],
+        "practicalExercise": "Implement and compare CNN, RNN, and Transformer models on the same classification task."
+      }
+    },
+    {
+      "id": 2,
+      "title": "Deep Learning Optimization",
+      "duration": "85 minutes",
+      "videoUrl": "https://www.youtube.com/embed/tIeHLnjs5U8",
+      "content": {
+        "overview": "Master the art and science of training deep neural networks effectively.",
+        "sections": [
+          {
+            "title": "Optimization Algorithms",
+            "content": "Learn about advanced optimization algorithms like Adam, RMSprop, and AdaGrad that help neural networks converge faster and more reliably than basic gradient descent."
+          },
+          {
+            "title": "Regularization Techniques",
+            "content": "Explore methods to prevent overfitting including dropout, batch normalization, weight decay, and early stopping. These techniques help models generalize better to unseen data."
+          },
+          {
+            "title": "Hyperparameter Tuning",
+            "content": "Discover systematic approaches to hyperparameter optimization including grid search, random search, and Bayesian optimization to find the best model configurations."
+          }
+        ],
+        "keyPoints": [
+          "Implementing advanced optimization algorithms",
+          "Applying regularization techniques effectively",
+          "Systematic hyperparameter tuning strategies",
+          "Understanding the bias-variance tradeoff"
+        ],
+        "practicalExercise": "Optimize a deep network using different optimization algorithms and regularization techniques."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Transfer Learning and Fine-tuning",
+      "duration": "75 minutes",
+      "videoUrl": "https://www.youtube.com/embed/yofjFQddwHE",
+      "content": {
+        "overview": "Learn how to leverage pre-trained models to solve new problems efficiently.",
+        "sections": [
+          {
+            "title": "Understanding Transfer Learning",
+            "content": "Transfer learning involves taking a pre-trained model and adapting it to a new but related task. This approach can dramatically reduce training time and improve performance with limited data."
+          },
+          {
+            "title": "Fine-tuning Strategies",
+            "content": "Learn different approaches to fine-tuning including freezing layers, gradual unfreezing, and layer-wise learning rates to adapt pre-trained models effectively."
+          },
+          {
+            "title": "Domain Adaptation",
+            "content": "Explore techniques for adapting models across different domains, handling distribution shifts, and dealing with limited target domain data."
+          }
+        ],
+        "keyPoints": [
+          "Understanding when and how to use transfer learning",
+          "Implementing effective fine-tuning strategies",
+          "Handling domain shifts and adaptation",
+          "Leveraging pre-trained models efficiently"
+        ],
+        "practicalExercise": "Fine-tune a pre-trained image classification model for a custom dataset."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Generative Models",
+      "duration": "95 minutes",
+      "videoUrl": "https://www.youtube.com/embed/8L11aMN5KY8",
+      "content": {
+        "overview": "Explore the fascinating world of generative AI models that can create new content.",
+        "sections": [
+          {
+            "title": "Generative Adversarial Networks (GANs)",
+            "content": "GANs consist of two neural networks competing against each other: a generator that creates fake data and a discriminator that tries to detect fake data. This adversarial training produces remarkably realistic generated content."
+          },
+          {
+            "title": "Variational Autoencoders (VAEs)",
+            "content": "VAEs learn to encode data into a latent space and then decode it back. They can generate new data by sampling from the learned latent distribution."
+          },
+          {
+            "title": "Diffusion Models",
+            "content": "Diffusion models generate data by learning to reverse a gradual noising process. They have achieved state-of-the-art results in image generation and are behind popular models like DALL-E and Stable Diffusion."
+          }
+        ],
+        "keyPoints": [
+          "Understanding GAN architecture and training",
+          "Implementing Variational Autoencoders",
+          "Learning about diffusion models",
+          "Comparing different generative approaches"
+        ],
+        "practicalExercise": "Build a GAN to generate synthetic images and compare with a VAE approach."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Model Deployment and Production",
+      "duration": "80 minutes",
+      "videoUrl": "https://www.youtube.com/embed/6M5VXKLf4D4",
+      "content": {
+        "overview": "Learn how to deploy deep learning models in production environments.",
+        "sections": [
+          {
+            "title": "Model Optimization for Production",
+            "content": "Learn techniques to optimize models for deployment including quantization, pruning, and knowledge distillation to reduce model size and improve inference speed."
+          },
+          {
+            "title": "Deployment Strategies",
+            "content": "Explore different deployment options including cloud APIs, edge devices, mobile applications, and containerized services using Docker and Kubernetes."
+          },
+          {
+            "title": "Monitoring and Maintenance",
+            "content": "Understand how to monitor model performance in production, detect model drift, and implement continuous learning systems."
+          }
+        ],
+        "keyPoints": [
+          "Optimizing models for production deployment",
+          "Choosing appropriate deployment strategies",
+          "Implementing model monitoring and maintenance",
+          "Handling scalability and performance requirements"
+        ],
+        "practicalExercise": "Deploy a trained model as a REST API and implement basic monitoring."
+      }
+    }
+  ],
+  "prerequisites": [
+    "Completion of AI Fundamentals course or equivalent knowledge",
+    "Strong programming skills in Python",
+    "Understanding of linear algebra and calculus",
+    "Experience with machine learning frameworks (TensorFlow or PyTorch)"
+  ],
+  "learningOutcomes": [
+    "Master advanced neural network architectures",
+    "Implement state-of-the-art deep learning models",
+    "Optimize and deploy models in production",
+    "Understand cutting-edge research in deep learning",
+    "Build and train generative AI models"
+  ],
+  "resources": [
+    {
+      "type": "book",
+      "title": "Deep Learning",
+      "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+      "url": "#"
+    },
+    {
+      "type": "documentation",
+      "title": "PyTorch Documentation",
+      "url": "https://pytorch.org/docs/"
+    },
+    {
+      "type": "paper",
+      "title": "Attention Is All You Need (Transformer Paper)",
+      "url": "https://arxiv.org/abs/1706.03762"
+    }
+  ],
+  "quiz": {
+    "available": true,
+    "questionsCount": 35,
+    "passingScore": 85,
+    "timeLimit": 60
+  }
+}

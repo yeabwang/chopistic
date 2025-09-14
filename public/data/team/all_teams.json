@@ -13,7 +13,7 @@
     {
       "id": 2,
       "name": "Eric Bilyk",
-      "title": "Programmer & Problem Solver",
+      "title": "CEO & Programmer",
       "image": "/img/team/eric/profile.jpg",
       "linkedin": "https://linkedin.com/in/yourusername",
       "github": "https://github.com/TheGrayColour",
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "name": "Hamza",
-      "title": "Team Leader & Designer",
+      "title": "CIO & Designer",
       "image": "/img/team/hamza/profile.jpg",
       "linkedin": "https://linkedin.com/in/hamza-profile",
       "github": "https://github.com/hamza-username",
@@ -64,22 +64,22 @@
   "galleryImages": [
     {
       "id": 1,
-      "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop",
+      "src": "/img/gallery/team-1.jpg",
       "alt": "Team collaboration"
     },
     {
       "id": 2,
-      "src": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=800&fit=crop",
+      "src": "/img/gallery/team-2.jpg",
       "alt": "Team workshop"
     },
     {
       "id": 3,
-      "src": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=800&fit=crop",
+      "src": "/img/gallery/team-3.jpg",
       "alt": "Modern workspace"
     },
     {
       "id": 4,
-      "src": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&h=800&fit=crop",
+      "src": "/img/gallery/team-4.jpg",
       "alt": "Strategic planning"
     }
   ]

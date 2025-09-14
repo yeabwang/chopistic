@@ -1,6 +1,6 @@
 {
   "courseId": 1,
-  "courseName": "Artificial Intelligence Fundamentals",
+  "courseName": "AI Fundamentals",
   "quizzes": [
     {
       "id": 1,
@@ -8,7 +8,7 @@
       "chapterName": "Introduction to AI",
       "title": "AI Fundamentals Quiz",
       "description": "Test your understanding of basic AI concepts, history, and applications covered in the introduction chapter.",
-      "questions": 10,
+      "questions": 5,
       "estimatedTime": "15 mins",
       "difficulty": "Beginner",
       "totalPoints": 100,
@@ -23,30 +23,72 @@
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "What does AI stand for?",
+          "question": "What event is considered the official birth of Artificial Intelligence as a research field?",
           "options": [
-            "Artificial Intelligence",
-            "Advanced Integration",
-            "Automated Information",
-            "Algorithmic Interface"
+            "The invention of the microprocessor",
+            "The Dartmouth Conference of 1956",
+            "The release of the first iPhone",
+            "Alan Turing’s Enigma work"
           ],
-          "correctAnswer": 0,
+          "correctAnswer": 1,
           "points": 10,
-          "explanation": "AI stands for Artificial Intelligence, which refers to the simulation of human intelligence in machines."
+          "explanation": "The Dartmouth Conference brought together pioneers like John McCarthy and Marvin Minsky, marking AI’s beginning as an academic field."
         },
         {
           "id": 2,
           "type": "multiple-choice",
-          "question": "Which of the following is considered the father of AI?",
+          "question": "Which of the following is an example of Narrow AI?",
           "options": [
-            "Alan Turing",
-            "John McCarthy",
-            "Marvin Minsky",
-            "Herbert Simon"
+            "A chatbot answering customer queries",
+            "A system that can think like a human in any situation",
+            "A future AI that surpasses human intelligence",
+            "A self-aware robot from science fiction"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Narrow AI is designed for specific tasks. Chatbots are a classic case: they handle one well-defined job but lack general intelligence."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Why did movies like *2001: A Space Odyssey* or *Star Wars* influence public views of AI?",
+          "options": [
+            "They showed realistic neural networks",
+            "They popularized the idea of intelligent machines",
+            "They explained supervised learning",
+            "They discouraged AI research"
           ],
           "correctAnswer": 1,
           "points": 10,
-          "explanation": "John McCarthy coined the term 'Artificial Intelligence' and is often considered the father of AI."
+          "explanation": "Before AI was widely used, films shaped public imagination with friendly robots and scary supercomputers."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which of these is a limitation of today’s AI?",
+          "options": [
+            "It cannot classify images",
+            "It lacks common sense reasoning",
+            "It always produces unbiased results",
+            "It can fully replace doctors"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Modern AI can recognize patterns but struggles with everyday logic humans take for granted."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "When you unlock your phone with Face ID, which type of AI are you using?",
+          "options": [
+            "Natural Language Processing",
+            "Computer Vision",
+            "General AI",
+            "Reinforcement Learning"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Face ID uses computer vision, an AI method that lets machines interpret and understand visual information."
         }
       ]
     },
@@ -56,7 +98,7 @@
       "chapterName": "Machine Learning Basics",
       "title": "Machine Learning Concepts Quiz",
       "description": "Evaluate your knowledge of ML algorithms, supervised and unsupervised learning methods from chapter 2.",
-      "questions": 15,
+      "questions": 5,
       "estimatedTime": "20 mins",
       "difficulty": "Intermediate",
       "totalPoints": 150,
@@ -71,26 +113,82 @@
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "What is the main difference between supervised and unsupervised learning?",
+          "question": "What is the key difference between traditional programming and machine learning?",
           "options": [
-            "Supervised learning uses labeled data, unsupervised doesn't",
-            "Supervised learning is faster than unsupervised",
-            "Supervised learning uses more data",
-            "There is no difference"
+            "ML requires no data",
+            "ML systems learn patterns from data instead of following fixed rules",
+            "Traditional programming always makes fewer mistakes",
+            "ML cannot be used for predictions"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Traditional programming is rule-based. ML discovers rules by analyzing examples in data."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Which of the following best describes supervised learning?",
+          "options": [
+            "The model groups data without labels",
+            "The model learns by rewards and penalties",
+            "The model is trained on labeled input-output pairs",
+            "The model works without any training data"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Supervised learning uses labeled datasets to train models, like email spam filters that learn from examples of 'spam' and 'not spam'."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "A company groups customers based on their shopping behavior without using labels. Which ML approach is this?",
+          "options": [
+            "Supervised learning",
+            "Unsupervised learning",
+            "Reinforcement learning",
+            "Deep learning"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Unsupervised learning finds hidden patterns in unlabeled data, like clustering customers into groups."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which algorithm is most suitable for predicting the price of a house based on its size and location?",
+          "options": [
+            "Linear Regression",
+            "K-Means Clustering",
+            "Decision Trees",
+            "Neural Networks"
           ],
           "correctAnswer": 0,
           "points": 10,
-          "explanation": "Supervised learning uses labeled training data, while unsupervised learning finds patterns in unlabeled data."
+          "explanation": "Linear Regression predicts continuous numerical values such as prices or temperatures."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Why is the phrase 'Garbage in, garbage out' important in machine learning?",
+          "options": [
+            "ML systems can work without data",
+            "Bad data leads to poor models",
+            "It refers to hardware issues in AI",
+            "It means ML models cannot learn patterns"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "ML performance depends on the quality of training data. Biased or messy input will produce weak models."
         }
       ]
     },
     {
       "id": 3,
       "chapterId": 3,
-      "chapterName": "Neural Networks",
+      "chapterName": "Deep Learning Essentials",
       "title": "Neural Networks Deep Dive Quiz",
       "description": "Challenge yourself with neural network architectures and deep learning concepts from chapter 3.",
-      "questions": 12,
+      "questions": 5,
       "estimatedTime": "18 mins",
       "difficulty": "Advanced",
       "totalPoints": 120,
@@ -105,26 +203,82 @@
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "What is the purpose of an activation function in a neural network?",
+          "question": "What is the key difference between deep learning and traditional machine learning?",
           "options": [
-            "To introduce non-linearity",
-            "To speed up training",
-            "To reduce overfitting",
-            "To normalize input data"
+            "Deep learning requires no data",
+            "Deep learning automatically extracts features from raw data",
+            "Machine learning is always better",
+            "Deep learning is only used for robots"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Unlike traditional ML, deep learning can learn complex features directly from data using neural networks."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Which biological system inspired the design of neural networks?",
+          "options": [
+            "The respiratory system",
+            "The human brain",
+            "The digestive system",
+            "The skeletal system"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Artificial neural networks are inspired by the structure of neurons and their connections in the brain."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What is the main role of the hidden layers in a neural network?",
+          "options": [
+            "To add noise to the data",
+            "To transform inputs into progressively more abstract features",
+            "To directly output predictions",
+            "To clean the dataset"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Hidden layers capture complex patterns by building higher-level representations of the data."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which activation function is most commonly used in hidden layers today?",
+          "options": [
+            "Sigmoid",
+            "ReLU (Rectified Linear Unit)",
+            "Softmax",
+            "Step function"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "ReLU is computationally efficient and helps prevent the vanishing gradient problem."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Why is a large dataset important for training deep learning models?",
+          "options": [
+            "Because deep learning models have many parameters that need lots of examples to train",
+            "Because large datasets make training faster",
+            "Because deep learning doesn’t work with images",
+            "Because data quality doesn’t matter in deep learning"
           ],
           "correctAnswer": 0,
           "points": 10,
-          "explanation": "Activation functions introduce non-linearity to neural networks, allowing them to learn complex patterns."
+          "explanation": "With millions of parameters, deep networks need large datasets to avoid overfitting and learn effectively."
         }
       ]
     },
     {
       "id": 4,
       "chapterId": 4,
-      "chapterName": "AI Applications",
+      "chapterName": "Natural Language Processing (NLP)",
       "title": "Practical AI Applications Quiz",
       "description": "Apply your knowledge to real-world AI scenarios and case studies from chapter 4.",
-      "questions": 8,
+      "questions": 5,
       "estimatedTime": "12 mins",
       "difficulty": "Intermediate",
       "totalPoints": 80,
@@ -139,26 +293,82 @@
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "Which AI application is most commonly used in image recognition?",
+          "question": "What is the primary goal of Natural Language Processing?",
           "options": [
-            "Computer Vision",
-            "Natural Language Processing",
-            "Expert Systems",
-            "Genetic Algorithms"
+            "To translate human languages into binary code",
+            "To enable machines to understand, interpret, and generate human language",
+            "To create programming languages",
+            "To recognize faces in images"
           ],
-          "correctAnswer": 0,
+          "correctAnswer": 1,
           "points": 10,
-          "explanation": "Computer Vision is the AI field that deals with enabling computers to interpret and understand visual information."
+          "explanation": "NLP bridges the gap between human language and computer understanding."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Which technique is used to represent words as vectors in NLP?",
+          "options": [
+            "Bag of Words",
+            "Word Embeddings",
+            "Decision Trees",
+            "Neural Radiance Fields"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Word embeddings capture semantic meaning by placing words in a continuous vector space."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Which NLP task powers voice assistants like Siri or Alexa?",
+          "options": [
+            "Sentiment Analysis",
+            "Speech Recognition",
+            "Machine Translation",
+            "Topic Modeling"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Voice assistants use speech recognition to convert spoken words into text and commands."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which deep learning model architecture revolutionized NLP starting in 2017?",
+          "options": [
+            "Convolutional Neural Networks",
+            "Transformers",
+            "Support Vector Machines",
+            "K-Nearest Neighbors"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Transformers enabled powerful models like GPT and BERT, significantly advancing NLP tasks."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "When analyzing tweets to detect positive or negative tone, which NLP technique is being applied?",
+          "options": [
+            "Machine Translation",
+            "Named Entity Recognition",
+            "Sentiment Analysis",
+            "Speech-to-Text"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Sentiment analysis identifies emotional tone in text, often applied to social media posts."
         }
       ]
     },
     {
       "id": 5,
       "chapterId": 5,
-      "chapterName": "Course Summary",
+      "chapterName": "AI in the Real World",
       "title": "Final Comprehensive Assessment",
       "description": "Comprehensive evaluation covering all course topics and advanced problem-solving scenarios.",
-      "questions": 25,
+      "questions": 5,
       "estimatedTime": "35 mins",
       "difficulty": "Advanced",
       "totalPoints": 250,
@@ -174,16 +384,72 @@
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "In a comprehensive AI system, which component is responsible for learning from data?",
+          "question": "Which AI application is commonly used in healthcare today?",
           "options": [
-            "Knowledge Base",
-            "Machine Learning Module",
-            "User Interface",
-            "Database"
+            "Self-driving cars",
+            "Medical image analysis for disease detection",
+            "Game-playing robots",
+            "Weather prediction only"
           ],
           "correctAnswer": 1,
           "points": 10,
-          "explanation": "The Machine Learning Module is responsible for learning patterns and making predictions from data."
+          "explanation": "AI helps radiologists detect diseases like cancer by analyzing medical images."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Which industry uses recommendation systems most heavily?",
+          "options": [
+            "Entertainment platforms like Netflix and Spotify",
+            "Construction",
+            "Mining",
+            "Oil drilling"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Recommendation systems suggest movies, music, and products based on user preferences."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What role does AI play in self-driving cars?",
+          "options": [
+            "Detecting objects and making driving decisions",
+            "Only playing music",
+            "Replacing the car battery",
+            "Designing car shapes"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Computer vision and decision-making algorithms enable cars to navigate safely."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which AI-powered technology is used by financial institutions to spot fraud?",
+          "options": [
+            "Image captioning",
+            "Anomaly detection",
+            "Face swapping",
+            "Text summarization"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "AI detects unusual spending patterns that may indicate fraudulent activity."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Which of these is a risk of deploying AI in real-world systems?",
+          "options": [
+            "Bias in decision-making",
+            "Instant perfection in all predictions",
+            "No need for human oversight",
+            "AI models never make mistakes"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "AI may inherit biases from training data, leading to unfair outcomes."
         }
       ]
     }

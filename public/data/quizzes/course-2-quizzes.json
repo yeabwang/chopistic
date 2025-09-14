@@ -1,106 +1,1959 @@
 {
-  "courseId": 2,
-  "courseName": "Advanced Machine Learning",
+  "courseId": 1,
+  "courseName": "Natural Language Processing (NLP) Zero to Hero",
   "quizzes": [
     {
-      "id": 6,
+      "id": 1,
       "chapterId": 1,
-      "chapterName": "Advanced Algorithms",
-      "title": "Advanced ML Algorithms Quiz",
-      "description": "Test your understanding of advanced machine learning algorithms and their implementations.",
-      "questions": 12,
-      "estimatedTime": "18 mins",
-      "difficulty": "Advanced",
-      "totalPoints": 120,
-      "passingScore": 75,
+      "chapterName": "Text Classification & Sarcasm Detection",
+      "title": "NLP Basics Quiz",
+      "description": "Test your understanding of tokenization, classification, embeddings, and sarcasm detection from the first NLP transcripts.",
+      "questions": 15,
+      "estimatedTime": "20 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 150,
+      "passingScore": 70,
       "topics": [
-        "Ensemble Methods",
-        "SVM",
-        "Random Forest",
-        "Gradient Boosting"
+        "Text Classification",
+        "Tokenization",
+        "Padding & Sequences",
+        "Sarcasm Detection",
+        "Embeddings"
       ],
       "questionData": [
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "Which ensemble method combines multiple weak learners to create a strong learner?",
+          "question": "What is the main purpose of text classification in NLP?",
           "options": [
-            "Bagging",
-            "Boosting",
-            "Stacking",
-            "All of the above"
+            "Assign labels to text based on content",
+            "Tokenize sentences into numbers",
+            "Train LSTMs",
+            "Generate poetry"
           ],
-          "correctAnswer": 3,
+          "correctAnswer": 0,
           "points": 10,
-          "explanation": "All three methods (Bagging, Boosting, and Stacking) are ensemble techniques that combine weak learners."
+          "explanation": "Text classification assigns predefined labels (e.g., spam, positive sentiment) to text based on content."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "In sarcasm detection datasets, what does “is_sarcastic = 1” indicate?",
+          "options": [
+            "The headline is neutral",
+            "The headline is sarcastic",
+            "The headline is positive",
+            "The headline is negative"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "A value of 1 means the text is sarcastic."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What is the format of Rishabh Misra’s sarcasm dataset?",
+          "options": [
+            "CSV",
+            "JSON",
+            "Excel",
+            "TXT"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The sarcasm dataset is in JSON format."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which field in the dataset is ignored in model training?",
+          "options": [
+            "headline",
+            "article_link",
+            "is_sarcastic",
+            "None"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The article_link is metadata and not used in training."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Why is padding needed for text sequences?",
+          "options": [
+            "To reduce vocabulary size",
+            "To make sequences the same length for neural networks",
+            "To improve tokenization",
+            "To split training and testing data"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Padding ensures all input sequences have equal length."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "What does tokenization achieve?",
+          "options": [
+            "Converts words into numerical representations",
+            "Predicts next words",
+            "Detects sarcasm",
+            "Removes stop words"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Tokenization maps words into integers for processing."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "Which TensorFlow/Keras utility is used for tokenization?",
+          "options": [
+            "Tokenizer",
+            "Sequencer",
+            "DataLoader",
+            "EmbeddingLayer"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The Keras Tokenizer is used to convert text into tokens."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "What is truncation used for in preprocessing?",
+          "options": [
+            "Splitting training and testing sets",
+            "Cutting off sequences longer than a set length",
+            "Adding padding",
+            "Reducing vocabulary"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Truncation ensures sequences don’t exceed the max length."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "Which embedding is created by the Tokenizer for unseen words?",
+          "options": [
+            "<start>",
+            "<pad>",
+            "<oov>",
+            "<unk>"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The <oov> token is used for out-of-vocabulary words."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "What is the advantage of using real datasets like sarcasm headlines?",
+          "options": [
+            "More realistic training and testing",
+            "Faster computation",
+            "Smaller vocabularies",
+            "Less need for tokenization"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Real datasets help models generalize better."
+        },
+        {
+          "id": 11,
+          "type": "multiple-choice",
+          "question": "What does the “fit_on_texts” function in Keras Tokenizer do?",
+          "options": [
+            "Splits data into training and testing",
+            "Creates word index based on frequency",
+            "Pads sequences",
+            "Loads dataset"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "fit_on_texts builds a word index mapping words to integers."
+        },
+        {
+          "id": 12,
+          "type": "multiple-choice",
+          "question": "What is one challenge with sarcasm detection?",
+          "options": [
+            "Sarcasm often depends on context",
+            "Sentences are always too long",
+            "Datasets are always in Excel",
+            "Tokenization fails"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Sarcasm often needs context beyond words."
+        },
+        {
+          "id": 13,
+          "type": "multiple-choice",
+          "question": "What does “texts_to_sequences” function do?",
+          "options": [
+            "Tokenizes raw text into integers",
+            "Splits text into train and test",
+            "Pads data",
+            "Normalizes input"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "It converts tokenized words into integer sequences."
+        },
+        {
+          "id": 14,
+          "type": "multiple-choice",
+          "question": "Which library is used for JSON dataset loading in Python?",
+          "options": [
+            "csv",
+            "json",
+            "pickle",
+            "keras"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The json library is used to parse JSON files."
+        },
+        {
+          "id": 15,
+          "type": "multiple-choice",
+          "question": "Why are embeddings important in NLP models?",
+          "options": [
+            "Represent words in dense vector space",
+            "Split datasets",
+            "Pad sequences",
+            "Tokenize sentences"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Embeddings capture semantic meaning in continuous vector space. Quiz Metadata Available: true Questions Count: 15 Passing Score (%): 70 Time Limit (mins): 25 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "chapterId": 2,
+      "chapterName": "Tokenization, Padding & Sequences",
+      "title": "Sequence Processing Quiz",
+      "description": "Assess your knowledge of tokenization, padding, truncation, and sequence preprocessing for NLP models.",
+      "questions": 15,
+      "estimatedTime": "25 mins",
+      "difficulty": "Beginner–Intermediate",
+      "totalPoints": 150,
+      "passingScore": 70,
+      "topics": [
+        "Tokenization",
+        "Word Index",
+        "OOV Tokens",
+        "Padding",
+        "Truncation",
+        "Sequence Processing"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What does the Keras Tokenizer build after fitting on text?",
+          "options": [
+            "Word index dictionary",
+            "Embedding matrix",
+            "One-hot vectors",
+            "Training set"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The Tokenizer builds a word index mapping words to integers."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Which Keras function converts texts to integer sequences?",
+          "options": [
+            "fit_on_texts",
+            "pad_sequences",
+            "texts_to_sequences",
+            "one_hot_encode"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "texts_to_sequences transforms tokenized words into integer sequences."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What does the “oov_token” parameter handle?",
+          "options": [
+            "Out-of-vocabulary words",
+            "Padding",
+            "Long sequences",
+            "JSON parsing"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "oov_token substitutes unknown words with a special token."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which function ensures uniform length of sequences?",
+          "options": [
+            "pad_sequences",
+            "texts_to_sequences",
+            "fit_on_texts",
+            "trunc_sequences"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "pad_sequences adjusts sequence length by adding padding."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Padding is usually applied:",
+          "options": [
+            "At the end or beginning of sequences",
+            "Only for short texts",
+            "To remove OOV tokens",
+            "To reduce dataset size"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Padding can be added “post” or “pre” to align sequence lengths."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "Truncation is necessary when:",
+          "options": [
+            "Sequences exceed max length",
+            "Tokenization fails",
+            "Padding is insufficient",
+            "Data is shuffled"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Truncation shortens sequences longer than the allowed max length."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "Which argument defines padding direction in pad_sequences?",
+          "options": [
+            "truncating",
+            "padding",
+            "direction",
+            "oov_token"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The padding argument specifies whether padding is “pre” or “post”."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "Which is a disadvantage of one-hot encoding compared to embeddings?",
+          "options": [
+            "Sparse and high-dimensional",
+            "Easy to implement",
+            "Captures semantic meaning",
+            "Reduces training data"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "One-hot encoding is inefficient and does not capture semantics."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "Why is vocabulary size important in Tokenizer?",
+          "options": [
+            "It defines maximum words considered for encoding",
+            "It increases embedding dimensionality",
+            "It splits data into train/test",
+            "It removes sarcasm"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The vocab size controls how many unique words are indexed."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "What is the default padding type in Keras pad_sequences?",
+          "options": [
+            "post",
+            "pre",
+            "both",
+            "none"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "By default, Keras applies padding at the beginning (pre)."
+        },
+        {
+          "id": 11,
+          "type": "multiple-choice",
+          "question": "What problem arises without padding in training batches?",
+          "options": [
+            "Inconsistent input shape",
+            "Vocabulary mismatch",
+            "Embedding failure",
+            "Dataset corruption"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Neural networks require fixed-size inputs; padding ensures uniform shapes."
+        },
+        {
+          "id": 12,
+          "type": "multiple-choice",
+          "question": "Which sequence would result from padding [3, 4, 5] to length 5?",
+          "options": [
+            "[3, 4, 5, 0, 0]",
+            "[0, 0, 3, 4, 5]",
+            "[3, 4, 0, 5, 0]",
+            "[3, 0, 4, 5, 0]"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "With post-padding, zeros are added at the end."
+        },
+        {
+          "id": 13,
+          "type": "multiple-choice",
+          "question": "What does “num_words” parameter in Tokenizer specify?",
+          "options": [
+            "Max number of words to keep in vocabulary",
+            "Number of tokens per sentence",
+            "Dimension of embeddings",
+            "Number of epochs"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "num_words limits the size of the vocabulary."
+        },
+        {
+          "id": 14,
+          "type": "multiple-choice",
+          "question": "Which of the following is an out-of-vocabulary word handling strategy?",
+          "options": [
+            "Use <oov> token",
+            "Remove sentence",
+            "Skip training",
+            "Force padding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "OOV words are replaced with the <oov> token."
+        },
+        {
+          "id": 15,
+          "type": "multiple-choice",
+          "question": "Which Keras module provides pad_sequences?",
+          "options": [
+            "keras.preprocessing.sequence",
+            "keras.models",
+            "keras.layers",
+            "keras.datasets"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "pad_sequences is located in keras.preprocessing.sequence. Quiz Metadata Available: true Questions Count: 15 Passing Score (%): 70 Time Limit (mins): 25 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 3"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "chapterId": 3,
+      "chapterName": "Embeddings & Neural Networks",
+      "title": "Embeddings and Model Basics Quiz",
+      "description": "Check your understanding of embeddings, dense layers, and basic NLP model architectures.",
+      "questions": 15,
+      "estimatedTime": "25 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 150,
+      "passingScore": 70,
+      "topics": [
+        "Embeddings",
+        "Neural Networks",
+        "Dense Layers",
+        "Activation Functions",
+        "Model Training"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the main purpose of word embeddings?",
+          "options": [
+            "Represent words as dense vectors with semantic meaning",
+            "Split sentences into tokens",
+            "Pad sequences with zeros",
+            "Remove out-of-vocabulary tokens"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Embeddings map words to dense vectors capturing meaning."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "In Keras, which layer is used to create embeddings?",
+          "options": [
+            "Embedding",
+            "Dense",
+            "LSTM",
+            "Tokenizer"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The Embedding layer maps integers to dense vectors."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What do embedding dimensions represent?",
+          "options": [
+            "Length of the dense vector for each word",
+            "Number of tokens in a sentence",
+            "Vocabulary size",
+            "Training epochs"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The embedding dimension defines the size of the vector space."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Why are embeddings preferred over one-hot vectors?",
+          "options": [
+            "They are dense and capture relationships between words",
+            "They are easier to visualize",
+            "They make datasets smaller",
+            "They require no training"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Embeddings capture semantic similarity in continuous space."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Which Keras layer is typically added after an Embedding layer?",
+          "options": [
+            "Dense",
+            "Conv2D",
+            "Dropout",
+            "Flatten"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Flatten converts embedding outputs into a single vector for Dense layers."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "Which activation function is commonly used for binary classification?",
+          "options": [
+            "sigmoid",
+            "relu",
+            "softmax",
+            "tanh"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Sigmoid maps outputs between 0 and 1 for binary labels."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "Which activation function is common in hidden layers?",
+          "options": [
+            "relu",
+            "sigmoid",
+            "softmax",
+            "linear"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "ReLU is widely used for hidden layers due to efficiency."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "What is the role of the Dense layer in Keras?",
+          "options": [
+            "Fully connected layer for learning features",
+            "Converts text into tokens",
+            "Loads dataset",
+            "Adds padding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Dense layers perform feature transformation through weights."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "What does “binary_crossentropy” loss measure?",
+          "options": [
+            "Error in binary classification tasks",
+            "Sequence padding length",
+            "Vocabulary mismatch",
+            "Tokenization quality"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Binary crossentropy is used when predicting 0/1 labels."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "In a sarcasm detection model, the final activation is usually:",
+          "options": [
+            "sigmoid",
+            "softmax",
+            "relu",
+            "tanh"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Sigmoid outputs a probability between 0 and 1."
+        },
+        {
+          "id": 11,
+          "type": "multiple-choice",
+          "question": "What is “embedding_matrix” in pretrained embeddings?",
+          "options": [
+            "A table mapping word indices to vectors",
+            "A tokenizer dictionary",
+            "A JSON dataset",
+            "A padding sequence"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The embedding matrix holds pretrained word vectors."
+        },
+        {
+          "id": 12,
+          "type": "multiple-choice",
+          "question": "Which optimizer is commonly used in beginner NLP models?",
+          "options": [
+            "Adam",
+            "RMSprop",
+            "SGD",
+            "Nadam"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Adam is efficient and widely used in NLP tasks."
+        },
+        {
+          "id": 13,
+          "type": "multiple-choice",
+          "question": "What does model.compile() define?",
+          "options": [
+            "Loss, optimizer, and metrics for training",
+            "Dataset location",
+            "Tokenizer rules",
+            "Padding length"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "compile configures the model for training."
+        },
+        {
+          "id": 14,
+          "type": "multiple-choice",
+          "question": "Which Keras method is used to train a model?",
+          "options": [
+            "fit()",
+            "compile()",
+            "predict()",
+            "evaluate()"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "fit() trains the model on input and labels."
+        },
+        {
+          "id": 15,
+          "type": "multiple-choice",
+          "question": "Which Keras method is used to test model performance?",
+          "options": [
+            "evaluate()",
+            "predict()",
+            "compile()",
+            "load()"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "evaluate() computes loss and accuracy on test data. Quiz Metadata Available: true Questions Count: 20 Passing Score (%): 70 Time Limit (mins): 30 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 4"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "chapterId": 4,
+      "chapterName": "Recurrent Neural Networks (RNNs)",
+      "title": "Sequence Modeling with RNNs",
+      "description": "Evaluate your understanding of RNNs, sequential dependencies, and their limitations in NLP.",
+      "questions": 20,
+      "estimatedTime": "30 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 200,
+      "passingScore": 70,
+      "topics": [
+        "RNN basics",
+        "Sequence/context modeling",
+        "Limitations of RNN",
+        "LSTM introduction",
+        "Bi-directionality"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What does an RNN primarily capture?",
+          "options": [
+            "Tokenization",
+            "Sequence/context in data",
+            "Word embeddings",
+            "Text padding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNNs model dependencies across time steps in a sequence."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Why is sequence order important in text generation?",
+          "options": [
+            "It isn’t important",
+            "It determines the next word in a sequence",
+            "It reduces vocabulary",
+            "It allows one-hot encoding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The sequence order influences predictions of the next word."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "In RNNs, what is passed from one neuron to the next besides output?",
+          "options": [
+            "Embedding",
+            "Feed-forward value (context)",
+            "Zero padding",
+            "Token index"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNNs pass hidden state (context) to the next step."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "What is the limitation of basic RNNs over long sequences?",
+          "options": [
+            "Cannot tokenize words",
+            "Short-term memory is weak; distant words lose influence",
+            "Cannot handle embeddings",
+            "Cannot classify sarcasm"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNNs struggle with long-term dependencies."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "What type of network solves the long-term dependency problem?",
+          "options": [
+            "CNN",
+            "LSTM",
+            "Dense",
+            "Logistic Regression"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "LSTMs introduce gates to preserve long-term context."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "Which example demonstrates short-term memory?",
+          "options": [
+            "Predicting “sky” after “beautiful blue”",
+            "Tokenizing headlines",
+            "One-hot encoding",
+            "Using padding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Nearby words influence prediction directly."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "What is a bi-directional LSTM?",
+          "options": [
+            "Learns only forward sequence",
+            "Learns backward and forward sequence",
+            "Only uses embeddings",
+            "Only uses padding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Bi-directional LSTMs process text both ways."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "What does the “cell state” in LSTM do?",
+          "options": [
+            "Stores vocabulary",
+            "Maintains context across timestamps",
+            "Pads sequences",
+            "Encodes words into numbers"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The cell state acts as memory across sequences."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "Why are LSTMs better than RNNs for predicting “Gaelic” in the sentence about Ireland?",
+          "options": [
+            "Bi-directional training",
+            "They maintain long-range context",
+            "They ignore embeddings",
+            "They use tokenization only"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "LSTMs retain context across long distances."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "Which type of neural network was used in sarcasm classification?",
+          "options": [
+            "RNN",
+            "LSTM",
+            "Dense network only",
+            "CNN"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "LSTMs were used to capture context in sarcasm."
+        },
+        {
+          "id": 11,
+          "type": "multiple-choice",
+          "question": "What is a major advantage of RNNs for NLP?",
+          "options": [
+            "Faster tokenization",
+            "Captures sequential dependencies in text",
+            "Reduces vocabulary",
+            "Generates embeddings"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNNs model temporal/sequential relationships."
+        },
+        {
+          "id": 12,
+          "type": "multiple-choice",
+          "question": "What is the key difference between text classification and text generation tasks?",
+          "options": [
+            "Classification uses embeddings, generation doesn’t",
+            "Generation cares about order of words; classification may not",
+            "Generation doesn’t use neural networks",
+            "Classification cannot use RNNs"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Classification may treat words independently, but generation depends on order."
+        },
+        {
+          "id": 13,
+          "type": "multiple-choice",
+          "question": "How does RNN encode sequence like Fibonacci?",
+          "options": [
+            "It doesn’t",
+            "By feeding previous outputs as new inputs",
+            "By padding sequences",
+            "By tokenizing"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNNs reuse hidden states from previous steps."
+        },
+        {
+          "id": 14,
+          "type": "multiple-choice",
+          "question": "What happens when sequence context weakens in RNN?",
+          "options": [
+            "Long-range dependencies may be lost",
+            "Accuracy improves",
+            "Vocabulary increases",
+            "Embeddings fail"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNNs lose information over long sequences."
+        },
+        {
+          "id": 15,
+          "type": "multiple-choice",
+          "question": "Which scenario shows short-range dependencies?",
+          "options": [
+            "“Ireland → Gaelic” prediction",
+            "“Beautiful blue → sky” prediction",
+            "Classifying sarcasm",
+            "One-hot encoding labels"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "“Beautiful blue → sky” depends on local context."
+        },
+        {
+          "id": 16,
+          "type": "multiple-choice",
+          "question": "What does backpropagation through time (BPTT) do in RNNs?",
+          "options": [
+            "Trains weights across sequence steps",
+            "Pads sequences",
+            "Converts text into embeddings",
+            "Splits train and test sets"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "BPTT computes gradients across timesteps."
+        },
+        {
+          "id": 17,
+          "type": "multiple-choice",
+          "question": "What is a common issue when training RNNs?",
+          "options": [
+            "Exploding and vanishing gradients",
+            "Tokenization errors",
+            "Padding mismatches",
+            "Too few embeddings"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Gradients may vanish or explode across long steps."
+        },
+        {
+          "id": 18,
+          "type": "multiple-choice",
+          "question": "Which framework function creates an RNN layer in Keras?",
+          "options": [
+            "SimpleRNN()",
+            "Dense()",
+            "Embedding()",
+            "Tokenizer()"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "SimpleRNN() is the basic recurrent layer in Keras."
+        },
+        {
+          "id": 19,
+          "type": "multiple-choice",
+          "question": "Which of these tasks fits RNNs well?",
+          "options": [
+            "Predicting next word",
+            "Sorting vocabulary",
+            "Tokenization",
+            "Embedding visualization"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNNs are designed for sequence prediction."
+        },
+        {
+          "id": 20,
+          "type": "multiple-choice",
+          "question": "What is the input shape required for RNNs?",
+          "options": [
+            "(samples, timesteps, features)",
+            "(features, tokens)",
+            "(tokens, embeddings)",
+            "(timesteps, samples)"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNN inputs are 3D: samples × timesteps × features. Quiz Metadata Available: true Questions Count: 10 Passing Score (%): 70 Time Limit (mins): 20 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 5"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "chapterId": 5,
+      "chapterName": "LSTMs and RNNs",
+      "title": "Sequence Models Quiz",
+      "description": "Test your understanding of recurrent networks, LSTMs, and their role in NLP.",
+      "questions": 10,
+      "estimatedTime": "20 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "Recurrent Neural Networks",
+        "Long Short-Term Memory",
+        "Sequence Learning",
+        "Context in NLP"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What problem do RNNs aim to solve in NLP?",
+          "options": [
+            "Capturing sequential dependencies in text",
+            "Reducing dataset size",
+            "Tokenizing words",
+            "Increasing vocabulary"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "RNNs process sequences step by step, keeping context."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Why do vanilla RNNs struggle with long sequences?",
+          "options": [
+            "Vanishing/exploding gradients",
+            "Small vocabulary size",
+            "Poor tokenization",
+            "Limited embedding dimension"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Gradients can vanish or explode over long sequences."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What is the key advantage of LSTMs over RNNs?",
+          "options": [
+            "They use gates to handle long-term dependencies",
+            "They reduce vocabulary size",
+            "They tokenize text better",
+            "They train faster"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "LSTMs use gates to store/forget information effectively."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which gate in an LSTM controls what information to keep?",
+          "options": [
+            "Forget gate",
+            "Input gate",
+            "Output gate",
+            "Embedding gate"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Forget gate decides what past info should be discarded."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Which Keras layer implements LSTMs?",
+          "options": [
+            "LSTM",
+            "GRU",
+            "SimpleRNN",
+            "Dense"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The LSTM layer handles sequence modeling with memory cells."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "What is the main benefit of GRUs over LSTMs?",
+          "options": [
+            "Fewer parameters and faster training",
+            "Larger embedding space",
+            "Better tokenization",
+            "Pretrained embeddings included"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "GRUs simplify the structure, making them faster and efficient."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "Which activation function is often used inside LSTM gates?",
+          "options": [
+            "sigmoid",
+            "relu",
+            "tanh",
+            "softmax"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Sigmoid is used to gate values between 0 and 1."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "What does return_sequences=True do in an LSTM layer?",
+          "options": [
+            "Returns outputs for every time step",
+            "Returns only the last output",
+            "Flattens sequences",
+            "Pads sequences"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Setting return_sequences=True gives output for each step."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "Which task benefits most from LSTMs?",
+          "options": [
+            "Sentiment analysis",
+            "Image classification",
+            "Sorting numbers",
+            "Clustering documents"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Sentiment analysis uses sequence context captured by LSTMs."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "In sequence classification, the final Dense layer usually has:",
+          "options": [
+            "softmax activation",
+            "relu activation",
+            "tanh activation",
+            "linear activation"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Softmax outputs probability distribution across classes. Quiz Metadata Available: true Questions Count: 10 Passing Score (%): 70 Time Limit (mins): 20 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 6"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "chapterId": 6,
+      "chapterName": "Sequence Models in Practice",
+      "title": "Practical Sequence Modeling Quiz",
+      "description": "Assess your knowledge of applying sequence models like LSTMs and GRUs in real NLP tasks.",
+      "questions": 10,
+      "estimatedTime": "20 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "Practical use of RNNs",
+        "LSTMs and GRUs",
+        "Sequence classification",
+        "Model training challenges"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is a typical preprocessing step before feeding data into an LSTM?",
+          "options": [
+            "Padding sequences to equal length",
+            "Shuffling tokens randomly",
+            "Removing embeddings",
+            "Normalizing labels"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Sequences must be padded so the model processes uniform input."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "What is the purpose of return_sequences=False in an LSTM layer?",
+          "options": [
+            "Return only the last hidden state",
+            "Return outputs at every time step",
+            "Normalize the embeddings",
+            "Add dropout automatically"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "False ensures only the final hidden state is returned."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Which is a common problem when training RNNs on long text?",
+          "options": [
+            "Vanishing gradients",
+            "Too much padding",
+            "Large vocabulary",
+            "Tokenization speed"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Vanishing gradients reduce the ability to learn dependencies."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Why might GRUs be chosen over LSTMs in practice?",
+          "options": [
+            "They are simpler and train faster",
+            "They handle larger vocabularies",
+            "They improve tokenization",
+            "They increase embedding dimensions"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "GRUs simplify gating, reducing parameters."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "What is a bidirectional LSTM?",
+          "options": [
+            "An LSTM that reads sequences forward and backward",
+            "An LSTM with two outputs",
+            "A stacked LSTM",
+            "An LSTM with dropout"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Bidirectional LSTMs capture context from both directions."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "What is one downside of bidirectional LSTMs?",
+          "options": [
+            "They double the computation cost",
+            "They reduce accuracy",
+            "They require smaller vocabularies",
+            "They cannot be trained on text"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Bidirectional models require more resources."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "Which Keras layer is used to stack multiple LSTM layers?",
+          "options": [
+            "LSTM with return_sequences=True",
+            "Dense with softmax",
+            "Flatten",
+            "Embedding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "return_sequences=True allows stacking by passing outputs."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "Which dropout technique is often applied in LSTMs?",
+          "options": [
+            "Recurrent dropout",
+            "Spatial dropout",
+            "Gaussian dropout",
+            "Variational dropout"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Recurrent dropout regularizes the recurrent connections."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "For sequence labeling tasks like NER, the output should be:",
+          "options": [
+            "Predictions at every time step",
+            "A single prediction at the end",
+            "Randomized embeddings",
+            "Flattened vectors"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Labeling requires outputs for each token in the sequence."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "Which optimizer is typically effective for training LSTMs?",
+          "options": [
+            "Adam",
+            "SGD",
+            "Adagrad",
+            "RMSprop"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Adam balances efficiency and adaptive learning for LSTMs. Quiz Metadata Available: true Questions Count: 10 Passing Score (%): 70 Time Limit (mins): 20 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 7"
         }
       ]
     },
     {
       "id": 7,
-      "chapterId": 2,
-      "chapterName": "Deep Learning",
-      "title": "Deep Learning Architectures Quiz",
-      "description": "Evaluate your knowledge of various deep learning architectures and their applications.",
-      "questions": 15,
-      "estimatedTime": "22 mins",
+      "chapterId": 7,
+      "chapterName": "CNNs for Text",
+      "title": "Convolutional Models for NLP Quiz",
+      "description": "Evaluate your understanding of CNNs applied to text data, feature extraction, and classification.",
+      "questions": 10,
+      "estimatedTime": "20 mins",
       "difficulty": "Advanced",
-      "totalPoints": 150,
-      "passingScore": 80,
+      "totalPoints": 100,
+      "passingScore": 70,
       "topics": [
-        "CNN",
-        "RNN",
-        "LSTM",
-        "Transformer"
+        "Convolutional Neural Networks",
+        "Text classification",
+        "Feature extraction",
+        "CNN layers in Keras"
       ],
       "questionData": [
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "What type of neural network is best suited for image processing?",
+          "question": "Why can CNNs be applied to text data?",
           "options": [
-            "RNN",
-            "CNN",
-            "LSTM",
-            "GAN"
+            "They capture local n-gram features",
+            "They remove stopwords",
+            "They normalize embeddings",
+            "They reduce vocabulary size"
           ],
-          "correctAnswer": 1,
+          "correctAnswer": 0,
           "points": 10,
-          "explanation": "Convolutional Neural Networks (CNNs) are specifically designed for image processing tasks."
+          "explanation": "Convolutions detect local patterns like n-grams."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "What does a convolution filter do in text CNNs?",
+          "options": [
+            "Slides over word embeddings to detect features",
+            "Tokenizes sentences",
+            "Reduces sequence length",
+            "Converts words to indices"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Filters extract feature maps by sliding over embeddings."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Which Keras layer is commonly used for 1D convolutions on text?",
+          "options": [
+            "Conv1D",
+            "Conv2D",
+            "Dense",
+            "Flatten"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Conv1D applies convolutions along sequence dimensions."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "What is the role of pooling in CNNs for text?",
+          "options": [
+            "Reduces dimensionality while keeping important features",
+            "Tokenizes sentences",
+            "Normalizes embeddings",
+            "Increases sequence length"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Pooling summarizes local features into a compact form."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Which pooling method is most common in text CNNs?",
+          "options": [
+            "GlobalMaxPooling1D",
+            "AveragePooling2D",
+            "Flatten",
+            "Dropout"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "GlobalMaxPooling1D captures the strongest signal per feature."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "What is an advantage of CNNs over RNNs in NLP?",
+          "options": [
+            "Faster training and parallelization",
+            "Larger vocabulary handling",
+            "Longer memory capacity",
+            "Better embeddings"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "CNNs can process sequences in parallel efficiently."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "What is a common use case for CNNs in NLP?",
+          "options": [
+            "Text classification",
+            "Machine translation",
+            "Sequence-to-sequence tasks",
+            "Long-term dependency modeling"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "CNNs excel at extracting features for classification."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "Which combination is typical in a CNN text classifier?",
+          "options": [
+            "Embedding → Conv1D → GlobalMaxPooling → Dense",
+            "Embedding → LSTM → Dense",
+            "Tokenizer → RNN → Dense",
+            "Embedding → Flatten → Dense"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "This stack extracts features then classifies them."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "What does kernel_size in Conv1D represent?",
+          "options": [
+            "Number of words the filter spans",
+            "Embedding dimension",
+            "Vocabulary size",
+            "Number of output classes"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Kernel size controls how many tokens are covered."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "What is a drawback of CNNs for NLP?",
+          "options": [
+            "Limited ability to capture long-range dependencies",
+            "Too slow to train",
+            "No use for embeddings",
+            "Only work for binary tasks"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "CNNs focus on local context, not long-term dependencies. Quiz Metadata Available: true Questions Count: 10 Passing Score (%): 70 Time Limit (mins): 20 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 8"
         }
       ]
     },
     {
       "id": 8,
-      "chapterId": 3,
-      "chapterName": "Model Optimization",
-      "title": "Optimization Techniques Quiz",
-      "description": "Test your knowledge of model optimization, hyperparameter tuning, and performance improvement.",
+      "chapterId": 8,
+      "chapterName": "Text Generation with LSTMs",
+      "title": "Generative Text Modeling Quiz",
+      "description": "Assess your understanding of text generation using LSTMs, including sequence preparation, n-grams, and prediction strategies.",
       "questions": 10,
-      "estimatedTime": "15 mins",
-      "difficulty": "Intermediate",
+      "estimatedTime": "20 mins",
+      "difficulty": "Advanced",
       "totalPoints": 100,
       "passingScore": 70,
       "topics": [
-        "Hyperparameter Tuning",
-        "Cross Validation",
-        "Regularization",
-        "Optimization Algorithms"
+        "Text generation",
+        "Sequence modeling",
+        "n-gram sequences",
+        "Prediction and padding"
       ],
       "questionData": [
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "What is the purpose of cross-validation?",
+          "question": "What type of dataset was used for poetry generation in the example?",
           "options": [
-            "To prevent overfitting",
-            "To estimate model performance",
-            "To tune hyperparameters",
-            "All of the above"
+            "Irish song lyrics",
+            "News headlines",
+            "Social media posts",
+            "Shakespeare plays"
           ],
-          "correctAnswer": 3,
+          "correctAnswer": 0,
           "points": 10,
-          "explanation": "Cross-validation serves multiple purposes including preventing overfitting, estimating performance, and helping with hyperparameter tuning."
+          "explanation": "The model was trained on traditional Irish song lyrics."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Why is there no validation set in text generation tasks?",
+          "options": [
+            "All data is used to capture word patterns",
+            "Validation reduces accuracy",
+            "The model cannot handle extra data",
+            "Training is faster without validation"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Using all data helps the model learn complete patterns for generation."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What is the purpose of n-grams in text generation?",
+          "options": [
+            "Predict the next word based on previous words",
+            "Reduce vocabulary size",
+            "Tokenize text",
+            "Pad sequences"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "n-grams provide context for predicting the following word."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "How are sequences padded before training?",
+          "options": [
+            "Add zeros to match max sentence length",
+            "Remove rare words",
+            "Shuffle tokens",
+            "Increase embedding dimension"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Padding ensures consistent input size for the LSTM."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "In input sequences, what represents X and Y?",
+          "options": [
+            "X: all tokens except last, Y: last token",
+            "X: first token only, Y: remaining tokens",
+            "X: embeddings, Y: padded values",
+            "X: full sequence, Y: zero"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The model learns to predict the last token from prior tokens."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "What activation function is used in the dense output layer for multi-class prediction?",
+          "options": [
+            "softmax",
+            "relu",
+            "sigmoid",
+            "tanh"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Softmax outputs probabilities for each possible next word."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "What does seeding the model mean?",
+          "options": [
+            "Providing initial words for generation",
+            "Initializing embeddings",
+            "Padding sequences",
+            "Tokenizing text"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Seed words guide the model to start generating text."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "Why is a large embedding dimension (e.g., 240) used?",
+          "options": [
+            "Capture variation of words in the corpus",
+            "Speed up training",
+            "Reduce vocabulary",
+            "Enable one-hot encoding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Higher dimensions allow more nuanced representation of words."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "How is text generated after the first word prediction?",
+          "options": [
+            "Append predicted word to seed sequence and continue",
+            "Only predict once",
+            "Reset the sequence each time",
+            "Ignore previous words"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Appending predictions allows continuous text generation."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "What is a typical initial accuracy when training a text generation LSTM?",
+          "options": [
+            "Very low (~0.05)",
+            "High (~90%)",
+            "Moderate (~50%)",
+            "Perfect (100%)"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The model starts with low accuracy and improves with training. Quiz Metadata Available: true Questions Count: 10 Passing Score (%): 70 Time Limit (mins): 20 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 9"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "chapterId": 9,
+      "chapterName": "Advanced Text Generation Techniques",
+      "title": "Text Generation & Practical Use Quiz",
+      "description": "Test your knowledge of advanced techniques in text generation, including bi-directional LSTMs, n-grams, and handling unseen sequences.",
+      "questions": 10,
+      "estimatedTime": "20 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "Text generation strategies",
+        "Bi-directional LSTMs",
+        "n-gram modeling",
+        "Handling unknown sequences"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "How does the model handle unseen sequences in text generation?",
+          "options": [
+            "Makes a rough prediction for the next word",
+            "Drops the sequence",
+            "Re-initializes embeddings",
+            "Skips prediction"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The model predicts the next word even for sequences not seen during training."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Which method is used to generate multiple words in sequence?",
+          "options": [
+            "Append predicted words and predict again",
+            "Tokenize only once",
+            "Use separate LSTMs for each word",
+            "Randomly sample embeddings"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The predicted word is appended to the input and the process repeats."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What type of layer predicts the next word in text generation?",
+          "options": [
+            "LSTM",
+            "Dense",
+            "Conv1D",
+            "Tokenizer"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "LSTM layers process sequences and predict next tokens."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Why might generated text appear nonsensical sometimes?",
+          "options": [
+            "Limited understanding and small training data",
+            "Embeddings are incorrect",
+            "Padding is too long",
+            "Tokenizer fails"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Insufficient training data or model understanding can produce incoherent text."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "What does bi-directional LSTM improve in poetry generation?",
+          "options": [
+            "Forward and backward context for better semantics",
+            "Only forward context",
+            "Padding efficiency",
+            "One-hot encoding accuracy"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Bi-directional LSTMs incorporate context from both directions."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "How are features and labels related in n-gram sequences?",
+          "options": [
+            "X = past words, Y = next word",
+            "X = embeddings, Y = padding",
+            "X = one-hot, Y = dense layer",
+            "X = dense layer, Y = embeddings"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Past words predict the next word in sequence modeling."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "Which Python function converts labels to categorical format?",
+          "options": [
+            "keras.utils.to_categorical",
+            "keras.preprocessing.text.Tokenizer",
+            "pad_sequences",
+            "Sequential()"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "to_categorical transforms integer labels into one-hot vectors."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "Why stack multiple LSTM layers in text generation?",
+          "options": [
+            "To allow deeper modeling of sequential patterns",
+            "To reduce embeddings",
+            "To avoid tokenization",
+            "To replace one-hot encoding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Stacking layers helps the model learn complex sequential dependencies."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "What is a key takeaway from the text generation series?",
+          "options": [
+            "RNNs and LSTMs can capture context and generate text",
+            "Neural networks cannot learn sequences",
+            "Tokenization is unnecessary",
+            "Padding always reduces accuracy"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Proper sequence modeling allows neural networks to generate coherent text."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "What is the accuracy range of the simple text generation model?",
+          "options": [
+            "70–75%",
+            "50–55%",
+            "60–65%",
+            "80–85%"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The basic model achieves approximately 70–75% accuracy after training. Quiz Metadata Available: true Questions Count: 10 Passing Score (%): 70 Time Limit (mins): 20 📝 Quizzes Information (course-1-quizzes.json) Course ID: 1 Course Name: Natural Language Processing (NLP) Zero to Hero Quiz 10"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "chapterId": 10,
+      "chapterName": "Text Generation Results & Practical Use",
+      "title": "Text Generation Results Quiz",
+      "description": "Evaluate understanding of results, practical use, and interpretation of LSTM-generated text.",
+      "questions": 10,
+      "estimatedTime": "20 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 100,
+      "passingScore": 70,
+      "topics": [
+        "Text generation evaluation",
+        "Handling unseen sequences",
+        "Prediction methodology",
+        "Bi-directional LSTM interpretation"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the accuracy range of the simple text generation model?",
+          "options": [
+            "70–75%",
+            "50–55%",
+            "60–65%",
+            "80–85%"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The text generation model achieves roughly 70–75% accuracy after training."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "How does the model handle sequences it hasn’t seen before?",
+          "options": [
+            "Makes a rough prediction for the next word",
+            "Fails completely",
+            "Uses padding only",
+            "Tokenizes incorrectly"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The model predicts the next word based on learned patterns even for unseen sequences."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Which method is used to repeatedly generate multiple words?",
+          "options": [
+            "Append predicted words to sequence and predict again",
+            "Tokenize once",
+            "Pad each word separately",
+            "Ignore previous predictions"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Sequentially appending predictions allows generation of longer text."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "What type of neural network layer predicts next words in text generation?",
+          "options": [
+            "LSTM",
+            "Dense",
+            "Convolutional",
+            "Tokenizer"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "LSTM layers are used for sequence modeling and predicting next tokens."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Why might generated text sometimes appear nonsensical?",
+          "options": [
+            "Limited understanding and small training data",
+            "Embeddings are incorrect",
+            "Padding is too long",
+            "Tokenizer fails"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Small datasets or limited model understanding may lead to incoherent output."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "What does “bi-directional” improve in poetry generation?",
+          "options": [
+            "Forward and backward context for better semantics",
+            "Only forward context",
+            "Padding efficiency",
+            "One-hot encoding accuracy"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Bi-directional LSTMs allow context from both directions to influence predictions."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "How are features and labels related in n-gram sequences?",
+          "options": [
+            "X = past words, Y = next word",
+            "X = embeddings, Y = padding",
+            "X = one-hot, Y = dense layer",
+            "X = dense layer, Y = embeddings"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The model uses past words to predict the next word."
+        },
+        {
+          "id": 8,
+          "type": "multiple-choice",
+          "question": "Which Python function helps convert labels to categorical?",
+          "options": [
+            "keras.utils.to_categorical",
+            "keras.preprocessing.text.Tokenizer",
+            "pad_sequences",
+            "Sequential()"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "to_categorical converts integer labels to one-hot encoding."
+        },
+        {
+          "id": 9,
+          "type": "multiple-choice",
+          "question": "Why is stacking LSTM layers sometimes useful?",
+          "options": [
+            "Allows deeper modeling of sequential patterns",
+            "Reduces embeddings",
+            "Avoids tokenization",
+            "Replaces one-hot encoding"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Stacked LSTMs can learn complex patterns and hierarchical dependencies."
+        },
+        {
+          "id": 10,
+          "type": "multiple-choice",
+          "question": "What is a key takeaway from the series?",
+          "options": [
+            "RNNs and LSTMs can capture context and generate text",
+            "Neural networks cannot learn sequences",
+            "Tokenization is unnecessary",
+            "Padding always reduces accuracy"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Proper use of RNNs and LSTMs enables learning sequential patterns and generating coherent text."
         }
       ]
     }

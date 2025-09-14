@@ -15,7 +15,7 @@
       "id": 1,
       "title": "Introduction to Computer Vision",
       "duration": "45 minutes",
-      "videoUrl": "https://www.youtube.com/embed/2w8XIskzdFw",
+      "videoUrl": "https://www.youtube.com/watch?v=2w8XIskzdFw",
       "content": {
         "overview": "What is computer vision, where it’s used, and how images become data.",
         "sections": [
@@ -44,7 +44,7 @@
       "id": 2,
       "title": "OpenCV Basics (Python)",
       "duration": "60 minutes",
-      "videoUrl": "https://www.youtube.com/embed/oXlwWbU8l2o",
+      "videoUrl": "https://www.youtube.com/watch?v=oXlwWbU8l2o",
       "content": {
         "overview": "Hands-on with OpenCV: read/write, resize, crop, draw, filter, and transform images.",
         "sections": [
@@ -73,7 +73,7 @@
       "id": 3,
       "title": "Convolutional Neural Networks (CNNs)",
       "duration": "60 minutes",
-      "videoUrl": "https://www.youtube.com/embed/YRhxdVk_sIs",
+      "videoUrl": "https://www.youtube.com/watch?v=YRhxdVk_sIs",
       "content": {
         "overview": "Convolutions, kernels, feature maps, pooling, and why CNNs work on images.",
         "sections": [
@@ -102,7 +102,7 @@
       "id": 4,
       "title": "Transfer Learning for Image Classification (PyTorch)",
       "duration": "75 minutes",
-      "videoUrl": "https://www.youtube.com/embed/Lxm8x35vlM0",
+      "videoUrl": "https://www.youtube.com/watch?v=Lxm8x35vlM0",
       "content": {
         "overview": "Speed up training with pretrained backbones (ResNet, MobileNet) and fine-tune on your dataset.",
         "sections": [
@@ -131,7 +131,7 @@
       "id": 5,
       "title": "Object Detection with YOLOv8",
       "duration": "75 minutes",
-      "videoUrl": "https://www.youtube.com/embed/videoseries?si=4WMA0lV_vCwJRZQh&amp;list=PLv8Cp2NvcY8ClWpGlPJ9tmBmUhlA94Umy",
+      "videoUrl": "https://www.youtube.com/playlist?list=PLv8Cp2NvcY8ClWpGlPJ9tmBmUhlA94Umy",
       "content": {
         "overview": "From boxes and anchors to training a custom detector with YOLOv8.",
         "sections": [
@@ -160,7 +160,7 @@
       "id": 6,
       "title": "Image Segmentation with U-Net",
       "duration": "75 minutes",
-      "videoUrl": "https://www.youtube.com/embed/IHq1t7NxS8k",
+      "videoUrl": "https://www.youtube.com/watch?v=IHq1t7NxS8k",
       "content": {
         "overview": "Pixel-wise prediction with U-Net; loss functions and evaluation.",
         "sections": [
@@ -189,7 +189,7 @@
       "id": 7,
       "title": "Features, Matching & Homography",
       "duration": "60 minutes",
-      "videoUrl": "https://www.youtube.com/embed/XMBkyudYjm4",
+      "videoUrl": "https://www.youtube.com/watch?v=XMBkyudYjm4",
       "content": {
         "overview": "Classical CV: SIFT/ORB features, matching, RANSAC, panorama stitching.",
         "sections": [
@@ -218,7 +218,7 @@
       "id": 8,
       "title": "Model Export & Deployment Basics (ONNX/TFLite)",
       "duration": "60 minutes",
-      "videoUrl": "https://www.youtube.com/embed/7nutT3Aacyw",
+      "videoUrl": "https://www.youtube.com/watch?v=7nutT3Aacyw",
       "content": {
         "overview": "Export trained models and run them efficiently on-device.",
         "sections": [
