@@ -1,157 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, black, purple);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      color: #fff;
+      background: #0f172a;
+      color: #f1f5f9;
+      scroll-behavior: smooth;
+    }
+    section {
+      padding: 6rem 2rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    /* ---------- HERO ---------- */
+    #hero {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
+      align-items: center;
       justify-content: center;
-      align-items: flex-start; /* Push content higher */
-      padding: 2rem;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 2rem;
-      max-width: 950px;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: flex-start;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-      margin-top: -40px; /* Move the whole card a bit up */
-    }
-
-    .card:hover {
-      transform: scale(1.02);
-    }
-
-    .profile-pic {
-      flex: 1 1 250px;
       text-align: center;
-      margin-top: -20px; /* Lift profile picture higher */
+      background: linear-gradient(to bottom right, #fbbf24, #3b82f6);
+      color: #fff;
     }
-
-    .profile-pic img {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 20px; /* Rounded square */
-      border: 4px solid rgba(255,255,255,0.5);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .profile-pic img:hover {
-      transform: rotate(-2deg) scale(1.05);
-    }
-
-    .intro {
-      flex: 2 1 500px;
-      background: rgba(0,0,0,0.6); /* Black with 60% transparency */
-      padding: 1.5rem;
-      border-radius: 12px;
-    }
-
-    .intro h2 {
-      font-size: 2rem;
+    #hero h1 {
+      font-size: 3.5rem;
       margin-bottom: 1rem;
-      color: #ffd369;
     }
-
-    .intro p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #f0f0f0;
+    #hero h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
     }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
+    .hero-badge {
+      background: rgba(15,23,42,0.8);
+      padding: 2rem;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem auto;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fbbf24;
+    }
+    /* ---------- ABOUT ---------- */
+    #about {
+      background: #0f172a;
+    }
+    .about-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .section-title span {
+      color: #fbbf24;
+      font-weight: 600;
+      letter-spacing: 2px;
       font-size: 0.9rem;
-      background: rgba(0,0,0,0.2);
+      text-transform: uppercase;
     }
+    .about-text h2 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin: 1rem 0;
+    }
+    .about-text .highlight {
+      background: linear-gradient(to right, #fbbf24, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .about-text p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+    .about-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .about-card {
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: transform 0.3s;
+    }
+    .about-card:hover {
+      transform: translateY(-6px);
+    }
+    .about-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #fbbf24;
+    }
+    .about-card p {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+    }
+    @media (max-width: 900px) {
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+      .about-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* ---------- EXPERIENCE ---------- */
+    #experience {
+      background: #706b6b;
+      color: #111;
+    }
+    #experience h2 {
+      color: #111;
+    }
+    .experience-timeline {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .experience-card {
+      background: #f9fafb;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .experience-card:hover {
+      transform: translateY(-6px);
+    }
+    .experience-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .experience-card .company {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .experience-card .period {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .experience-card .desc {
+      margin-bottom: 1rem;
+      color: #444;
+    }
+    .achievements {
+      padding-left: 1.2rem;
+      margin: 0;
+      color: #333;
+    }
+    .achievements li {
+      margin-bottom: 0.5rem;
+    }
+    .experience-card.blue { border-left: 6px solid #3b82f6; }
+    .experience-card.green { border-left: 6px solid #22c55e; }
+    .experience-card.purple { border-left: 6px solid #a855f7; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>About Me</h1>
-    <p>Welcome to my personal webpage ✨</p>
-  </header>
+  <!-- Hero Section -->
+<section id="hero" class="relative flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="text-center">
+    <!-- Floating Square Frame (Smaller) -->
+    <div class="hero-frame w-32 h-32 mx-auto border-4 border-gray-800 shadow-lg overflow-hidden">
+      <img src="Profile-pic.jpg" alt="Hamza Bilal" class="w-full h-full object-cover" />
+    </div>
 
-  <main>
-    <div class="card">
-      <div class="profile-pic">
-        <!-- Replace with your picture -->
-        <img src="Profile-pic.jpg" alt="My Photo">
-      </div>
+    <!-- Your Info -->
+    <h1 class="mt-4 text-3xl font-bold">Hamza Bilal</h1>
+    <h2 class="mt-2 text-xl text-gray-600">Creative Developer & Designer</h2>
+    <p class="mt-2 text-gray-500">Coffee Enthusiast ☕ | Communication king 💻</p>
+  </div>
+</section>
 
-      <div class="intro">
-        <h2>Hello, I'm Hamza</h2>
+<style>
+  /* Floating animation for the frame */
+  .hero-frame {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+</style>
+
+
+<style>
+  /* Floating animation for the frame */
+  .hero-frame {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+</style>
+
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <div class="section-title"><span>About Me</span></div>
+        <h2>
+          Passionate about creating
+          <span class="highlight">Coffee</span>
+        </h2>
         <p>
-          <!-- Replace this with your 200-word intro -->
-			As an extroverted and optimistic individual, I excel where teamwork and innovation come together. I am naturally receptive to questions, which makes me introduce new ideas into the mix while valuing the personal contribution of others. My good communication skills and hearing other sides make me help build a cult of team
-			As an extroverted individual with a positive attitude, I work most efficiently in environments where teamwork and innovation overlap. I am extremely open to conversation, which allows me to introduce new ideas into the mix while also valuing other people's individual ideas. Good communication ability along with my ability to value different perspectives create a team culture where all concerned feel heard and motivated.
-			Having had experience as a CEO of two teams in the past, I have leadership skills and knowledge of how to direct a team towards shared goals. Skills acquired in the process included management of a team, conflict management, and staying grounded despite pressure. Such experiences taught me that direction and flexibility are key in balance—making strides while leaving space for innovation.
-			In addition to leadership, I am technically inclined and creative. Having excellent design instincts and above-average video editing skills, I enjoy bringing ideas to polished completions that are imbued with vision and precision.
-			What I bring to this team is not only experience, but enthusiasm for building synergy, creating open collaboration, and translating collective ideas into effectual results. I believe together we can produce work that is not only effectual, but inspiring.
-
-          blandit, sagittis nulla id, feugiat lorem.  
+          As an extroverted and optimistic individual, I excel where teamwork and innovation come together. I am naturally receptive to questions, which makes me introduce new ideas into the mix while valuing the personal contribution of others. My good communication skills and hearing other sides make me help build a cult of team
+          As an extroverted individual with a positive attitude, I work most efficiently in environments where teamwork and innovation overlap. I am extremely open to conversation, which allows me to introduce new ideas into the mix while also valuing other people's individual ideas. Good communication ability along with my ability to value different perspectives create a team culture where all concerned feel heard and motivated.
+          Having had experience as a CEO of two teams in the past, I have leadership skills and knowledge of how to direct a team towards shared goals. Skills acquired in the process included management of a team, conflict management, and staying grounded despite pressure. Such experiences taught me that direction and flexibility are key in balance—making strides while leaving space for innovation.
+          In addition to leadership, I am technically inclined and creative. Having excellent design instincts and above-average video editing skills, I enjoy bringing ideas to polished completions that are imbued with vision and precision.
+          What I bring to this team is not only experience, but enthusiasm for building synergy, creating open collaboration, and translating collective ideas into effectual results. I believe together we can produce work that is not only effectual, but inspiring.
+        </p>
+        <p>
+          I enjoy combining <strong>creativity</strong> and <strong>technology</strong> to build websites that not only look beautiful but also deliver results.
         </p>
       </div>
+      <div class="about-cards">
+        <div class="about-card">
+          <h3>📍 Location</h3>
+          <p>my room :3</p>
+        </div>
+        <div class="about-card">
+          <h3>❤️ Passion</h3>
+          <p>Designing and coding creative digital products that inspire people.</p>
+        </div>
+        <div class="about-card">
+          <h3>💡 Mindset</h3>
+          <p>Always curious, always learning — turning ideas into real solutions.</p>
+        </div>
+        <div class="about-card">
+          <h3>🎯 Goal</h3>
+          <p>To create meaningful experiences that leave a positive impact.</p>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <footer>
-    <p>© 2025 Chopsticks — All rights reserved.</p>
-  </footer>
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-timeline">
+      <div class="experience-card blue">
+        <h3>CIO of Chopsicks</h3>
+        <p class="company">Chopsticks — <span>BIT</span></p>
+        <p class="period">present - Present</p>
+        <p class="desc">leading in meme sticks and reminding what we gotta do T_T</p>
+        <ul class="achievements">
+          <li>increaded the bloodpresure of the programmers</li>
+          <li>led the CEO to geesunke</li>
+          <li>petted a cat</li>
+        </ul>
+      </div>
+      <div class="experience-card green">
+        <h3>Full Time Chill guy</h3>
+        <p class="company">Chopsticks — <span>Remote</span></p>
+        <p class="period">2000- present</p>
+        <p class="desc">idk this webpage</p>
+        <ul class="achievements">
+          <li>Built this webpage.</li>
+          <li>implimented this webpage.</li>
+          <li>Reduced nothing and made this webpage :3.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
-
