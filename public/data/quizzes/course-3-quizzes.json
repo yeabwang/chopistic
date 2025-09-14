@@ -1,106 +1,720 @@
 {
-  "courseId": 3,
-  "courseName": "Data Science & Analytics",
+  "courseId": 101,
+  "courseName": "Computer Vision Fundamentals",
   "quizzes": [
     {
-      "id": 9,
+      "id": 1,
       "chapterId": 1,
-      "chapterName": "Data Analysis Fundamentals",
-      "title": "Data Analysis Basics Quiz",
-      "description": "Test your understanding of fundamental data analysis concepts and statistical methods.",
-      "questions": 10,
-      "estimatedTime": "15 mins",
+      "chapterName": "Introduction to Computer Vision",
+      "title": "CV Basics Quiz",
+      "description": "Test your understanding of CV definitions, applications, and data representations.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
       "difficulty": "Beginner",
-      "totalPoints": 100,
+      "totalPoints": 50,
       "passingScore": 70,
       "topics": [
-        "Descriptive Statistics",
-        "Data Types",
-        "Data Cleaning",
-        "Exploratory Data Analysis"
+        "CV Definition",
+        "Applications",
+        "Images as Data",
+        "Color Spaces"
       ],
       "questionData": [
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "What is the first step in any data analysis project?",
+          "question": "A typical RGB image has how many channels?",
           "options": [
-            "Building models",
-            "Data collection and understanding",
-            "Creating visualizations",
-            "Writing reports"
-          ],
-          "correctAnswer": 1,
-          "points": 10,
-          "explanation": "Understanding and collecting quality data is the foundation of any successful data analysis project."
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "chapterId": 2,
-      "chapterName": "Statistical Methods",
-      "title": "Statistical Analysis Quiz",
-      "description": "Evaluate your knowledge of statistical methods and hypothesis testing in data science.",
-      "questions": 12,
-      "estimatedTime": "18 mins",
-      "difficulty": "Intermediate",
-      "totalPoints": 120,
-      "passingScore": 75,
-      "topics": [
-        "Hypothesis Testing",
-        "Confidence Intervals",
-        "Correlation",
-        "Regression Analysis"
-      ],
-      "questionData": [
-        {
-          "id": 1,
-          "type": "multiple-choice",
-          "question": "What does a p-value represent in hypothesis testing?",
-          "options": [
-            "The probability of the null hypothesis being true",
-            "The probability of observing the data given the null hypothesis is true",
-            "The confidence level",
-            "The effect size"
-          ],
-          "correctAnswer": 1,
-          "points": 10,
-          "explanation": "A p-value represents the probability of observing the data (or more extreme) given that the null hypothesis is true."
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "chapterId": 3,
-      "chapterName": "Data Visualization",
-      "title": "Data Visualization Quiz",
-      "description": "Test your knowledge of effective data visualization techniques and best practices.",
-      "questions": 8,
-      "estimatedTime": "12 mins",
-      "difficulty": "Intermediate",
-      "totalPoints": 80,
-      "passingScore": 70,
-      "topics": [
-        "Chart Types",
-        "Visualization Best Practices",
-        "Dashboard Design",
-        "Interactive Visualizations"
-      ],
-      "questionData": [
-        {
-          "id": 1,
-          "type": "multiple-choice",
-          "question": "Which chart type is best for showing the relationship between two continuous variables?",
-          "options": [
-            "Bar chart",
-            "Pie chart",
-            "Scatter plot",
-            "Line chart"
+            "1",
+            "2",
+            "3",
+            "4"
           ],
           "correctAnswer": 2,
           "points": 10,
-          "explanation": "Scatter plots are ideal for showing relationships between two continuous variables and identifying correlations."
+          "explanation": "RGB has 3 channels."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Which color space often simplifies color thresholding?",
+          "options": [
+            "RGB",
+            "HSV",
+            "CMYK",
+            "YCbCr"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "HSV separates chroma from intensity."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Pixels are arranged as:",
+          "options": [
+            "(C,H,W)",
+            "(H,W,C)",
+            "(W,H) only",
+            "(N,C)"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Many libraries use (H,W,C)."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Which is NOT a CV application?",
+          "options": [
+            "Object detection",
+            "Image classification",
+            "Speech-to-text",
+            "Segmentation"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Speech-to-text is NLP/Audio."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Downsampling reduces:",
+          "options": [
+            "Spatial resolution",
+            "Number of classes",
+            "Channels",
+            "Label noise"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Downsampling shrinks H,W."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "chapterId": 2,
+      "chapterName": "OpenCV Basics (Python)",
+      "title": "OpenCV Fundamentals Quiz",
+      "description": "Evaluate knowledge of image I/O, transforms, filters, and edges.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "I/O",
+        "Filtering",
+        "Edges",
+        "Transforms"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "Which function performs Canny edge detection in OpenCV?",
+          "options": [
+            "cv2.blur",
+            "cv2.Canny",
+            "cv2.Sobel",
+            "cv2.threshold"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "cv2.Canny implements Canny."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Gaussian blur primarily:",
+          "options": [
+            "Sharpens edges",
+            "Reduces noise",
+            "Normalizes histograms",
+            "Rotates image"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "It smooths noise."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Perspective transform corresponds to:",
+          "options": [
+            "Translation",
+            "Rotation",
+            "Affine",
+            "Projective"
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Homography is projective."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Thresholding converts images to:",
+          "options": [
+            "HSV",
+            "Binary",
+            "LAB",
+            "CMYK"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Binarization based on thresholds."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Histogram equalization helps with:",
+          "options": [
+            "Illumination variations",
+            "Color conversion",
+            "File I/O",
+            "Scaling labels"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Spreads intensity distribution."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "chapterId": 3,
+      "chapterName": "Convolutional Neural Networks (CNNs)",
+      "title": "CNN Concepts Quiz",
+      "description": "Check your understanding of kernels, feature maps, pooling, and architectures.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Convolutions",
+        "Pooling",
+        "Architectures",
+        "Training"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "Padding of 1 for a 3x3 kernel with stride 1:",
+          "options": [
+            "Reduces feature map",
+            "Preserves spatial size",
+            "Increases channels",
+            "Normalizes activations"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Compensates border loss."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Pooling primarily:",
+          "options": [
+            "Increases resolution",
+            "Reduces spatial size & adds invariance",
+            "Changes channels",
+            "Adds parameters"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Summarizes neighborhoods."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Residual connections help by:",
+          "options": [
+            "Reducing FLOPs",
+            "Improving gradient flow for deep nets",
+            "Eliminating convolutions",
+            "Preventing all overfitting"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Skip connections ease optimization."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Data augmentation helps to:",
+          "options": [
+            "Increase test labels",
+            "Reduce overfitting",
+            "Break batch norm",
+            "Reduce dataset size"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Improves generalization."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "A common CNN classifier head is:",
+          "options": [
+            "RNN",
+            "Fully connected layers after global pooling",
+            "Another input layer",
+            "Dropout only"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Global pool→FC is standard."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "chapterId": 4,
+      "chapterName": "Transfer Learning for Image Classification (PyTorch)",
+      "title": "Transfer Learning Quiz",
+      "description": "Evaluate concepts of feature extraction, fine-tuning, and dataset handling.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Feature Extract vs Fine-tune",
+        "Data Augmentation",
+        "Metrics"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "Freezing the backbone means:",
+          "options": [
+            "Training all layers",
+            "Training only the classifier head",
+            "Removing conv layers",
+            "Switching optimizer"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Keep features fixed; train head."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Learning rate for full fine-tuning vs head-only is often:",
+          "options": [
+            "Equal",
+            "Higher for backbone",
+            "Lower for backbone",
+            "Irrelevant"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Backbone usually needs smaller LR."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Early stopping monitors:",
+          "options": [
+            "Validation metric",
+            "Training loss only",
+            "Test metric",
+            "GPU temp"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Stop when validation degrades."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Imbalanced classes can be handled by:",
+          "options": [
+            "Class weights or resampling",
+            "Ignoring the minority class",
+            "Reducing image size only",
+            "Freezing all layers"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Weights/Resampling help balance."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Good metric for multi-class classification:",
+          "options": [
+            "IoU",
+            "Dice",
+            "Accuracy/F1",
+            "BLEU"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Accuracy/F1 are standard."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "chapterId": 5,
+      "chapterName": "Object Detection with YOLOv8",
+      "title": "Object Detection Quiz",
+      "description": "mAP, IoU, NMS, dataset preparation, and YOLOv8 workflow.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "IoU",
+        "NMS",
+        "mAP",
+        "YOLO format"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "NMS is used to:",
+          "options": [
+            "Increase recall",
+            "Remove duplicate overlapping boxes",
+            "Train faster",
+            "Balance classes"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Keeps the highest-scoring boxes."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "IoU measures:",
+          "options": [
+            "Edge sharpness",
+            "Box overlap ratio",
+            "Training speed",
+            "Class balance"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Intersection over Union."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "mAP summarizes:",
+          "options": [
+            "Mean average precision across classes",
+            "Model size",
+            "Latency",
+            "Augmentation strength"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Averaged AP over classes."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "YOLO annotations store:",
+          "options": [
+            "Absolute pixel boxes",
+            "Normalized center_x, center_y, width, height",
+            "Segmentation masks",
+            "Image histograms"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "YOLO uses normalized coords."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "PR curve plots:",
+          "options": [
+            "Precision vs Recall",
+            "Loss vs Epoch",
+            "FPS vs Resolution",
+            "LR vs Step"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Evaluate thresholds."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "chapterId": 6,
+      "chapterName": "Image Segmentation with U-Net",
+      "title": "Segmentation Quiz",
+      "description": "Losses, metrics, and architecture for pixel-wise prediction.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Dice/IoU",
+        "Class imbalance",
+        "Encoder–decoder"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "Dice coefficient measures:",
+          "options": [
+            "Edge density",
+            "Overlap between predicted and true masks",
+            "Number of instances",
+            "Box error"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "2|A∩B|/(|A|+|B|)."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "Class imbalance in segmentation can be handled by:",
+          "options": [
+            "Weighted loss or focal loss",
+            "Random cropping only",
+            "Lower LR",
+            "More epochs"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Weights focus on rare classes."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "U-Net uses skip connections to:",
+          "options": [
+            "Add parameters only",
+            "Recover spatial detail from encoder",
+            "Reduce dataset size",
+            "Change color space"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Concatenate encoder features."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Binary segmentation often uses:",
+          "options": [
+            "Categorical cross-entropy",
+            "BCE/Dice loss",
+            "Triplet loss",
+            "CTC loss"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Pixel-wise BCE or Dice."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "IoU equals:",
+          "options": [
+            "TP/(TP+FP+FN)",
+            "TP/(TP+FP)",
+            "TP/(TP+FN)",
+            "(TP+TN)/All"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Intersection over Union."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "chapterId": 7,
+      "chapterName": "Features, Matching & Homography",
+      "title": "Classical CV Quiz",
+      "description": "Assess knowledge of SIFT/ORB, feature matching, and homography.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Keypoints",
+        "Matching",
+        "Geometry"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "ORB is:",
+          "options": [
+            "A learnable deep descriptor",
+            "A fast binary descriptor",
+            "A clustering algorithm",
+            "A loss function"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "ORB is oriented FAST+BRIEF."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "The Lowe ratio test helps:",
+          "options": [
+            "Outlier rejection in matching",
+            "Speeding training",
+            "Tuning LR",
+            "Balancing classes"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Rejects ambiguous matches."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Homography relates:",
+          "options": [
+            "3D to 2D projection",
+            "Two 2D planes under perspective",
+            "Two RGB channels",
+            "Frames per second"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Maps points between planes."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "RANSAC is used to:",
+          "options": [
+            "Estimate robust models despite outliers",
+            "Normalize images",
+            "Quantize weights",
+            "Initialize CNNs"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Find consensus set."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "BFMatcher with Hamming distance is suited for:",
+          "options": [
+            "SIFT",
+            "SURF",
+            "ORB/BRIEF",
+            "KAZE"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Binary descriptors use Hamming."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "chapterId": 8,
+      "chapterName": "Model Export & Deployment Basics (ONNX/TFLite)",
+      "title": "Deployment Quiz",
+      "description": "Exporting models and running them efficiently on-device.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "ONNX",
+        "TFLite",
+        "Quantization"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "Quantization mainly helps by:",
+          "options": [
+            "Reducing model size and latency",
+            "Increasing class count",
+            "Improving dataset quality",
+            "Eliminating overfitting"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Lower precision → smaller/faster."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "ONNX is:",
+          "options": [
+            "A training optimizer",
+            "An interchange format for models",
+            "A GPU vendor",
+            "A dataset"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Open Neural Network Exchange."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "TFLite targets:",
+          "options": [
+            "Web only",
+            "Mobile/edge devices",
+            "HPC clusters",
+            "Databases"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Designed for on-device inference."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Post-training quantization converts:",
+          "options": [
+            "Architecture",
+            "Dataset",
+            "Weights/activations precision",
+            "Labels"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "E.g., FP32→INT8."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "To serve a PyTorch model via ONNX you typically:",
+          "options": [
+            "Export with torch.onnx.export and load in an ONNX runtime",
+            "Retrain from scratch",
+            "Use YAML only",
+            "Convert to CSV"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Standard export → runtime inference."
         }
       ]
     }

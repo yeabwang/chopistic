@@ -12,14 +12,15 @@
     },
     {
       "id": 2,
-      "title": "Deep Neural Networks",
-      "category": "Deep Learning",
+      "title": "Natural Language Processing",
+      "category": "NLP",
       "level": "Intermediate",
-      "duration": "12 weeks",
+      "duration": "9 weeks",
       "link": "#",
-      "description": "Dive deep into neural network architectures and build sophisticated AI models.",
-      "media": "videos/feature-2.mp4"
+      "description": "Build AI systems that understand and generate human language.",
+      "media": "videos/feature-4.mp4"
     },
+    
     {
       "id": 3,
       "title": "Computer Vision Mastery",
@@ -32,13 +33,13 @@
     },
     {
       "id": 4,
-      "title": "Natural Language Processing",
-      "category": "NLP",
+      "title": "Deep Neural Networks",
+      "category": "Deep Learning",
       "level": "Intermediate",
-      "duration": "9 weeks",
+      "duration": "12 weeks",
       "link": "#",
-      "description": "Build AI systems that understand and generate human language.",
-      "media": "videos/feature-4.mp4"
+      "description": "Dive deep into neural network architectures and build sophisticated AI models.",
+      "media": "videos/feature-2.mp4"
     },
     {
       "id": 5,

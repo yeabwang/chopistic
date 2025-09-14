@@ -159,7 +159,7 @@ const Hero = () => {
             </h1>
 
             <p className="mb-5 font-robert-regular text-blue-100">
-              {content?.hero?.description || "Enter the Intelligence Layer Unleash the Learning Economy."}
+              {content?.hero?.description || "Begin Your AI Journey."}
             </p>
 
             <Button

@@ -1,202 +1,254 @@
 {
-  "id": 2,
-  "title": "Deep Neural Networks",
-  "category": "Deep Learning",
-  "level": "Intermediate",
-  "duration": "12 weeks",
-  "description": "Dive deep into neural network architectures and build sophisticated AI models.",
-  "instructor": "Prof. Michael Rodriguez",
-  "enrollmentCount": 1923,
-  "rating": 4.9,
-  "media": "videos/feature-2.mp4",
-  "thumbnail": "img/gallery-2.webp",
+  "id": 1,
+  "title": "Natural Language Processing (NLP) Zero to Hero",
+  "category": "Machine Learning",
+  "level": "Advanced",
+  "duration": "10 weeks",
+  "description": "Welcome to Zero to Hero for Natural Language Processing using TensorFlow! If you’re not an expert on AI or ML, don’t worry -- we’re taking the concepts of NLP and teaching them from first principles with our host Laurence Moroney.",
+  "instructor": "Laurence Moroney",
+  "enrollmentCount": 0,
+  "rating": 0.0,
+  "media": "",
+  "thumbnail": "",
   "chapters": [
     {
       "id": 1,
-      "title": "Advanced Neural Network Architectures",
-      "duration": "90 minutes",
-      "videoUrl": "https://www.youtube.com/embed/VS3OAXG-Rx4",
+      "title": "Tokenization",
+      "duration": "50 minutes",
+      "videoUrl": "https://www.youtube.com/embed/fNxaJsNG3-s",
       "content": {
-        "overview": "Explore advanced neural network architectures that power today's most sophisticated AI systems.",
+        "overview": "Introduction to Tokenization in NLP\n\nLearn how to represent words in a way that computers can understand, a foundational step in natural language processing (NLP). This process, called tokenization, is the first step toward training neural networks that can process and interpret language.",
         "sections": [
           {
-            "title": "Convolutional Neural Networks (CNNs)",
-            "content": "CNNs are specialized neural networks designed for processing grid-like data such as images. They use convolutional layers that apply filters to detect features like edges, textures, and patterns."
+            "title": "What is Tokenization?",
+            "content": "Tokenization is the process of breaking down text into smaller units (tokens) that can be represented as numbers for machine processing. Instead of focusing on letters, tokenization focuses on mapping words to numbers, enabling computers to better capture meaning and context."
           },
           {
-            "title": "Recurrent Neural Networks (RNNs)",
-            "content": "RNNs are designed for sequential data and can maintain memory of previous inputs. Variants like LSTM and GRU solve the vanishing gradient problem of traditional RNNs."
+            "title": "Challenges in Word Representation",
+            "content": "Letter-based encoding: Using ASCII or similar encodings, words like listen and silent would look nearly identical, making it difficult to capture meaning.\nWord-based encoding: Assigning unique numbers to entire words helps preserve meaning, but requires careful handling of vocabulary size, punctuation, and new words.\nSimilarity and context: Sentences like I love my dog and I love my cat should show similarity, since both describe loving a pet. Tokenization helps reveal this."
           },
           {
-            "title": "Transformer Architecture",
-            "content": "Transformers use self-attention mechanisms to process sequences in parallel, making them highly efficient for natural language processing and other sequential tasks."
+            "title": "How Tokenization Works",
+            "content": "Word Indexing\n* Each word is assigned a unique number (e.g., I → 1, love → 2, my → 3, dog → 4).\n\n* A new sentence, I love my cat, reuses known tokens and assigns a new one for cat (→ 5).\nUsing TensorFlow’s Tokenizer API\n   * Import Tokenizer from TensorFlow Keras.\n\n   * Provide a list of sentences as input.\n\n   * Set the num_words parameter to limit vocabulary size (e.g., keep only the top 100 most frequent words).\n\n   * Fit the tokenizer to the text to generate the word index dictionary.\nHandling Exceptions\n      * The tokenizer recognizes punctuation and avoids treating words like dog! as different from dog.\n\n      * It dynamically expands the vocabulary when new words (like you) appear.\nSequencing for Neural Networks\n         * After tokenization, sentences are represented as sequences of numbers in the correct order.\n\n         * These sequences are then ready to be fed into neural networks for tasks like classification, translation, or text generation."
+          },
+          {
+            "title": "Applications of Tokenization",
+            "content": "Sentiment Analysis – Converting reviews into tokens for polarity detection.\nChatbots & Virtual Agents – Understanding user inputs by mapping them to tokens.\nMachine Translation – Encoding source text into tokens before translating.\nText Summarization – Tokenizing large documents for compression into shorter summaries."
           }
         ],
         "keyPoints": [
-          "Understanding CNN architecture and applications",
-          "Learning RNN variants and their use cases",
-          "Mastering transformer networks",
-          "Comparing different architectures for specific tasks"
+        "Tokenization is the first critical step in NLP, turning text into numbers computers can process.",
+        "Word-level tokenization captures meaning better than letter-level encoding.",
+        "TensorFlow’s Tokenizer API provides efficient tools to handle large vocabularies, punctuation, and unseen words.",
+        "Once tokenized, sequences can be used to train neural networks for advanced NLP tasks."
         ],
-        "practicalExercise": "Implement and compare CNN, RNN, and Transformer models on the same classification task."
+        "practicalExercise": ""
       }
     },
     {
       "id": 2,
-      "title": "Deep Learning Optimization",
-      "duration": "85 minutes",
-      "videoUrl": "https://www.youtube.com/embed/tIeHLnjs5U8",
+      "title": "Sequencing - Turning sentences into data",
+      "duration": "50 minutes",
+      "videoUrl": "https://www.youtube.com/embed/r9QjkdSJZ2g",
       "content": {
-        "overview": "Master the art and science of training deep neural networks effectively.",
+        "overview": "Creating and Managing Sequences in NLP\n\nLearn how to convert tokenized words into sequences of numbers, handle unseen words, and prepare text data for neural network training. This step ensures that sentences of varying lengths can be processed effectively by models.",
         "sections": [
           {
-            "title": "Optimization Algorithms",
-            "content": "Learn about advanced optimization algorithms like Adam, RMSprop, and AdaGrad that help neural networks converge faster and more reliably than basic gradient descent."
+            "title": "What is Sequence Creation?",
+            "content": "Sequence creation is the process of converting tokenized words into ordered sequences of numbers that represent entire sentences. This step is crucial for neural networks, which require structured numeric inputs rather than raw text."
           },
           {
-            "title": "Regularization Techniques",
-            "content": "Explore methods to prevent overfitting including dropout, batch normalization, weight decay, and early stopping. These techniques help models generalize better to unseen data."
+            "title": "Challenges in Sequencing",
+            "content": "Out-of-vocabulary words (OOV): Words not present in the initial training corpus can cause missing tokens, which may confuse models.\nVariable sentence lengths: Sentences can have different numbers of words, while neural networks often require uniform input sizes.\nPreserving sequence information: It's important to maintain the original order and relative position of words to retain meaning."
           },
           {
-            "title": "Hyperparameter Tuning",
-            "content": "Discover systematic approaches to hyperparameter optimization including grid search, random search, and Bayesian optimization to find the best model configurations."
+            "title": "How Sequence Creation Works",
+            "content": "Tokenization Review\n            * First, words are converted to tokens using a tokenizer.\n\n            * Each word is mapped to a unique number (e.g., I → 4, love → 2).\nConverting Text to Sequences\n               * TensorFlow’s texts_to_sequences() method converts sentences into sequences of numeric tokens.\n\n               * Example: I love my dog → [4, 2, 1, 3].\n\n               * New words like amazing, think, is, and do get new tokens automatically.\nHandling Out-of-Vocabulary (OOV) Words\n                  * Words not in the word index (e.g., manatee, loves if unseen) are replaced with an OOV token.\n\n                  * Example: Using oov_token=\"<OOV>\" ensures that unknown words are represented by a single token rather than being dropped.\nPadding Sequences\n                     * Neural networks often require inputs of equal length.\n\n                     * TensorFlow’s pad_sequences() can add 0s to the start (pre) or end (post) of sequences.\n\n                     * Example: A sentence [5, 3, 2, 4] can be padded to [0, 0, 0, 5, 3, 2, 4] to match the longest sentence length.\nTruncating Sequences\n                        * If a sentence is longer than the desired maximum length (maxlen), it can be truncated either pre (from the start) or post (from the end)."
+          },
+          {
+            "title": "Applications of Sequences",
+            "content": "Text Classification: Prepares text for neural networks to classify sentiment, sarcasm, or topic.\nSequence Modeling: Used in language models, chatbots, and predictive text systems.\nText Generation: Enables neural networks to predict the next word in a sequence."
           }
         ],
         "keyPoints": [
-          "Implementing advanced optimization algorithms",
-          "Applying regularization techniques effectively",
-          "Systematic hyperparameter tuning strategies",
-          "Understanding the bias-variance tradeoff"
+        "Converting tokenized words into sequences is essential for neural network training.",
+        "OOV tokens help maintain sequence integrity when encountering unseen words.",
+        "Padding ensures all sequences have the same length, while truncation manages overly long sentences.",
+        "Proper sequence handling allows models to learn from structured numeric representations of text while retaining the order and meaning of words."
         ],
-        "practicalExercise": "Optimize a deep network using different optimization algorithms and regularization techniques."
+        "practicalExercise": ""
       }
     },
     {
       "id": 3,
-      "title": "Transfer Learning and Fine-tuning",
-      "duration": "75 minutes",
-      "videoUrl": "https://www.youtube.com/embed/yofjFQddwHE",
+      "title": "Training a model to recognize sentiment in text",
+      "duration": "50 minutes",
+      "videoUrl": "https://www.youtube.com/embed/Y_hzMnRXjhI",
       "content": {
-        "overview": "Learn how to leverage pre-trained models to solve new problems efficiently.",
+        "overview": "Building a Text Classifier for Sentiment Analysis\n\nLearn how to use tokenized and padded sequences to train a neural network that can classify text sentiment, specifically detecting sarcasm in headlines.",
         "sections": [
           {
-            "title": "Understanding Transfer Learning",
-            "content": "Transfer learning involves taking a pre-trained model and adapting it to a new but related task. This approach can dramatically reduce training time and improve performance with limited data."
+            "title": "What is Text Classification?",
+            "content": "Text classification is the process of assigning labels to text based on its content. In this case:\n                           * Sarcastic: Headlines intended to be humorous or ironic.\n\n                           * Not Sarcastic: Normal headlines without irony.\nThe goal is for a model to recognize patterns in words and sequences that indicate sentiment."
           },
           {
-            "title": "Fine-tuning Strategies",
-            "content": "Learn different approaches to fine-tuning including freezing layers, gradual unfreezing, and layer-wise learning rates to adapt pre-trained models effectively."
+            "title": "Dataset Overview",
+            "content": "Source: Rishabh Misra’s sarcasm dataset from Kaggle.\nFormat: JSON with fields:\n                              * is_sarcastic (1 = sarcastic, 0 = not sarcastic)\n\n                              * headline (text to classify)\n\n                              * article_link (ignored in this model)\nPreprocessing:\n                                 * Load JSON into Python lists.\n\n                                 * Extract labels and headlines.\n\n                                 * Tokenize the headlines into numeric sequences.\n\n                                 * Pad sequences to uniform length for neural network input."
           },
           {
-            "title": "Domain Adaptation",
-            "content": "Explore techniques for adapting models across different domains, handling distribution shifts, and dealing with limited target domain data."
+            "title": "Handling Training and Testing Data",
+            "content": "Split dataset into training and testing sets (e.g., 20,000 training, 6,709 testing).\nFit the tokenizer only on training data to avoid data leakage.\nConvert both training and testing sentences into sequences and pad them consistently."
+          },
+          {
+            "title": "Understanding Embeddings",
+            "content": "Embeddings are a way to represent words as multi-dimensional vectors that encode semantic meaning:\n                                    * Words with similar meanings appear closer in vector space.\n\n                                    * Sentiment can be represented directionally:\n\n                                       * Good → [1, 0]\n\n                                       * Bad → [-1, 0]\n\n                                       * Meh → [-0.4, 0.7]\n\n                                          * Multi-dimensional embeddings allow models to capture complex sentiment patterns, like sarcasm.\n\n                                          * Summing word vectors in a sentence produces an overall sentiment vector."
+          },
+          {
+            "title": "Neural Network Architecture",
+            "content": "Embedding Layer: Learns the vector representations of words during training.\nGlobal Average Pooling: Aggregates word vectors into a single sentence vector.\nDense Layers: Fully connected layers to interpret embeddings and produce output.\nOutput: Probability of sarcasm (1 = sarcastic, 0 = not sarcastic)."
+          },
+          {
+            "title": "Training the Model",
+            "content": "Use model.fit() with training sequences and labels.\nValidate with testing sequences and labels.\nExample results:\n                                             * Training accuracy: 99%\n\n                                             * Testing accuracy: 81–82% (generalization to unseen words)."
+          },
+          {
+            "title": "Using the Classifier",
+            "content": "Tokenize new sentences using the same tokenizer as training.\nPad sequences to the same length and type used during training.\nPass padded sequences to the trained model to predict sentiment.\nExample predictions:\n                                                * Sarcastic sentence → 0.91 (high probability)\n\n                                                * Plain sentence → 0.000005 (low probability)"
           }
         ],
         "keyPoints": [
-          "Understanding when and how to use transfer learning",
-          "Implementing effective fine-tuning strategies",
-          "Handling domain shifts and adaptation",
-          "Leveraging pre-trained models efficiently"
+        "Text classifiers can detect sentiment, including sarcasm, using tokenized and padded sequences.",
+        "Word embeddings capture semantic meaning and sentiment direction.",
+        "Proper training/test split prevents leakage and ensures reliable evaluation.",
+        "Neural networks can learn complex patterns in text to generalize to new sentences."
         ],
-        "practicalExercise": "Fine-tune a pre-trained image classification model for a custom dataset."
+        "practicalExercise": ""
       }
     },
     {
       "id": 4,
-      "title": "Generative Models",
-      "duration": "95 minutes",
-      "videoUrl": "https://www.youtube.com/embed/8L11aMN5KY8",
+      "title": "ML with Recurrent Neural Networks",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/OuYtk9Ymut4",
       "content": {
-        "overview": "Explore the fascinating world of generative AI models that can create new content.",
+        "overview": "Introduction to Recurrent Neural Networks (RNNs) for Text Generation\n\nLaurence Moroney introduces the next step in NLP after text classification: text generation. The key idea is that the order of words matters when generating text, unlike simple sentiment classification.",
         "sections": [
           {
-            "title": "Generative Adversarial Networks (GANs)",
-            "content": "GANs consist of two neural networks competing against each other: a generator that creates fake data and a discriminator that tries to detect fake data. This adversarial training produces remarkably realistic generated content."
+            "title": "Why Sequence Matters",
+            "content": "In sentiment classification, word order is less important because the overall vector sum determines sentiment.\nIn text generation, predicting the next word requires context from previous words.\nExample: “Today the weather is gorgeous, and I see a beautiful blue …” → likely next word: “sky”."
           },
           {
-            "title": "Variational Autoencoders (VAEs)",
-            "content": "VAEs learn to encode data into a latent space and then decode it back. They can generate new data by sampling from the learned latent distribution."
+            "title": "Fitting Sequential Data to Neural Networks",
+            "content": "Standard feed-forward networks take data and labels and infer rules but don’t inherently handle sequences.\nTo generate text, we need to represent data sequentially, so previous elements influence predictions of future elements."
           },
           {
-            "title": "Diffusion Models",
-            "content": "Diffusion models generate data by learning to reverse a gradual noising process. They have achieved state-of-the-art results in image generation and are behind popular models like DALL-E and Stable Diffusion."
+            "title": "Understanding Numeric Sequences",
+            "content": "Using the Fibonacci sequence as an analogy:\n                                                   * Each number depends on the previous two.\n\n                                                   * Previous numbers are carried forward and influence the sequence.\n\n                                                   * This demonstrates contextual dependence—a core concept for recurrent networks."
+          },
+          {
+            "title": "Recurrent Neural Networks (RNNs)",
+            "content": "RNNs maintain a feed-forward value from each neuron to the next.\nEach neuron receives the current input and the output from the previous step.\nThis recurrence allows the network to encode sequences and maintain context."
+          },
+          {
+            "title": "Limitations of Simple RNNs",
+            "content": "RNNs can struggle with long-term dependencies:\n                                                      * Words or signals from the beginning of a long sequence may have minimal effect on later outputs.\n\n                                                      * Example: Predicting “Gaelic” in “I lived in Ireland, so they taught me how to speak …” requires information from much earlier in the sentence."
+          },
+          {
+            "title": "Solution: Long Short-Term Memory (LSTM)",
+            "content": "LSTM networks extend RNNs by maintaining longer-term memory, allowing them to capture dependencies across long sequences.\nEssential for tasks like text generation where context can span many words."
           }
         ],
         "keyPoints": [
-          "Understanding GAN architecture and training",
-          "Implementing Variational Autoencoders",
-          "Learning about diffusion models",
-          "Comparing different generative approaches"
+        "Text generation requires models that understand word order and context.",
+        "RNNs carry forward information from previous steps to influence future predictions.",
+        "Standard RNNs struggle with long-term dependencies; LSTMs address this issue.",
+        "Using sequential numeric representation allows neural networks to generate text with contextual understanding."
         ],
-        "practicalExercise": "Build a GAN to generate synthetic images and compare with a VAE approach."
+        "practicalExercise": ""
       }
     },
     {
       "id": 5,
-      "title": "Model Deployment and Production",
-      "duration": "80 minutes",
-      "videoUrl": "https://www.youtube.com/embed/6M5VXKLf4D4",
+      "title": "Long Short-Term Memory for NLP",
+      "duration": "45 minutes",
+      "videoUrl": "https://www.youtube.com/embed/A9QVYOBjZdY",
       "content": {
-        "overview": "Learn how to deploy deep learning models in production environments.",
+        "overview": "Understanding Context in Text with LSTMs\n\nLearn how to use Long Short-Term Memory (LSTM) networks to capture context across long sentences and improve text prediction and generation.",
         "sections": [
           {
-            "title": "Model Optimization for Production",
-            "content": "Learn techniques to optimize models for deployment including quantization, pruning, and knowledge distillation to reduce model size and improve inference speed."
+            "title": "Why Context Matters",
+            "content": "Predicting the next word in a sentence often requires information from words far earlier.\nExample: \"I lived in Ireland, so I learned how to speak something.\"\nCorrect prediction: \"Gaelic\" (not \"Irish\").\nStandard RNNs struggle with long sequences because early words lose influence over later predictions."
           },
           {
-            "title": "Deployment Strategies",
-            "content": "Explore different deployment options including cloud APIs, edge devices, mobile applications, and containerized services using Docker and Kubernetes."
+            "title": "Long Short-Term Memory (LSTM)",
+            "content": "Cell State: Maintains context across many timestamps, preserving important information from earlier in the sentence.\nBi-Directional LSTMs: Process sequences both forwards and backwards to capture context from the entire sentence.\nUseful for understanding semantics and meaning across long sequences."
           },
           {
-            "title": "Monitoring and Maintenance",
-            "content": "Understand how to monitor model performance in production, detect model drift, and implement continuous learning systems."
+            "title": "Implementation in Neural Networks",
+            "content": "LSTM Layer: Specify number of hidden nodes / output dimensions.\nBi-Directional Wrapper: Combines forward and backward passes for improved context understanding.\nStacking LSTM Layers:\n                                                         * Multiple layers can be stacked for deeper learning.\n\n                                                         * Use return_sequences=True on all layers that feed into another LSTM.\nLSTMs use many parameters; summary of the model shows hidden nodes, output dimensions, and total parameters."
           }
         ],
         "keyPoints": [
-          "Optimizing models for production deployment",
-          "Choosing appropriate deployment strategies",
-          "Implementing model monitoring and maintenance",
-          "Handling scalability and performance requirements"
+        "LSTMs improve predictions in sequences where long-term dependencies exist.",
+        "Bi-directional LSTMs can learn context in both directions.",
+        "Preprocessing (tokenization, sequences, padding) remains essential for network input.",
+        "Experimentation with layer depth, hidden nodes, and directionality can improve text comprehension and generation."
         ],
-        "practicalExercise": "Deploy a trained model as a REST API and implement basic monitoring."
+        "practicalExercise": ""
+      }
+    },
+    {
+      "id": 6,
+      "title": "Training an AI to create poetry",
+      "duration": "80 minutes",
+      "videoUrl": "https://www.youtube.com/embed/ZMudJXhsUpY",
+      "content": {
+        "overview": "Generating Poetry with NLP Models\n\nBuild a text-generation model using LSTMs and embeddings, trained on traditional Irish song lyrics, to create original poetry.",
+        "sections": [
+          {
+            "title": "Dataset Preparation",
+            "content": "Corpus: Lyrics of traditional Irish songs (e.g., Lanigan’s Ball).\nProcessing Steps:\n                                                            * Read lyrics as a single string with \\n for new lines.\n\n                                                            * Split into sentences by line breaks → corpus.\n\n                                                            * Tokenize corpus with a word index.\n\n                                                            * Add +1 to vocabulary size for zero-padding.\nNo Validation Set: Unlike classification, text generation uses the entire dataset to capture word occurrence patterns."
+          },
+          {
+            "title": "Creating Input Sequences",
+            "content": "For each line:\n                                                               * Tokenize into numbers.\n\n                                                               * Generate n-grams:\n\n                                                                  * First 2 words → predict 3rd.\n\n                                                                  * First 3 words → predict 4th.\n\n                                                                  * Continue until the end of line.\nPadding:\n\n                                                                     * Pad sequences with 0s to match max sentence length.\n\n                                                                     * Input (X): all tokens except the last.\n\n                                                                     * Label (Y): last token."
+          },
+          {
+            "title": "Features and Labels",
+            "content": "X: Sequence of words (padded).\nY: Next word (one-hot encoded).\nExample: Input: [0, 0, 4, 2] → Label: 66.\nOne-hot encoding marks only the correct index as 1."
+          },
+          {
+            "title": "Model Architecture",
+            "content": "Embedding Layer:\n                                                                        * Input: total vocabulary size.\n\n                                                                        * Dimensions: 240 (to handle variation in words).\n\n                                                                        * Input length = max sequence length – 1.\nBi-Directional LSTM: Captures context in both directions.\nDense Output Layer:\n\n                                                                        * Size = vocabulary size.\n\n                                                                        * Activation: categorical (softmax).\nLoss Function: Categorical Cross-Entropy.\nOptimizer: Standard optimizers (e.g., Adam)."
+          },
+          {
+            "title": "Training the Model",
+            "content": "Train X (sequences) against Y (labels).\nInitial accuracy: very low (~0.05).\nImproves to 70–75% accuracy after training.\nThe model learns to predict the next word in sequence."
+          },
+          {
+            "title": "Text Generation Process",
+            "content": "Seed with starting words.\nPredict the next word.\nAppend prediction to seed sequence.\nRepeat to generate longer text.\nExample output (from seed “I made a poetry machine”): Produced text including phrases like “shed love raw boo”."
+          }
+        ],
+        "keyPoints": [
+        "Text generation differs from classification: all data is used, no validation split.",
+        "n-gram sequences help train the model to predict the next word.",
+        "Padding ensures consistent input lengths.",
+        "Accuracy grows slowly but can reach ~75%.",
+        "Creativity of generated text depends heavily on architecture and training time.",
+        "Experimentation is encouraged for more coherent poetry."
+        ],
+        "practicalExercise": ""
       }
     }
   ],
-  "prerequisites": [
-    "Completion of AI Fundamentals course or equivalent knowledge",
-    "Strong programming skills in Python",
-    "Understanding of linear algebra and calculus",
-    "Experience with machine learning frameworks (TensorFlow or PyTorch)"
-  ],
-  "learningOutcomes": [
-    "Master advanced neural network architectures",
-    "Implement state-of-the-art deep learning models",
-    "Optimize and deploy models in production",
-    "Understand cutting-edge research in deep learning",
-    "Build and train generative AI models"
-  ],
-  "resources": [
-    {
-      "type": "book",
-      "title": "Deep Learning",
-      "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
-      "url": "#"
-    },
-    {
-      "type": "documentation",
-      "title": "PyTorch Documentation",
-      "url": "https://pytorch.org/docs/"
-    },
-    {
-      "type": "paper",
-      "title": "Attention Is All You Need (Transformer Paper)",
-      "url": "https://arxiv.org/abs/1706.03762"
-    }
-  ],
+  "prerequisites": [],
+  "learningOutcomes": [],
+  "resources": [],
   "quiz": {
-    "available": true,
-    "questionsCount": 35,
-    "passingScore": 85,
-    "timeLimit": 60
+  	"available": true,
+    "questionsCount": 15,
+    "passingScore": 70,
+    "timeLimit": 20
   }
 }

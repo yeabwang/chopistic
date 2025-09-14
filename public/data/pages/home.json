@@ -1,7 +1,7 @@
 {
   "hero": {
     "mainTitle": "Lets Learn <b>A</b>I",
-    "description": "Enter the Intelligence Layer Unleash the Learning Economy.",
+    "description": "Begin Your AI Journey.",
     "ctaButton": {
       "text": "Start Learning",
       "id": "watch-trailer"
@@ -16,7 +16,7 @@
   "about": {
     "tagline": "Welcome to Chopistic Learning",
     "title": "Disc<b>o</b>ver the world's <br /> largest shared <b>l</b>earning",
-    "subtitle": "The Learning of Intelligence begins—your life, now an epic MMORPG",
+    "subtitle": "The Learning of Intelligence begins—your journey into AI mastery starts here",
     "description": "Chopistic Learning unites every learner from countless courses and platforms, both digital and physical, into a unified Learning Economy",
     "backgroundImage": "img/about.webp"
   },
@@ -31,7 +31,7 @@
   "story": {
     "tagline": "the artificial intelligence world",
     "title": "the st<b>o</b>ry of <br /> a hidden mind",
-    "description": "Where algorithms converge, lies Chopistic Learning and the boundless knowledge. Discover its secrets and shape your mind amidst infinite opportunities.",
+    "description": "Where algorithms converge, lies Chopistic Learning and boundless AI knowledge. Discover cutting-edge concepts and shape your understanding through comprehensive learning opportunities.",
     "image": "/img/entrance.webp",
     "ctaButton": {
       "text": "discover foundation",
@@ -39,15 +39,14 @@
     }
   },
   "contact": {
-    "tagline": "Join Chopistic Learning",
-    "title": "let&#39;s b<b>u</b>ild the <br /> new era of <br /> l<b>e</b>arning t<b>o</b>gether.",
+    "tagline": "Join the AI Learning Revolution",
+    "title": "let&#39;s b<b>u</b>ild the <br /> future of <br /> AI l<b>e</b>arning t<b>o</b>gether.",
     "ctaButton": {
       "text": "contact us"
     },
     "images": {
       "contact1": "/img/contact-1.webp",
       "contact2": "/img/contact-2.webp",
-      "swordmanPartial": "/img/swordman-partial.webp",
       "swordman": "/img/swordman.webp"
     }
   }

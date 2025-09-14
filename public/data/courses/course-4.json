@@ -1,202 +1,291 @@
 {
-  "id": 4,
-  "title": "Natural Language Processing",
-  "category": "NLP",
-  "level": "Intermediate",
-  "duration": "9 weeks",
-  "description": "Build AI systems that understand and generate human language.",
-  "instructor": "Dr. Alex Thompson",
-  "enrollmentCount": 2156,
-  "rating": 4.8,
-  "media": "videos/feature-4.mp4",
-  "thumbnail": "img/gallery-4.webp",
+  "id": 2,
+  "title": "Neural Networks from Scratch",
+  "category": "Deep Learning",
+  "level": "Beginner to Intermediate",
+  "duration": "Unknown",
+  "description": "Learn how to build a neural network from scratch in Python. A foundational course that covers the fundamental concepts of deep learning without relying on major frameworks.",
+  "instructor": "Harrison Kinsley (sentdex)",
+  "enrollmentCount": 0,
+  "rating": 0,
+  "media": "videos/feature-nn.mp4",
+  "thumbnail": "img/nn-gallery-1.webp",
   "chapters": [
     {
       "id": 1,
-      "title": "Introduction to Natural Language Processing",
+      "title": "Intro and Neuron Code",
       "duration": "60 minutes",
-      "videoUrl": "https://www.youtube.com/embed/fOvTtapxa9c",
+      "videoUrl": "https://www.youtube.com/embed/Wo5dMEP_BbI?si=p39ZCHQlcC2ZS9RU",
       "content": {
-        "overview": "Explore the fascinating world of natural language processing and understand how computers can work with human language.",
+        "overview": "Introduces the motivation behind building a neural network from scratch rather than using pre-built libraries, providing intuition for the mechanics of neural nets.",
         "sections": [
           {
-            "title": "What is Natural Language Processing?",
-            "content": "NLP is a field of AI that focuses on the interaction between computers and humans through natural language. It combines computational linguistics with machine learning to help computers understand, interpret, and generate human language."
+            "title": "Objective: Why Build a Neural Network From Scratch?",
+            "content": "Explains the importance of understanding fundamentals to customize, troubleshoot, and innovate."
           },
           {
-            "title": "Challenges in NLP",
-            "content": "Human language is inherently ambiguous, context-dependent, and constantly evolving. Learn about the unique challenges NLP faces including polysemy, syntax variation, cultural context, and informal language."
+            "title": "Core Concepts of Neural Networks",
+            "content": "Neurons, weights, biases, layers, input/output, and training goal."
           },
           {
-            "title": "NLP Applications",
-            "content": "Discover real-world applications including machine translation, sentiment analysis, chatbots, information extraction, question answering, and text summarization."
+            "title": "From Mathematical Formulas to Code",
+            "content": "Translating summation and matrix notations into simple Python code."
+          },
+          {
+            "title": "Practical Implementation: Coding the First Neuron",
+            "content": "First Python implementation of a neuron."
           }
         ],
         "keyPoints": [
-          "Understanding the scope and challenges of NLP",
-          "Learning about language ambiguity and context",
-          "Exploring various NLP applications",
-          "Understanding the intersection of linguistics and AI"
+          "Neurons = weighted inputs + bias → activation.",
+          "Training adjusts weights/biases to minimize error.",
+          "Math formulas → simple code."
         ],
-        "practicalExercise": "Analyze different types of language ambiguity in a collection of text samples and identify challenges for automated processing."
+        "practicalExercise": "Write Python code to implement a single neuron with initialized weights and bias."
       }
     },
     {
       "id": 2,
-      "title": "Text Preprocessing and Tokenization",
-      "duration": "70 minutes",
-      "videoUrl": "https://www.youtube.com/embed/ZvvZONHzLz8",
+      "title": "Forward Pass Through a Network",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/lGLto9Xd7bU",
       "content": {
-        "overview": "Master the fundamental techniques for preparing text data for NLP analysis.",
+        "overview": "Builds from a single neuron to multiple neurons organized in layers. Introduces forward pass logic across layers.",
         "sections": [
           {
-            "title": "Text Cleaning and Normalization",
-            "content": "Learn essential preprocessing steps including removing special characters, handling case sensitivity, dealing with numbers and punctuation, and normalizing text for consistent analysis."
+            "title": "From Neuron to Layer",
+            "content": "Grouping neurons and connecting them to form hidden layers."
           },
           {
-            "title": "Tokenization Techniques",
-            "content": "Understand different approaches to breaking text into meaningful units, from simple whitespace splitting to advanced methods like SentencePiece and Byte-Pair Encoding (BPE)."
+            "title": "Forward Pass Logic",
+            "content": "How inputs propagate through weights/biases to produce outputs."
           },
           {
-            "title": "Stop Words and Stemming",
-            "content": "Learn about removing common words that don't carry significant meaning and reducing words to their root forms through stemming and lemmatization techniques."
+            "title": "Coding a Forward Pass",
+            "content": "Python implementation of a forward pass through multiple layers."
           }
         ],
         "keyPoints": [
-          "Implementing text cleaning pipelines",
-          "Understanding different tokenization strategies",
-          "Applying stemming and lemmatization",
-          "Handling multilingual text preprocessing"
+          "Multiple neurons form a layer.",
+          "Forward pass is repeating weighted sum → activation across layers.",
+          "Output depends on structure and parameters."
         ],
-        "practicalExercise": "Build a comprehensive text preprocessing pipeline and compare the effects of different preprocessing steps on downstream tasks."
+        "practicalExercise": "Implement a forward pass through a 2-layer network in Python."
       }
     },
     {
       "id": 3,
-      "title": "Word Embeddings and Semantic Representation",
-      "duration": "85 minutes",
-      "videoUrl": "https://www.youtube.com/embed/ERibwqs9p38",
+      "title": "Activation Functions",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/tMrbN67U9d4",
       "content": {
-        "overview": "Learn how to represent words and documents as numerical vectors that capture semantic meaning.",
+        "overview": "Explains why non-linearity is needed and introduces common activation functions.",
         "sections": [
           {
-            "title": "Traditional Approaches: Bag of Words and TF-IDF",
-            "content": "Understand classical methods for text representation including frequency-based approaches and their limitations in capturing semantic relationships between words."
+            "title": "Why Non-Linearity?",
+            "content": "Without non-linear activation, networks are just linear combinations."
           },
           {
-            "title": "Word2Vec and FastText",
-            "content": "Explore neural word embeddings that learn dense vector representations of words, capturing semantic and syntactic relationships from large text corpora."
+            "title": "Popular Functions",
+            "content": "Sigmoid, ReLU, Tanh, Softmax."
           },
           {
-            "title": "Contextual Embeddings",
-            "content": "Learn about modern contextual embeddings like ELMo, BERT, and RoBERTa that generate different representations for the same word based on its context."
+            "title": "Implementation in Python",
+            "content": "Coding these functions and applying them to outputs."
           }
         ],
         "keyPoints": [
-          "Understanding vector space representations of text",
-          "Implementing Word2Vec and FastText models",
-          "Working with pre-trained word embeddings",
-          "Exploring contextual embedding models"
+          "Activations give networks the ability to model complex functions.",
+          "Sigmoid for probabilities, ReLU for efficiency, Softmax for classification."
         ],
-        "practicalExercise": "Train custom word embeddings on domain-specific text and evaluate their quality through similarity tasks and visualization."
+        "practicalExercise": "Implement Sigmoid, ReLU, and Softmax in Python and test them on sample inputs."
       }
     },
     {
       "id": 4,
-      "title": "Text Classification and Sentiment Analysis",
-      "duration": "75 minutes",
-      "videoUrl": "https://www.youtube.com/embed/VtRLrQ3Ev-U",
+      "title": "Loss Functions",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/TEWy9vZcxW4",
       "content": {
-        "overview": "Build systems that can automatically categorize and analyze the sentiment of text documents.",
+        "overview": "Introduces error measurement in neural networks and common loss functions.",
         "sections": [
           {
-            "title": "Text Classification Fundamentals",
-            "content": "Learn the principles of text classification, feature engineering for text, and classical machine learning approaches like Naive Bayes and SVM for text classification."
+            "title": "Why Loss Functions?",
+            "content": "Loss measures how far predictions are from labels."
           },
           {
-            "title": "Deep Learning for Text Classification",
-            "content": "Explore neural approaches including recurrent neural networks (RNNs), LSTMs, and convolutional neural networks (CNNs) for text classification tasks."
+            "title": "Common Functions",
+            "content": "Mean Squared Error (MSE), Categorical Cross-Entropy."
           },
           {
-            "title": "Sentiment Analysis Techniques",
-            "content": "Understand different approaches to sentiment analysis from rule-based methods to machine learning and deep learning approaches, including handling of sarcasm and context."
+            "title": "Python Implementation",
+            "content": "Implementing loss functions and testing with predictions."
           }
         ],
         "keyPoints": [
-          "Implementing classical text classification algorithms",
-          "Building deep learning models for text classification",
-          "Understanding sentiment analysis challenges",
-          "Evaluating text classification performance"
+          "Loss guides training by providing error feedback.",
+          "Different tasks → different losses."
         ],
-        "practicalExercise": "Build a multi-class sentiment analyzer for product reviews and compare different modeling approaches."
+        "practicalExercise": "Implement MSE and Cross-Entropy in Python."
       }
     },
     {
       "id": 5,
-      "title": "Advanced NLP with Transformers",
-      "duration": "95 minutes",
-      "videoUrl": "https://www.youtube.com/embed/TQQlZhbC5ps",
+      "title": "Backpropagation Basics",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/gmjzbpSVY1A",
       "content": {
-        "overview": "Master the transformer architecture that has revolutionized modern NLP.",
+        "overview": "Introduces the idea of gradients and error propagation backward through the network.",
         "sections": [
           {
-            "title": "Transformer Architecture",
-            "content": "Understand the self-attention mechanism, multi-head attention, and the encoder-decoder structure that makes transformers so powerful for sequence-to-sequence tasks."
+            "title": "The Need for Backpropagation",
+            "content": "To adjust weights, we must know how errors depend on them."
           },
           {
-            "title": "BERT and Pre-trained Language Models",
-            "content": "Learn about bidirectional encoder representations and how pre-trained language models like BERT, RoBERTa, and ALBERT have transformed NLP through transfer learning."
+            "title": "Gradient Concept",
+            "content": "Derivatives measure how a small change affects loss."
           },
           {
-            "title": "GPT and Generative Models",
-            "content": "Explore generative pre-trained transformers and their applications in text generation, completion, and conversational AI."
+            "title": "Step-by-Step Process",
+            "content": "Errors flow backward, gradients are computed for each weight."
           }
         ],
         "keyPoints": [
-          "Understanding attention mechanisms",
-          "Fine-tuning pre-trained language models",
-          "Implementing transformer-based solutions",
-          "Building conversational AI systems"
+          "Backpropagation is chain rule in action.",
+          "Enables training by updating weights systematically."
         ],
-        "practicalExercise": "Fine-tune a BERT model for named entity recognition and compare performance with traditional approaches."
+        "practicalExercise": "Walk through derivative calculation of a simple 2-layer network."
+      }
+    },
+    {
+      "id": 6,
+      "title": "Optimization Techniques",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/omz_NdFgWyU",
+      "content": {
+        "overview": "Shows how to use gradients to adjust weights with optimizers.",
+        "sections": [
+          {
+            "title": "Gradient Descent",
+            "content": "The simplest optimization algorithm."
+          },
+          {
+            "title": "Variants",
+            "content": "Stochastic, Mini-batch, Adam optimizer."
+          },
+          {
+            "title": "Implementation",
+            "content": "Update rules coded in Python."
+          }
+        ],
+        "keyPoints": [
+          "Learning rate critical for convergence.",
+          "Adam is often preferred for efficiency."
+        ],
+        "practicalExercise": "Implement basic gradient descent and experiment with learning rates."
+      }
+    },
+    {
+      "id": 7,
+      "title": "Building a Full Network",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/dEXPMQXoiLc",
+      "content": {
+        "overview": "Brings all components together into a working neural network.",
+        "sections": [
+          {
+            "title": "From Layers to Network",
+            "content": "Combining neurons, activations, loss, and optimization."
+          },
+          {
+            "title": "Step-by-Step Training Loop",
+            "content": "Forward pass → loss → backprop → update."
+          },
+          {
+            "title": "Python Implementation",
+            "content": "Build a simple network for classification."
+          }
+        ],
+        "keyPoints": [
+          "All previous concepts unify here.",
+          "Training loop is the core cycle of neural nets."
+        ],
+        "practicalExercise": "Code a small network to classify 2D points."
+      }
+    },
+    {
+      "id": 8,
+      "title": "Improving Performance",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/levekYbxauw",
+      "content": {
+        "overview": "Techniques for better results and avoiding pitfalls.",
+        "sections": [
+          {
+            "title": "Regularization",
+            "content": "Dropout, L2 penalty."
+          },
+          {
+            "title": "Data Augmentation",
+            "content": "Expanding dataset to prevent overfitting."
+          },
+          {
+            "title": "Batch Normalization",
+            "content": "Stabilizes training."
+          }
+        ],
+        "keyPoints": [
+          "Overfitting is a major concern.",
+          "Regularization and augmentation help generalization."
+        ],
+        "practicalExercise": "Add dropout to your previous network implementation."
+      }
+    },
+    {
+      "id": 9,
+      "title": "Final Project and Wrap-Up",
+      "duration": "60 minutes",
+      "videoUrl": "https://www.youtube.com/embed/txh3TQDwP1g",
+      "content": {
+        "overview": "Culminates in building a complete neural network from scratch for a real classification problem.",
+        "sections": [
+          {
+            "title": "Project Overview",
+            "content": "Using MNIST-like dataset for digit classification."
+          },
+          {
+            "title": "Implementation",
+            "content": "End-to-end pipeline with forward pass, loss, backprop, optimization."
+          },
+          {
+            "title": "Reflection",
+            "content": "Recap of journey and importance of fundamentals."
+          }
+        ],
+        "keyPoints": [
+          "From neuron to full project.",
+          "Concepts apply beyond toy datasets."
+        ],
+        "practicalExercise": "Build and train a full network for digit classification."
       }
     }
   ],
   "prerequisites": [
-    "Strong programming skills in Python",
-    "Basic understanding of machine learning",
-    "Familiarity with statistics and probability",
-    "Knowledge of linear algebra fundamentals"
+    "Intermediate Python programming knowledge",
+    "Basic understanding of mathematics (vectors, matrices, derivatives)"
   ],
   "learningOutcomes": [
-    "Build end-to-end NLP applications",
-    "Implement state-of-the-art transformer models",
-    "Master text preprocessing and feature engineering",
-    "Deploy NLP models for real-world applications",
-    "Understand modern approaches to language understanding"
+    "Understand the fundamental components of a neural network (neurons, layers, activation functions).",
+    "Implement a forward pass through a neural network.",
+    "Understand and implement loss functions.",
+    "Grasp the concept of backpropagation and optimization.",
+    "Build a complete neural network to solve a classification problem."
   ],
-  "resources": [
-    {
-      "type": "book",
-      "title": "Natural Language Processing with Python",
-      "author": "Steven Bird, Ewan Klein, Edward Loper",
-      "url": "#"
-    },
-    {
-      "type": "documentation",
-      "title": "Hugging Face Transformers",
-      "url": "https://huggingface.co/docs/transformers/"
-    },
-    {
-      "type": "dataset",
-      "title": "Stanford Sentiment Treebank",
-      "url": "https://nlp.stanford.edu/sentiment/"
-    }
-  ],
+  "resources": [],
   "quiz": {
     "available": true,
-    "questionsCount": 28,
-    "passingScore": 82,
-    "timeLimit": 55
+    "questionsCount": 10,
+    "passingScore": 70,
+    "timeLimit": 10
   }
 }

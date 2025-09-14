@@ -1,106 +1,834 @@
 {
-  "courseId": 4,
-  "courseName": "Web Development Mastery",
+  "courseId": 2,
+  "courseName": "Neural Networks from Scratch",
   "quizzes": [
     {
-      "id": 12,
+      "id": 1,
       "chapterId": 1,
-      "chapterName": "HTML & CSS Fundamentals",
-      "title": "HTML & CSS Basics Quiz",
-      "description": "Test your understanding of HTML structure, semantic elements, and CSS styling fundamentals.",
-      "questions": 12,
-      "estimatedTime": "18 mins",
+      "chapterName": "Intro and Neuron Code",
+      "title": "Neuron Fundamentals Quiz",
+      "description": "Test your understanding of neurons, weights, biases, layers, and training goals.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
       "difficulty": "Beginner",
-      "totalPoints": 120,
+      "totalPoints": 50,
       "passingScore": 70,
       "topics": [
-        "HTML Structure",
-        "Semantic Elements",
-        "CSS Selectors",
-        "Box Model"
+        "Neurons",
+        "Weights and biases",
+        "Layers",
+        "Training goals"
       ],
       "questionData": [
         {
           "id": 1,
           "type": "multiple-choice",
-          "question": "Which HTML tag is used for the largest heading?",
+          "question": "What is the primary reason the presenter advocates for building a neural network from scratch, rather than immediately using a library like TensorFlow?",
           "options": [
-            "&lt;h1&gt;",
-            "&lt;h6&gt;",
-            "&lt;header&gt;",
-            "&lt;title&gt;"
-          ],
-          "correctAnswer": 0,
-          "points": 10,
-          "explanation": "The &lt;h1&gt; tag represents the largest heading in HTML, typically used for main page titles."
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "chapterId": 2,
-      "chapterName": "JavaScript Essentials",
-      "title": "JavaScript Fundamentals Quiz",
-      "description": "Evaluate your knowledge of JavaScript syntax, functions, and DOM manipulation.",
-      "questions": 15,
-      "estimatedTime": "22 mins",
-      "difficulty": "Intermediate",
-      "totalPoints": 150,
-      "passingScore": 75,
-      "topics": [
-        "Variables and Data Types",
-        "Functions",
-        "DOM Manipulation",
-        "Event Handling"
-      ],
-      "questionData": [
-        {
-          "id": 1,
-          "type": "multiple-choice",
-          "question": "Which of the following is the correct way to declare a variable in JavaScript?",
-          "options": [
-            "var name = 'John';",
-            "variable name = 'John';",
-            "v name = 'John';",
-            "declare name = 'John';"
-          ],
-          "correctAnswer": 0,
-          "points": 10,
-          "explanation": "The 'var' keyword is used to declare variables in JavaScript, though 'let' and 'const' are preferred in modern JavaScript."
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "chapterId": 3,
-      "chapterName": "React Development",
-      "title": "React Components & State Quiz",
-      "description": "Test your understanding of React components, state management, and hooks.",
-      "questions": 10,
-      "estimatedTime": "15 mins",
-      "difficulty": "Advanced",
-      "totalPoints": 100,
-      "passingScore": 80,
-      "topics": [
-        "Components",
-        "State Management",
-        "React Hooks",
-        "Props"
-      ],
-      "questionData": [
-        {
-          "id": 1,
-          "type": "multiple-choice",
-          "question": "Which hook is used to manage state in functional React components?",
-          "options": [
-            "useEffect",
-            "useState",
-            "useContext",
-            "useReducer"
+            "Neural networks built from scratch perform better than those built with libraries.",
+            "To gain a deep, fundamental understanding of how and why neural networks work.",
+            "High-level libraries are too complex for beginners to install and use.",
+            "It is faster to write code in raw Python than to use a high-level library."
           ],
           "correctAnswer": 1,
           "points": 10,
-          "explanation": "useState is the primary hook for managing local state in functional React components."
+          "explanation": "Building from scratch provides foundational understanding for customization and troubleshooting."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "In the context of a single neuron, what is the role of a 'bias'?",
+          "options": [
+            "It determines the type of activation function the neuron will use.",
+            "It normalizes the input data before it is processed by the neuron.",
+            "It is a value that multiplies with each input to determine its importance.",
+            "It is an additional parameter that is added to the weighted sum of inputs, allowing the neuron's activation to be shifted."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "The bias shifts the activation function, allowing the neuron to fire even if all inputs are zero."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "According to the video, what is the goal of the 'training' process in a neural network?",
+          "options": [
+            "To increase the number of layers in the network until it produces the right output.",
+            "To visualize the connections between all the neurons in the network.",
+            "To find the optimal set of weights and biases that allow the network to correctly map inputs to desired outputs.",
+            "To write the simplest possible code for the forward pass."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Training optimizes parameters to minimize prediction error on the given task."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "How does a single neuron calculate its output before applying an activation function?",
+          "options": [
+            "It finds the maximum value among the inputs and multiplies it by the bias.",
+            "It multiplies each input by its corresponding weight, sums these products, and then adds the bias.",
+            "It takes the average of all inputs and adds the average of all weights.",
+            "It adds all the inputs and weights together and then adds the bias."
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "The calculation is: (input1 * weight1) + (input2 * weight2) + ... + bias."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "Which layer in a neural network is responsible for producing the final result or prediction?",
+          "options": [
+            "The First Hidden Layer",
+            "The Input Layer",
+            "The Output Layer",
+            "The Bias Layer"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "The output layer generates the final predictions based on the transformations from all preceding layers."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "chapterId": 2,
+      "chapterName": "Forward Pass Through a Network",
+      "title": "Forward Pass Quiz",
+      "description": "Covers multiple neurons, layer structure, and forward pass logic.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Layers",
+        "Forward pass logic",
+        "Implementation"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "If a single layer in a neural network has 10 inputs and 8 neurons, how many total weights and biases will this layer have?",
+          "options": [
+            "10 weights and 8 biases",
+            "80 weights and 1 bias",
+            "80 weights and 8 biases",
+            "10 weights and 10 biases"
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Each of the 8 neurons has 10 weights (one per input), totaling 80 weights. Each neuron has one bias, totaling 8 biases."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "What is the structure of the output produced by a layer of neurons?",
+          "options": [
+            "A matrix of values, with rows for neurons and columns for inputs.",
+            "A list of values, where each value is the output of a single neuron in that layer.",
+            "A single numerical value representing the average of all neuron outputs.",
+            "The same as the input, but with the biases added."
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "The output is a vector (list) containing one value per neuron in the layer."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What is the primary reason that each neuron in a layer receives the exact same set of inputs?",
+          "options": [
+            "Because it is computationally impossible to give each neuron a different input.",
+            "So that all neurons in the layer will produce the exact same output.",
+            "To reduce the amount of memory required to store the inputs.",
+            "To allow each neuron to analyse the full input data and potentially learn a different, unique feature from it."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Each neuron learns a different aspect of the input data, enabling the layer to extract diverse features."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "In the video's Python code, how are the weights for a layer containing multiple neurons represented?",
+          "options": [
+            "As a single list of numbers.",
+            "As a single number that is shared by all neurons.",
+            "As a list of lists, where each inner list contains the weights for a single neuron.",
+            "As a dictionary where keys are neuron IDs."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "A 2D list (matrix) is used where each row corresponds to a neuron and each column to an input."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "The video emphasizes that weights and biases are the 'tunable' parameters. What does this mean in the context of training a neural network?",
+          "options": [
+            "It means the number of weights and biases can change during the training process.",
+            "It means the network can change the input data to better fit the weights and biases.",
+            "It means these are the values that are automatically adjusted by an optimization algorithm to minimize the network's prediction error.",
+            "It means the programmer must manually adjust the weights and biases until the output is correct."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "During training, algorithms like gradient descent automatically update these parameters to improve performance."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "chapterId": 3,
+      "chapterName": "Activation Functions",
+      "title": "Activation Functions Quiz",
+      "description": "Assess understanding of different activation functions and their role in networks.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Non-linearity",
+        "Common activations (ReLU, sigmoid, tanh, softmax)",
+        "Practical uses"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the primary motivation for switching from pure Python loops to using the NumPy dot product for neural network calculations?",
+          "options": [
+            "To significantly improve performance and make the code cleaner and more readable.",
+            "Because Python lists cannot handle the complexity of a weight matrix.",
+            "To make the code more verbose and easier for beginners to read.",
+            "To avoid having to add a bias term to the calculation."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "NumPy operations are vectorized and much faster than Python loops for matrix math."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "If you have a batch of 5 input samples, each with 10 features, and a layer with 4 neurons, what are the shapes of your input matrix and weight matrix, respectively?",
+          "options": [
+            "Inputs: (5, 10), Weights: (10, 4)",
+            "Inputs: (10, 5), Weights: (4, 10)",
+            "Inputs: (5, 4), Weights: (4, 10)",
+            "Inputs: (5, 10), Weights: (4, 10)"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Input shape is (batch_size, n_inputs). Weight matrix shape is (n_inputs, n_neurons) for proper matrix multiplication."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "When performing a matrix multiplication between a batch of inputs and the layer's weights, why is it necessary to transpose the weight matrix?",
+          "options": [
+            "To ensure the number of neurons matches the number of input samples.",
+            "Because the `np.dot()` function only works with transposed matrices.",
+            "To flip the inputs and the outputs of the neural network layer.",
+            "To make the inner dimensions of the input matrix and the weight matrix match, which is a requirement for matrix multiplication."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Matrix multiplication requires the inner dimensions to align; transposing the weights makes (5,10) @ (10,4) valid."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "What mathematical operation is equivalent to the calculation a single neuron performs on its inputs and weights (before adding the bias)?",
+          "options": [
+            "Matrix Transposition",
+            "A Cross Product",
+            "Element-wise Addition",
+            "The Dot Product"
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "The weighted sum is the dot product of the input vector and the weight vector."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "After calculating `np.dot(inputs, weights.T)`, what is the final step to get the complete output of the layer?",
+          "options": [
+            "Add the vector of biases to the resulting matrix.",
+            "Multiply the result by the biases.",
+            "Take the dot product of the result with the biases.",
+            "Transpose the result of the dot product."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The bias vector is added element-wise to the output of the dot product."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "chapterId": 4,
+      "chapterName": "Loss Functions",
+      "title": "Loss Functions Quiz",
+      "description": "Evaluates knowledge of measuring network error and different loss functions.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Beginner",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Error measurement",
+        "Mean Squared Error",
+        "Cross-Entropy Loss"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the primary motivation for refactoring the neural network code into a `Layer_Dense` class?",
+          "options": [
+            "To change the mathematical formula for a forward pass.",
+            "To reduce the amount of memory the weights and biases use.",
+            "To make the code scalable and easier to manage when building deep networks with many layers.",
+            "To make the dot product calculations run faster."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Object-oriented design allows easy stacking of multiple layers without code duplication."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "In the video's `Layer_Dense` class, how are the weights and biases initialized in the `__init__` method?",
+          "options": [
+            "Weights are initialized with small random numbers, and biases are initialized to zero.",
+            "Both weights and biases are initialized to zero.",
+            "Weights are initialized to zero, and biases are initialized with small random numbers.",
+            "Both weights and biases are initialized with small random numbers."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Small random weights break symmetry, and zero biases provide a neutral starting point."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "When creating a network by connecting `layer1` and `layer2`, what must be true for the forward pass to work correctly?",
+          "options": [
+            "The number of inputs to `layer1` must match the number of neurons in `layer2`.",
+            "Both layers must have the same number of neurons.",
+            "Both layers must have the same number of inputs.",
+            "The number of neurons in `layer1` must match the number of inputs for `layer2`."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "The output of layer1 (its neurons) becomes the input to layer2, so their counts must be equal."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "What is the primary purpose of the `forward` method within the `Layer_Dense` class?",
+          "options": [
+            "To receive a batch of inputs and calculate the layer's corresponding outputs.",
+            "To define the number of inputs and neurons for the layer.",
+            "To update the layer's weights and biases based on prediction error.",
+            "To initialize the layer's weights and biases when the object is created."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The `forward` method implements the core computation: weighted sum + bias + activation."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "In the video's implementation, a layer is initialized as `Layer_Dense(n_inputs, n_neurons)`. What is the shape of the `self.weights` matrix that gets created?",
+          "options": [
+            "`n_inputs` rows and `n_neurons` columns.",
+            "`n_inputs` rows and `n_inputs` columns.",
+            "`n_neurons` rows and `n_neurons` columns.",
+            "`n_neurons` rows and `n_inputs` columns."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "The weights matrix is shaped as (n_neurons, n_inputs) to enable multiplication with a batch of inputs of shape (batch_size, n_inputs)."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "chapterId": 5,
+      "chapterName": "Backpropagation Basics",
+      "title": "Backpropagation Quiz",
+      "description": "Focuses on understanding the gradient-based optimization process.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Chain rule",
+        "Gradient descent",
+        "Weight updates"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the primary problem with a deep neural network that is built using only dense layers, without any activation functions?",
+          "options": [
+            "It is impossible to use the dot product on more than one layer.",
+            "The network becomes too slow to make predictions as more layers are added.",
+            "The output values of the network will always be negative.",
+            "The entire network is only capable of learning linear relationships, making it no more powerful than a single layer."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Without non-linear activation, every layer is a linear transformation, and the whole network collapses to a single linear layer."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "What is the mathematical definition of the ReLU (Rectified Linear Unit) activation function?",
+          "options": [
+            "It returns the input value for all positive and negative numbers.",
+            "It returns the input value if it's positive, and 0 otherwise.",
+            "It returns the square of the input value.",
+            "It returns 1 for positive inputs and -1 for negative inputs."
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "ReLU = max(0, x); it outputs zero for negative inputs and the input itself for positive inputs."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "In the flow of data through a neural network, where is the activation function applied?",
+          "options": [
+            "Before the dot product is calculated in the dense layer.",
+            "It is added to the weights and biases to create new parameters.",
+            "Only on the final output layer of the entire network.",
+            "After the dot product and bias addition of a layer, but before the data is passed to the next layer."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Activation functions are applied after the linear combination (dot product + bias) of each layer."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "Why is introducing non-linearity into a neural network so important?",
+          "options": [
+            "It reduces the total number of weights and biases needed in the network.",
+            "It makes the code more organized and easier to read.",
+            "It prevents the weights from becoming too large during training.",
+            "It allows the network to learn and model complex, real-world patterns that are not simple straight lines."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Non-linearities enable neural networks to approximate any function, capturing complex data relationships."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "How is the ReLU activation function implemented efficiently using NumPy in the video?",
+          "options": [
+            "By using the `np.maximum(0, inputs)` function.",
+            "By calculating the dot product of the inputs and a vector of zeros.",
+            "By using the `np.abs()` function to get the absolute value.",
+            "By using a Python 'for' loop to check if each number is greater than 0."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "`np.maximum(0, inputs)` applies the ReLU function element-wise to the entire array at once."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "chapterId": 6,
+      "chapterName": "Optimization Techniques",
+      "title": "Optimizers Quiz",
+      "description": "Covers techniques to improve training efficiency and convergence.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Softmax",
+        "Exponentiation",
+        "Numerical Stability"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the primary role of the Softmax activation function in a neural network?",
+          "options": [
+            "To convert the raw output scores (logits) from the final layer into a probability distribution.",
+            "To randomly initialize the weights and biases of the output layer.",
+            "To introduce non-linearity between the hidden layers.",
+            "To speed up the network by simplifying the dot product calculation."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Softmax transforms logits into probabilities that sum to 1, suitable for multi-class classification."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "In the Softmax function, what is the main effect of applying the exponential function (e^x) to the logits?",
+          "options": [
+            "It makes all of the logit values negative.",
+            "It makes all the logit values positive and emphasizes the largest value.",
+            "It makes all the logits sum to 1.",
+            "It subtracts the mean from the logit values."
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Exponentiation ensures all values are positive and amplifies differences, making the largest value dominate."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Why is the 'subtract the maximum logit' trick used before exponentiation in a practical implementation of Softmax?",
+          "options": [
+            "To make the network train faster.",
+            "To ensure the final probabilities sum up to exactly 1.",
+            "To prevent a potential 'overflow' error from exponentiating very large numbers.",
+            "To make the smallest logit value equal to zero."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Subtracting the maximum prevents overflow when exponentiating large numbers while preserving the relative ratios."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "After the exponentiation step in Softmax, what does the normalization step (dividing each value by the sum of all values) accomplish?",
+          "options": [
+            "It ensures that the output values sum to 1, creating a valid probability distribution.",
+            "It makes all the values positive.",
+            "It amplifies the largest value to make it stand out.",
+            "It prevents overflow errors from happening."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "Normalization scales the exponentiated values so they sum to 1, defining a proper probability distribution."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "If the final layer of a network produces the logits `[ -3.0, 2.0, 5.0]` for three classes, what will the output of the Softmax function generally look like?",
+          "options": [
+            "A probability distribution where each value is roughly 0.33.",
+            "A set of all positive numbers that do not sum to 1.",
+            "A probability distribution where the third value is very close to 1, and the others are close to 0.",
+            "An exact copy of the input: `[ -3.0, 2.0, 5.0]`."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Due to the exponential function, the highest logit (5.0) will dominate, yielding a probability near 1 for that class."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "chapterId": 7,
+      "chapterName": "Building a Full Network",
+      "title": "Batch Training Quiz",
+      "description": "Tests knowledge of mini-batch training and its trade-offs.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Full batch vs mini-batch",
+        "Stochastic training",
+        "Efficiency considerations"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the primary purpose of a 'loss function' in training a neural network?",
+          "options": [
+            "To calculate the final probability distribution of the output layer.",
+            "To select which activation function to use for the hidden layers.",
+            "To quantify how 'wrong' a model's prediction is compared to the actual correct answer.",
+            "To adjust the weights and biases of the network during the forward pass."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "The loss function measures the discrepancy between predicted and true labels, guiding the optimization."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "In Categorical Cross-Entropy, the loss calculation simplifies to focusing on only one value from the network's output. Which value is it?",
+          "options": [
+            "The predicted probability of the single, correct class.",
+            "The highest predicted probability, regardless of which class it was for.",
+            "The lowest predicted probability, to see what the network was least confident in.",
+            "The average of all the predicted probabilities in the output distribution."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "For a given sample, cross-entropy only cares about the predicted probability assigned to its true class."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Why is the negative natural logarithm (`-log(x)`) a good choice for a loss function?",
+          "options": [
+            "It produces a high loss for low predicted probabilities and a low loss for high probabilities.",
+            "It is a linear function, which is easy for the network to calculate.",
+            "It always returns a value between 0 and 1, just like probabilities.",
+            "It produces a low loss for low predicted probabilities and a high loss for high probabilities."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "-log(x) approaches infinity as x approaches 0 (bad prediction) and approaches 0 as x approaches 1 (good prediction)."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "If a network predicts a probability of `0.95` for the correct class, what will the loss be?",
+          "options": [
+            "A negative value.",
+            "Exactly 0.95.",
+            "A very high value.",
+            "A value close to zero."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Since -log(0.95) ≈ 0.051, the loss is very low, indicating a highly confident and correct prediction."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "How is the overall loss for a 'batch' of data calculated?",
+          "options": [
+            "By taking the average of all the individual loss values in the batch.",
+            "By finding the maximum loss value within the batch.",
+            "By summing up all the individual loss values in the batch.",
+            "By taking the dot product of all the loss values."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The batch loss is typically the mean of individual sample losses to provide a stable gradient estimate."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "chapterId": 8,
+      "chapterName": "Improving Performance",
+      "title": "Network Assembly Quiz",
+      "description": "Checks ability to integrate all components into a functioning network.",
+      "questions": 5,
+      "estimatedTime": "10 mins",
+      "difficulty": "Intermediate",
+      "totalPoints": 50,
+      "passingScore": 70,
+      "topics": [
+        "Combining layers",
+        "Forward/backward flow",
+        "Training loop"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the primary goal of an 'optimizer' in the context of training a neural network?",
+          "options": [
+            "To perform the forward pass and generate predictions.",
+            "To adjust the network's weights and biases in order to minimize the loss.",
+            "To select the best activation functions for the network's layers.",
+            "To calculate the loss of the network's predictions."
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "The optimizer uses gradients to update parameters and reduce the loss."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "In the 'hiker in a valley' analogy for optimization, what does the hiker's 'elevation' represent?",
+          "options": [
+            "The number of layers in the neural network.",
+            "The current set of the network's weights and biases.",
+            "The loss value produced by the network's current parameters.",
+            "The speed at which the network is training."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "The elevation represents the current quality of the model, measured by the loss function."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "What is the major drawback of using a 'random search' strategy for optimization?",
+          "options": [
+            "It is computationally very efficient but often finds a poor solution.",
+            "It can only be used for networks with a single layer.",
+            "It is extremely inefficient and highly unlikely to find a good solution for a network with many parameters.",
+            "It is guaranteed to find the best possible set of weights and biases."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "With thousands of parameters, randomly guessing combinations is computationally infeasible."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "The video concludes by suggesting a much better optimization strategy than random search. What is the core idea of this better strategy?",
+          "options": [
+            "Trying every single possible combination of weights and biases in an organized way.",
+            "Always adjusting weights and biases by a small, fixed amount, regardless of the loss.",
+            "Using the 'slope' of the loss landscape to take an intelligent step in the steepest downhill direction.",
+            "Initializing the weights and biases to zero to start at the bottom of the valley."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "Gradient descent uses the derivative (slope) to determine the direction of steepest descent."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "What mathematical tool is used to find the 'slope' of the loss landscape, which is essential for smart optimization?",
+          "options": [
+            "Statistics",
+            "Linear Algebra",
+            "Probability Theory",
+            "Calculus (Derivatives and Gradients)"
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "Derivatives (gradients) measure the rate of change of the loss with respect to each parameter."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "chapterId": 9,
+      "chapterName": "Final Project and Wrap-Up",
+      "title": "Classification Quiz",
+      "description": "Validates knowledge of applying a neural network to solve classification tasks.",
+      "questions": 7,
+      "estimatedTime": "15 mins",
+      "difficulty": "Advanced",
+      "totalPoints": 70,
+      "passingScore": 70,
+      "topics": [
+        "Output layer setup",
+        "Prediction logic",
+        "Accuracy evaluation"
+      ],
+      "questionData": [
+        {
+          "id": 1,
+          "type": "multiple-choice",
+          "question": "What is the primary goal of the backpropagation algorithm?",
+          "options": [
+            "To select the best learning rate for the model.",
+            "To calculate the gradient of the loss function with respect to every weight and bias.",
+            "To perform the forward pass and calculate the network's prediction.",
+            "To randomly adjust weights and see if the loss improves."
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "Backpropagation computes the partial derivatives of the loss with respect to all parameters for optimization."
+        },
+        {
+          "id": 2,
+          "type": "multiple-choice",
+          "question": "What fundamental rule from calculus is the 'engine' that makes backpropagation possible for deep, nested functions?",
+          "options": [
+            "The Chain Rule",
+            "The Product Rule",
+            "The Power Rule",
+            "The Quotient Rule"
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The chain rule allows us to compute the derivative of a composite function by multiplying the derivatives of its components."
+        },
+        {
+          "id": 3,
+          "type": "multiple-choice",
+          "question": "Conceptually, how does the chain rule work during the backward pass?",
+          "options": [
+            "It finds the average of all the local gradients.",
+            "It only uses the gradient from the very first layer.",
+            "It adds the local gradients of each function together.",
+            "It multiplies the local gradient of each function by the gradient flowing from the step ahead of it."
+          ],
+          "correctAnswer": 3,
+          "points": 10,
+          "explanation": "The chain rule propagates the gradient backward by multiplying the local gradient at each step by the incoming gradient."
+        },
+        {
+          "id": 4,
+          "type": "multiple-choice",
+          "question": "What is the correct formula for the weight update rule?",
+          "options": [
+            "`weight = weight + learning_rate * gradient`",
+            "`weight = weight - learning_rate * gradient`",
+            "`weight = gradient - learning_rate`",
+            "`weight = weight / (learning_rate * gradient)`"
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "We subtract the gradient scaled by the learning rate because the gradient points uphill; we want to go downhill."
+        },
+        {
+          "id": 5,
+          "type": "multiple-choice",
+          "question": "What is the role of the `learning_rate`?",
+          "options": [
+            "It determines how many layers the network has.",
+            "It is the calculated loss for the batch.",
+            "It is a hyperparameter that controls how large of a step the optimizer takes.",
+            "It is the gradient calculated by backpropagation."
+          ],
+          "correctAnswer": 2,
+          "points": 10,
+          "explanation": "The learning rate is a user-defined scalar that scales the size of the parameter updates."
+        },
+        {
+          "id": 6,
+          "type": "multiple-choice",
+          "question": "Why is the process called 'BACK'-propagation?",
+          "options": [
+            "Because it starts from the final loss and propagates the gradient calculation backward through the network layers.",
+            "Because it is an older algorithm that is no longer used.",
+            "Because it moves the network's parameters back to their initial random state.",
+            "Because it processes the training data in reverse order, from the last sample to the first."
+          ],
+          "correctAnswer": 0,
+          "points": 10,
+          "explanation": "The algorithm calculates gradients starting from the output layer and moves backward toward the input layer."
+        },
+        {
+          "id": 7,
+          "type": "multiple-choice",
+          "question": "Why do we *subtract* a portion of the gradient from a weight, rather than add it?",
+          "options": [
+            "Because addition is more computationally expensive than subtraction.",
+            "Because the gradient points 'uphill' (in the direction of increasing loss), and we want to go 'downhill'.",
+            "To prevent the learning rate from having an effect.",
+            "To make sure the weight value always decreases."
+          ],
+          "correctAnswer": 1,
+          "points": 10,
+          "explanation": "The gradient indicates the direction of steepest ascent. To minimize loss, we move in the opposite direction."
         }
       ]
     }
